@@ -1,0 +1,1513 @@
+<pre>
+# THURSDAY, DECEMBER 2, 2027
+label kendall_start:
+    $ date = "Thursday, December 2, 2027"
+    $ transition("bg classroom day", "End of chapter 5.", end=True)
+    #$ transition("bg classroom day", "LATER", black=True) # should be week of December 1 or so
+    show john suit normal
+    
+    j "I don't think it'll be of much interest, but... I have been asked specifically to pass on this message to everyone in my class."
+    
+    j "The mid-winter dance this year is going to be held in conjunction with DCTI, a public high school a few blocks away."
+    
+    j "Apparently this means they'll be able to afford to make it quite an extravagant affair? It's semi-formal, tickets are $80, and it's on December 7."
+    
+    show john suit closed cross
+    j "...which isn't actually mid-winter. It's like two weeks before. Outstanding."
+    
+    show john suit annoyed
+    j "Well, if anyone's interested, let me know."
+    
+    "I put the note away, rolling my eyes. As if there's anyone in the class who would care, anyway, I figure. None of them really seem like the types for school dances."
+    
+    j "Now, moving right on to the homework from last night..."
+    
+    $ relationship_status = Post(arianna, "Hey, you know... are you {i}really{/i} still single? Did I miss something, or shouldn't you guys update your relationship status?", nolan)
+    if charlotte_and_kendall:
+        $ save_name = "Chapter 6:\nGirls Before Flowers"
+        $ title(6, "GIRLS BEFORE FLOWERS", "Thursday, Dec. 2 — Tuesday, Dec. 8", "bg classroom day", "kendall uniform blush")
+    else:
+        $ save_name = "Chapter 6:\nFlowers Before Boys"
+        $ title(6, "FLOWERS BEFORE BOYS", "Thursday, Dec. 2 — Tuesday, Dec. 8", "bg classroom day", "kendall uniform smug")
+    show john suit normal
+    show kendall uniform worried at two_left
+    show akira casual2 normal at two_right
+    with dissolve
+    
+    k "Hey, sir?"
+    
+    play music COOL_MORNING fadein 2.0
+    
+    j "Hi. What's up?"
+    
+    ak "Um, well, it's about the big creative assignment. It's due next week, right?"
+    
+    j "Yes, that's right..."
+    
+    "And I can't say I'm really encouraged by that. Has he even started?!"
+    
+    show kendall uniform happy
+    show akira casual2 happy
+    k "Well, we had a pretty good idea for it, and were wondering if we could do a presentation together."
+    
+    ak "Yeah. For reals, it'd be great."
+    
+    "Normally I would say no, absolutely under no circumstances; it's a huge end-of-term project, worth 30%% of their grade... it's not really some small group assignment or anything."
+    
+    "But... they seem into it. Really into it."
+    
+    j "I don't know... what's the idea?"
+    
+    show kendall uniform smug
+    k "It'd be a dramatic presentation about, you know, meta-fiction. Good chance to explore the themes of the course, apply them to a modern context."
+    
+    show kendall uniform happy
+    show akira casual2 amused
+    ak "That sorta thing. It'd be totes rad, sir. I mean, we could just do essays, but... we figured you'd want us to do something interesting instead?"
+    
+    show akira casual2 happy
+    k "Yeah. You'd be a real bro if we could, sir."
+    
+    show john suit uncomfortable
+    j "Well..."
+    
+    "It sounds like they actually care; given that this is the first time I've ever seen that sort of reaction from either of them about anything school-related... how can I say no?"
+    
+    "This is my chance — probably my only chance — to actually get them to engage with the class. I guess I'll have to fudge the rules."
+    
+    j "I guess I'll allow it, this once."
+    
+    show akira casual2 very happy
+    show kendall uniform very happy
+    ak "You're a bro, sir."
+    
+    k "Totes legit."
+    
+    "We go over the details for another couple minutes... and they go on their way."
+    
+    hide kendall
+    hide akira
+    with dissolve
+    
+    $ relationship_status.reply(akira, ">.>")
+    
+    "I guess it could be worse. As far as concerns go, I have bigger ones, anyway."
+    
+    $ relationship_status.reply(nolan, "Lol uh well it's complicated?")
+    $ private_relationship = Conversation(akira, nolan)
+    $ private_relationship.send(akira, "she's rite, tho. wut ARE we? i don't really want to pressure you or anything, but... well that was why taylor scared me so much before. i'm never really sure what our relationship is.\n\ni mean, if you don't know either, that's totes cool! we don't have to say anything still, no pressure. :/ i just... well, i dunno. feels weird man.")
+    
+    "I spend the whole prep hour crippled with indecision over how I'm going to handle the upcoming exam review. I start writing notes, but I throw them away, every time."
+    
+    "In the end, I come up with nothing."
+    
+    $ private_relationship.send(nolan, "Sorry I didn't know you felt that strongly! Your my boyfriend obv. Do you want me to change my profile? Are we at that point? I just didnt want to rush things...")
+    
+    scene bg classroom evening with dissolve
+    
+    $ private_relationship.send(akira, "...oh. durr. >.> we're both silly, then. yes, totes, if yr comfortable saying that, then we definitely should <3 XD")
+    
+    "I don't have a clue how I'm going to get them through this. I have control over what's on the exam, but I won't be responsible for marking them, so... well, if they all do terribly..."
+    
+    scene bg hallway evening with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg street evening with dissolve
+    
+    $ nolan.relationship_status = "in a relationship with Akira Yamazaki"
+    $ nolan.interested_in = "Straight, with one exception"
+    $ Post(nolan, "has updated his relationship status.", picture=False)
+    $ no_homo = Post(nolan, "is in love with a boy, no homo.")
+    
+    "Still, though, on some bizarre, perverse level, I'm actually glad to be worrying about this. Thrilled, even. It's nice to finally be actually worried about my students academically, not their personal drama."
+    
+    $ no_homo.reply(akira, "LOL *>.>*")
+    $ akira.relationship_status = "Nolan x Akira OTP"
+    $ Post(akira, "has updated his relationship status.", picture=False)
+    
+    "Isn't that how it's {i}supposed{/i} to go?"
+    
+    $ no_homo.reply(kendall, "nice.")
+    $ no_homo.reply(arianna, "ROFL. I was wondering!")
+    if charlotte_and_kendall:
+        $ naughty = Conversation(charlotte, kendall)
+        $ naughty.send(charlotte, "Hey, dear, what are you up to? I'm really bored.")
+        $ naughty.send(kendall, "aw, not much. wish i could go be with you, but unfortunately mom's out with the car, and the bus doesn't run that late ._.; sry, babe. trust me, i'm bored too.")
+        $ naughty.send(charlotte, "Oh, that's okay, I understand. I've just been thinking of you a lot. You always seem like you know how to deal with boredom; I don't believe you!")
+        $ naughty.send(kendall, "well, actually, i can think of something >.>; are you alone in your room?")
+        $ naughty.send(charlotte, "Ohhhh, yes, of course I am. What's that?")
+        $ naughty.send(kendall, "um, do you remember those pictures i sent you a while back? <.< i just ask because um you said at the time (before we broke up, i guess) that you would be interested in reciprocating. um, if you're up for it, of course.")
+    $ transition("bg bedroom evening", "LATER")
+    
+    "When I get home, I say I'm going to get a comprehensive exam review finished for tomorrow. I really need to."
+    
+    if charlotte_and_kendall:
+        play music COOL_AND_HEAVY fadein 2.0
+    else:
+        play music MIDNIGHT fadein 2.0
+    
+    "...but first, I need to mark all the homework from today. Why did I think that was a smart idea, again, to give homework today, when I should be worrying about their exams now?"
+    
+    if charlotte_and_kendall:
+        $ naughty.send(charlotte, "Wait, do you mean the sexy ones? I... might have kept those. Sorry. I probably should have deleted them when we broke up, but I couldn't really bring myself to.\n\nDo... you really want to see that? I've never really done that sort of thing before...")
+    
+    "And what's more, they just leave me feeling even more worried. This is some of the shittiest, sloppiest work I've seen in my entire life."
+    
+    if charlotte_and_kendall:
+        $ naughty.send(kendall, "well, no pressure or anything. but of course i do. you're beautiful and i'm sure you have a beautiful body, charlotte. it's fun, and there's no need to be prudish about it. for reals, sis, i think you have a lot to be proud of.")
+        $ naughty.send(charlotte, "Okay. I don't think mine will turn out as hot as yours, but I guess I'm willing to give it a shot anyway. Should I use the same image sharing thing that you did last time?")
+    
+    "Just absolutely terrible, all around."
+        
+    if charlotte_and_kendall:
+        $ naughty.send(kendall, "yeah, that works. :3")
+    
+        "Despite being told specifically not to, they're all bullshit five paragraph essays, every single one; at least one student managed to fit theirs onto a single page! It's unbelievable."
+        
+        $ naughty.send(charlotte, "...okay, here goes. The password is your middle name.\n\nUm... I'm sorry, I'm really not very good at this at all. I think I fail at sexy forever. You make it look so easy...", link={"image":"profiles/naughty1.jpg", "url":"http://bit.ly/djAO8yy", "filename":"CAMX-2027-0001.jpg", "size":"32 MiB"}) # change URL
+        
+        "I mean, there's bad, and then there's {i}bad{/i}. Despite being given easy topics, not a single one manages to actually stay on point for more than a paragraph. And most depressingly..."
+        
+        $ naughty.send(kendall, "awww, no, don't say that! you are {i}really{/i} pretty, sis, you just need to work on your posing a little. you shouldn't hide your hips with your skirt like that ^_^ you could even lose the bra, it's a little awkward there. don't overthink it; really, just try to tease a little more and it'll be perfect.")
+        
+        "Even Charlotte's is awful. Not as awful the rest, but it's the most incoherent argument imaginable. She wasn't even trying."
+        
+        $ naughty.send(charlotte, "Okay... this took a lot of tries. Do you think this is better? I still just think I suck at it.", link={"image":"profiles/naughty2.jpg", "url":"http://bit.ly/fAx4wg", "filename":"CAMX-2027-0023.jpg", "size":"37 MiB"}) # change URL
+        
+        "I realize why, of course. She's been distracted. And... maybe I encouraged that, a little."
+        
+        $ naughty.send(kendall, "omg, yes, that's perfect. <3 i shouldn't have said anything, now i'm actually really hot for you ._.;;; definitely you shouldn't be down on yourself, you are absolutely beautiful. omg, i just want to pounce on you right now <3 <3 <3")
+        
+        "But I sure can't give this a good mark in good faith. It's awful. And she's still the best in the class!"
+        
+        $ naughty.send(charlotte, "Aww, thank you, I'm blushing. <3 <3 <3")
+        
+        "By the time I'm done with all the marking, I feel like just completely giving up. What's the point? I'm exhausted from desperately trying to find some way to justify raising their marks just a little."
+        
+        "I can't exactly let them all fail."
+        
+        "I'll worry about exam review later, I guess. There's no point in trying now. I'm just too tired."
+        
+        $ naughty.send(charlotte, "I'm not really sure this works, but I tried to take your advice... when you said pounce on me, did you mean something like this?", link={"image":"profiles/naughty3.jpg", "url":"http://bit.ly/73hAJk", "filename":"CAMX-2027-0068.jpg", "size":"29 MiB"})
+        
+        "I spend the rest of the evening just lying in bed. I deserve a bit of a break, I suppose."
+        
+        $ naughty.send(kendall, "<3 <3 <3 <3 <3\n\nomg charlotte i do not deserve you. i love you so much, you're going to keep me up all night thinking of you like that ^_^;;; so cute, so so SO cute, i wish my boobs were half as adorable as yours... and that stare <3 omg, you are just too perfect.\n\nfjdksjlaks I COULD KISS YOU i just want to bring you home and have my way with you forever. you're too much, charlotte. you are way too much. ._.;; i am in LOVE with you.")
+        
+        "...even if rationally, I should be freaking out."
+        
+        $ naughty.send(charlotte, "Oh my gosh, stop that, you're embarrassing me so much! I was just doing what you suggested... I love you too, but you don't have to flatter me so much, you know.")
+        $ naughty.send(kendall, ">implying i'm flattering\n\nnope. you really {i}are{/i} incredibly beautiful, for reals. <3")
+    else:
+        "Screw it, I don't have time for these. Preparing them for exams is far more important. I'm too anxious about this; they need to start doing way better or I'm going to have an aneurysm."
+        
+# FRIDAY, DECEMBER 3, 2027
+        $ date = "Friday, December 3, 2027"
+        $ transition("bg classroom day", "THE NEXT DAY")
+        show john suit normal
+        
+        j "Alright, everyone, I've given you all sets of the review questions!"
+        
+        j "I want you to break up into groups and go over each of them. The exam questions will be taken from this list."
+        
+        play music EASY_GOING fadein 2.0
+        
+        "...which is like the easiest softball in the world. I'm basically telling them what the questions are actually going to be. There's no way they should do too poorly given that, right?"
+        
+        "They all break off into rather unsurprising pairs. Oh well, that's fine."
+        
+        $ plans = Conversation(kendall, nolan)
+        $ plans.send(kendall, "hey bro, i was wondering, do you and yr bf have plans for next Tuesday?")
+        
+        "I try to focus on marking the essays I didn't have time to last night."
+        
+        "Half-way through the pile, though, I realize that the chatter I'm hearing is clearly not work-related. I'm going to be having a few words with a couple of girls..."
+        
+        scene bg classroom2 day
+        show john suit annoyed
+        show kendall uniform happy at two_left
+        show charlotte uniform happy at two_right
+        with dissolve
+        
+        j "How's the review going, ladies?"
+        
+        k "Um, good."
+        
+        c "Thanks for giving us the list. We're planning on going over them thoroughly after school."
+        
+        $ plans.send(nolan, "No")
+        
+        "Well, maybe you could try going over them thoroughly {i}now{/i}..."
+        
+        show kendall uniform very happy
+        k "Oh, actually, good timing, sir. You can help us out."
+        
+        show kendall uniform happy
+        j "Yes...?"
+        
+        k "'kay, so we were thinking, mid-winter dance is coming up. You can hook people up with tickets, right?"
+        
+        j "Uh, yes. Wait, you? You... really don't seem like the type."
+        
+        show charlotte uniform smug
+        c "She's really, really not."
+        
+        show charlotte uniform happy
+        k "Lol, no, not for me. We were thinking for Akira and Nolan."
+        
+        k "The boy {i}wants{/i} to take his B-F to the dance, but he is way, way too big a pussy to actually ask. You know Akira."
+        
+        j "Hm."
+        
+        show john suit happy
+        "I have to admit, while it doesn't sound like her at all, Akira... I can definitely see."
+        
+        j "Well, that's probably true. I'm not going to try convincing them to drop a lot of money on dance tickets, though. That seems sketchy."
+        
+        k "Lol. Naw, you're right."
+        
+        c "The thought was that we would buy them a pair, as a surprise."
+        
+        $ wait(plans)
+        
+        "So that's why she was asking if they were both free on that evening. But... I'm pretty sure that's not going to go over very well."
+        
+        show john suit uncomfortable
+        j "That's a nice thought, but are you sure they're really going to want that? I don't want to be rude, but..."
+        
+        "Well, how do I put this...?"
+        
+        k "Yeah? It's cool, you're not going to hurt our feelings."
+        
+        j "Well. I think Nolan would probably just be humiliated to get dance tickets from a couple of girls. Kendall, you must know where I'm going with this."
+        
+        "She laughs."
+        
+        k "Ohhhhh. Lol! No, you're totes right."
+        
+        show charlotte uniform worried
+        c "Huh? What are you two talking about?"
+        
+        k "He's sayin' that if we gave Nolan the tickets ourselves, he would think it's just because we're tryna hook them up."
+        
+        show charlotte uniform uncomfortable
+        c "But we {i}are{/i} trying to hook them up, aren't we?"
+        
+        show charlotte uniform worried
+        j "Think about it this way, Charlotte. If a man as..."
+        
+        "...I was about to say \"a man as perverted as Kendall,\" but I realize at the last second how absolutely wrong it would be to say it like that."
+        
+        j "...that is, if an older man approached you, trying to hook you up with a girl, how do you think you would feel about that?"
+        
+        show charlotte uniform surprised
+        c "Ew. Gross."
+        
+        show charlotte uniform worried
+        c "...oh, I see. Point well taken, Mr. Rook."
+        
+        c "Maybe it's not such a great idea after all, then."
+        
+        k "Naw. Just don't tell 'em who they're from. You give them to 'em, say you comped them or whatevs."
+        
+        if failed_nolan:
+            "That's... not a bad idea. It would certainly be a good way to apologize to Nolan for being completely useless when he actually needed help."
+        else:
+            "That's... not a bad idea. Especially since Nolan already seems to trust me with his relationship issues anyway."
+        
+        show john suit happy
+        j "Huh. That's a surprisingly sensible idea."
+        
+        j "Sure, bring in the money for the tickets, and I'll handle the rest."
+        
+        show kendall uniform smug
+        show charlotte uniform happy
+        k "Sweet. Thanks, sir. It's gonna be rad."
+        
+        j "Just... one condition, okay?"
+        
+        c "What's that?"
+        
+        j "Do the exam review questions {i}now{/i}, please."
+        
+        show kendall uniform awkward smile
+        k "Lol, 'kay, sorry sir..."
+        
+        scene bg classroom day with dissolve
+        
+        "I go back to my desk, but it's too late to finish the marking now. I guess I'll just have to make sure to have them back by the next day."
+        
+        $ no_u = Conversation(akira, kendall)
+        $ no_u.send(akira, "hey, did you see that /u/ thread about eniko, with the explanation? totally should show that to charlotte, it's a really good starting point. since she was wondering and it seems like something she would like.")
+    
+    if not conceded_to_taylor:
+        $ trying = Post(taylor, "is trying to make things better...")
+# FRIDAY, DECEMBER 3, 2027
+        $ date = "Friday, December 3, 2027"
+        if charlotte_and_kendall:
+            $ transition("bg classroom day", "LUNCH, THE NEXT DAY")
+        else:
+            $ transition("bg classroom day", "LUNCH")
+        show john suit annoyed
+        show charlotte uniform worried at two_right
+        show kendall uniform bored at two_left
+        with dissolve
+        
+        "It's just the two of them at lunch, again."
+        
+        play music DAY_TO_DAY fadein 2.0
+        
+        if charlotte_and_kendall:
+            $ wait(naughty)
+            
+            c "So I guess the essays didn't really go very well, Mr. Rook? Can I at least explain why?"
+            
+            "No no no no no no no. I know {i}exactly{/i} why they didn't go well, and I really do not want to hear her try to explain. Especially not after what they were doing last night. No no no."
+            
+            $ advice_for_kendall = Conversation(arianna, kendall)
+            $ advice_for_kendall.send(kendall, "um, hey, i know we've never really been great friends or anything, but can i ask you for advice on something? i mean, would you mind, or do you totes hate me? x.x")
+            
+            j "Do you really want to talk about this?"
+            
+            show charlotte uniform uncomfortable
+            c "When you put it that way, not really, no."
+            
+            show charlotte uniform worried
+            j "Just... do a better job when you're studying for your exam, okay? Your marks are really going to flag if you don't put the effort into them."
+        else:
+            $ no_u.send(kendall, "WUT NO. NO NO NO NO NO NO NO NO NO NO NO. DO NOT DO THAT.")
+            
+            c "Sorry about that essay, Mr. Rook. It wasn't really my best work, I've been so busy with other classes."
+            
+            j "It's fine. I know what that's like; but do a better job when you're studying for your exam, okay? Your marks are really going to flag if you don't."
+            
+        c "Um, right, of course, I'm sorry. I'll try harder next time."
+            
+        j "Okay. Good."
+        
+        "There's a pause."
+        
+        k "What, not going to bitch me out for my marks, sir?"
+        
+        j "Would you actually listen?"
+        
+        show charlotte uniform smug
+        k "Lol, nope."
+        
+        if charlotte_and_kendall:
+            $ advice_for_kendall.send(arianna, "No, of course I don't hate you! I mean, you're really difficult at times, but I understand completely. It's Taylor who hates you, and... well, the less said about her right now, the better. So what's up?")
+        else:
+            $ no_u.send(akira, "lol wut")
+        
+        j "Well, there you go, then."
+        
+        j "I'm not trying to be hostile, it's just... arguing with you is not something that smart people do. I get that."
+        
+        j "They're your marks to worry about. As much as you should, it's not as if I can force you to care."
+        
+        k "Ha ha, lol, totes legit. Good call, sir."
+        
+        "I'm about to try to change the subject to anything but that, when we're interrupted by someone I haven't seen much of in the past few days."
+        
+        show kendall uniform closed
+        k "Speaking of hostile..."
+        
+        play music LIGHTNING_KICK fadein 2.0
+        
+        show kendall uniform cross at shift_three_left
+        show charlotte uniform normal at shift_center with None
+        show taylor uniform worried at three_right with dissolve
+        
+        t "Do you mind if I come in for a few minutes?"
+        
+        "She looks... humble, somehow, if that's even possible to say about Taylor."
+        
+        k "Yes."
+        
+        t "Thanks..."
+        
+        k "No, as in, yes, I mind, sis."
+        
+        show charlotte uniform disappointed
+        "Charlotte gives a stern look, as she usually does when Kendall says something mean."
+        
+        c "I do, too."
+        
+        "...oh. Well, ouch."
+        
+        "But even if she deserves it, I probably shouldn't let Kendall rip into her too much. Or... Charlotte, for that matter, as bizarre as the idea of it is."
+        
+        show taylor uniform awkward smile
+        t "Oh, come on! I came here because... look, I just got back from talking to Akira and Nolan. I wanted to apologize for being a bitch to you two, too."
+        
+        show taylor uniform uncomfortable
+        "I sigh. For fuck's sake. At least she's admitted to it straight up, but that doesn't mean I trust her."
+        
+        j "You were just talking to Akira and Nolan?"
+        
+        t "Yes..."
+        
+        j "Where are they?"
+        
+        t "They're on the roof together... I didn't say anything mean, I promise, I just wanted to let them know I was sorry. It's fine..."
+        
+        j "Yeah, I'll be the judge of that."
+        
+        "I get up to leave."
+        
+        j "Guys, I'll be back in a few minutes. Please just be calm, and don't kill her, okay? If there's a problem, I'll take care of it."
+        
+        show kendall uniform closed
+        k "That's a big request. No promises, sir."
+        
+        show kendall uniform cross
+        j "{i}Kendall{/i}..."
+        
+        k "Fiiiiiine, sir. I won't kill her."
+        
+        j "Good."
+        
+        play music EASY_GOING fadein 2.0
+        
+        scene bg hallway day with dissolve
+        
+        $ renpy.pause(0.5)
+        
+        scene bg rooftop day with dissolve
+        
+        "Sure enough, she's not lying about that, at least. Both the boys are on the far end of the roof."
+        
+        "It's a good place, too; the view is nice from up here, it's pleasantly mild out, and it's surprisingly quiet."
+        
+        scene bg akiranolan with dissolve
+        show john suit normal
+        show akira casual2 upset null
+        show nolan uniform happy null
+        
+        ak "Aaaaah! What's that?!"
+        
+        $ how_can_you = Conversation(charlotte, kendall)
+        $ how_can_you.send(kendall, "...wtf sis. how can you put up with this retarded non-apology?")
+        
+        n "Oh, that's dragonspawn. You have to — have to be quick with them, or they bring in reinforcements, with the incinerate power."
+        
+        ak "Incinerate...?"
+        
+        n "Yeah. Destroys items in your inventory if you get hit with it."
+        
+        ak "Everything?"
+        
+        n "If you're not careful. But they're easy to deal with. You just flank like this..."
+        
+        show akira casual2 very upset null
+        ak "Whoaaaaaaa. Awesome!"
+        
+        show nolan uniform embarassed null
+        n "Well, you know, not really..."
+        
+        "Well, they {i}seem{/i} to be okay, anyway. It looks like Taylor hasn't left a wake of emotional devastation in her wake this time."
+        
+        $ how_can_you.send(charlotte, "I'm not going to tell her off. You shouldn't, either. Maybe she's right, maybe we should give her a second chance.")
+        $ trying.reply(kendall, "lol cool story bro")
+        scene bg rooftop day 
+        show john suit normal
+        show nolan uniform happy at two_left
+        show akira casual2 amused at two_right
+        with dissolve
+        
+        ak "Oh, 'sup, sir!"
+        
+        "Akira waves, and Nolan — I assume — pauses his game to look up."
+        
+        n "Hey, sir."
+        
+        show akira casual2 bothered
+        j "Hey, guys... sorry, I didn't mean to interrupt or anything. I just heard that Taylor came by to talk to you two."
+        
+        show nolan uniform speechless
+        j "\"Apologize\" is what she said, but the last time she said that... well... I just wanted to be sure everything was alright."
+        
+        n "No, everything's cool. Um, don't worry about it."
+        
+        show john suit sympathetic
+        j "Oh, that's good. If there's ever a problem with her again... well, you already know. You can tell me."
+        
+        show nolan uniform bored
+        n "I think she's actually trying this time. Trying, at least. Not very well. It's... well, I don't want to be too mean."
+        
+        $ how_can_you.send(kendall, "gl hf with that. i can't stand this bullshit.")
+        
+        show akira casual2 indignant
+        ak "Fffffffffu, O-M-G. It's Taylor, bro. You can be mean."
+        
+        show akira casual2 cross
+        n "Yeah..."
+        
+        show nolan uniform disappointed
+        n "It's just really pathetic, you know?"
+        
+        show akira casual2 bored
+        ak "Ugh, for reals. I'm still raging so hard at that b — girl."
+        
+        $ how_can_you.send(charlotte, "Then go, it's fine. It's not as if I don't understand. I think I can talk some sort of sense into her, but I really do not mind if you leave. I'll cover your escape, even.")
+        
+        show nolan uniform bored
+        n "No... I mean in a really pitiful sort of way. I feel bad for making fun of her. She really just {i}is{/i} that retarded about other peoples' feelings."
+        
+        show akira casual2 angry
+        ak "Whatevs. Fuck her, I'm sick of talking about her."
+        
+        show akira casual2 bored
+        $ how_can_you.send(kendall, "<3")
+        
+        j "So everything's fine, then?"
+        
+        show nolan uniform cross
+        n "Yes. I mean. So long as she continues to stay away from my B-F. She's pathetic, but I'm not stupid."
+        
+        show akira casual2 blushing
+        
+        ak "Yeah..."
+        
+        if charlotte_and_kendall:
+            $ advice_for_kendall.send(kendall, "ty, i'm glad to hear that ^_^\n\num, anyway... do you wear make-up at all, arianna? not trying to be weird, actually just wondering.")
+        else:
+            $ no_u.send(kendall, "DO NOT SHOW CHARLOTTE /u/ UNDER ANY CIRCUMSTANCES.\n\nomg not even joking. do not. DO NOT. she is a delicate little flower and will be traumatized forever. also she'll think ur some kind of terrifying pervert.")
+        
+        j "I'll let you get back to it, then."
+        
+        show akira casual2 super happy
+        ak "T-Y for asking, though, sir."
+        
+        show akira casual2 amused
+        show nolan uniform awkward smile
+        j "Um..."
+        
+        n "Yeah. Thanks. I don't really need you to protect him for me, though."
+        
+        j "Sorry, sorry. I'll leave you alone, then."
+        
+        scene bg hallway day with dissolve
+        show john suit normal
+        
+        "I realize as I walk away why Nolan sounded so annoyed: that must have been kind of emasculating, wasn't it?"
+        
+        "I probably wouldn't feel very manly if not only did I have a boyfriend who needed protecting, but apparently felt like I couldn't even do that. Shit."
+        
+        "I briefly consider going back to apologize, but..."
+        
+        "...what the fuck do you say about that? \"Sorry, I think you're actually very manly, it's okay, everyone sometimes gets reduced to tears by a teenaged girl!\""
+         
+        "I guess not, huh. The best thing, I suppose, is to just stop now."
+        
+        show kendall uniform cross with dissolve
+        
+        k "Hey, sir."
+        
+        j "Hi... weren't you still eating lunch with Charlotte?"
+        
+        k "Yeah, well, Taylor's {i}still{/i} in there. Kinda hard to eat when you're overwhelmed by nausea."
+        
+        j "That's a little harsh."
+        
+        k "So's the smell of \"bitch\" in the room. Extremely harsh, in fact."
+        
+        if charlotte_and_kendall:
+            $ advice_for_kendall.send(arianna, "OMG. LOL.\n\nOf course I do. Everyone at our school does! Man, do you really think my face looks like this naturally? I wish!\n\nSoooooooo... why do you ask? I mean, I know why you're asking, I just want to hear you actually say it. :D")
+        else:
+            $ no_u.send(akira, "um, that's a little extreme, don't you think? >.>")
+        
+        j "Okay, really, there's no need to be that way. You're going to have to put up with her for the rest of the year, so don't... be like that."
+        
+        "What I'm trying to say is \"Kendall, don't be Kendall about it.\""
+        
+        show kendall uniform worried
+        k "'kay, whatevs, bro."
+        
+    else:
+        if charlotte_and_kendall:
+            $ advice_for_kendall = Conversation(arianna, kendall)
+            $ advice_for_kendall.send(kendall, "um, hey, i know we've never really been great friends or anything, but can i ask you for advice on something? i mean, would you mind, or do you totes hate me? x.x")
+            $ advice_for_kendall.send(arianna, "No, of course I don't hate you! I mean, you're really difficult at times, but I understand completely. It's Taylor who hates you, and... well, the less said about her right now, the better. So what's up?")
+            $ advice_for_kendall.send(kendall, "ty, i'm glad to hear that ^_^\n\num, anyway... do you wear make-up at all, arianna? not trying to be weird, actually just wondering.")
+        else:
+            $ no_u.send(kendall, "WUT NO. NO NO NO NO NO NO NO NO NO NO NO. DO NOT DO THAT.")
+            $ no_u.send(akira, "lol wut")
+            $ no_u.send(kendall, "DO NOT SHOW CHARLOTTE /u/ UNDER ANY CIRCUMSTANCES.\n\nomg not even joking. for reals. do not. DO NOT. she is a delicate little flower and will be traumatized forever. also she'll think ur some kind of terrifying pervert.")
+            $ no_u.send(akira, "um, that's a little extreme, don't you think? >.> she likes you and you ARE some kind of terrifying pervert. i think ur underestimating her.")
+    
+# FRIDAY, DECEMBER 3, 2027        
+        $ date = "Friday, December 3, 2027"
+        $ transition("bg hallway day", "THE NEXT DAY")
+        show john suit normal
+        show kendall uniform normal
+        with dissolve
+        
+        "On my way to afternoon class, I end up bumping into Kendall."
+        
+        play music DAY_TO_DAY fadein 2.0
+        
+        k "Hey, sir."
+        
+        j "Hi... how're you?"
+        
+        k "Things're cool. You know. You?"
+        
+        if charlotte_and_kendall:
+            $ advice_for_kendall.send(arianna, "OMG. LOL.\n\nOf course I do. Everyone at our school does! Man, do you really think my face looks like this naturally? I wish!\n\nSoooooooo... why do you ask? I mean, I know why you're asking, I just want to hear you actually say it. :D")
+        
+        j "That sounds about right. Things are cool, I suppose."
+        
+        "I'm about to keep walking by, but she interrupts me."
+        
+    if not charlotte_and_kendall:
+        jump tickets_for_boys
+    
+    show kendall uniform worried
+    k "Um, hey, actually, there was something I was wondering. You said you would handle tickets for that Mid-Winter dance, right?"
+    
+    j "Yeah."
+    
+    show john suit surprised
+    j "...wait, really? You?"
+    
+    show kendall uniform uncomfortable
+    k "What? Is there a problem with that?"
+    
+    j "No! No, of course not! I'm just... surprised. You don't seem like the dancing sort."
+    
+    show kendall uniform worried
+    k "Not really. But I think Charlotte would like it, and... um... well, you know. Since we got back together, we haven't really {i}done{/i} much."
+    
+    show kendall uniform blush
+    k "I... kinda want to do something special with her, sir. And... like..."
+    
+    k "Well, I think she'd like it, is all. She doesn't think I can be girly or romantic or whatevs... I think it'd impress her if I proved her wrong."
+    
+    show kendall uniform worried
+    k "Is that weird?"
+    
+    show john suit happy
+    j "No, no, it's not weird at all. Of course, that makes perfect sense. You're probably right."
+    
+    k "You said $80, right? So can you hook a sister up?"
+    
+    j "Sure, just bring in the money, and I'll get you... two tickets, right?"
+    
+    "She just reaches into her jacket, and pulls out a pair of hundreds. Well. Shit. I guess she came prepared."
+    
+    k "Here."
+    
+    show john suit surprised
+    j "Uh, okay. Great. I'll... get you change, and the tickets. I'll do it during prep; can you come by after school to pick them up?"
+    
+    show kendall uniform happy
+    k "Yeah, of course. See you in your office?"
+    
+    show john suit normal
+    j "Yes, that works for me."
+    
+    k "'kay. T-Y, bro! I'll see you then."
+    
+    j "You're... welcome?"
+    
+    k "Laters!"
+    
+    hide kendall with dissolve
+    
+    "Well, that was... surprising."
+    
+    $ advice_for_kendall.send(kendall, "._.;; um, well, i would really appreciate your help with it? i'm taking charlotte to that dance, and i've got a nice dress picked out and everything, but... i do not know the first thing about make-up AT ALL and i really, really, really want to impress her. she's going to go to a lot of effort, i know, and i would feel terrible if i didn't too. except, um, i am totally clueless when it comes to that. x.x")
+    $ advice_for_kendall.send(arianna, "...you, in a nice dress? No way. OMG, what have you done with the real Kendall?!\n\nOf course I'll help! It sounds like a worth cause, after all. :D Come on, we can meet up after school, we'll go to Shopper's together and I'll help you out. I just have one condition.")
+    $ advice_for_kendall.send(kendall, "ty ^___^ what's the condition?")
+    $ advice_for_kendall.send(arianna, "You absolutely must show me this dress. Wow, I can't even imagine that.")
+    $ advice_for_kendall.send(kendall, "...k. fair enough >.>; ty again!")
+    $ advice_for_kendall.send(arianna, "Now, if only I could get you to go {i}all{/i} the way with the Eliza Doolittle thing... LOL, well, meet me outside after school, then. It's no problem at all!")
+    
+    jump got_tickets
+    
+label tickets_for_boys:
+    show kendall uniform happy
+    k "Here, sir, I've gots the money for you."
+    
+    "She just reaches into her jacket, and pulls out a large pile of bills."
+    
+    j "Okay, great. That's $160, right?"
+    
+    k "Yep. All there."
+    
+    j "Wonderful. I'll get the tickets for them, then. I'm glad you're doing this, by the way; it's a good idea."
+    
+    k "Yeah, true story, sir."
+    
+    j "Do you have any classes with them in the afternoon?"
+    
+    k "Uh huh."
+    
+    j "Could you tell them to stop by my office after school, then? Don't give any sort of reason why, just say you're passing on the message."
+    
+    k "'kay, of course. No prob. T-Y for this, bro, it's going to be sweet for them."
+    
+    j "Yeah, I agree. I need to get to class now, though."
+    
+    k "Lol, yeah, me too. Laters!"
+    
+    $ no_u.send(kendall, "yeah well she doesn't KNOW that about me.\n\n...look, bro, what's on the front page right now? just list all the threads and you tell ME if you rly think i'm exaggerating.")
+    $ no_u.send(akira, "uh, right now? k... let's see.\n\nbondage general, digital girl eniko general, touhou doujin (??), fail'd bondage general, sister complex thread, marimite announcement, some sauce request of a screenshot (not rly sure wut)")
+    $ no_u.send(akira, "...o rite. k, um, fair enough. i guess maybe she might find that a little bit intimidating.")
+    $ no_u.send(kendall, "JUST A LITTLE. omg, srsly, do not.")
+    $ no_u.send(akira, "k, k! point made, bro, point made.")
+    
+label got_tickets:
+    $ transition("bg classroom evening", "3:55 PM")
+    
+    python:
+        seen_posts_chan = False
+        posts_chan = [ ]
+        posts_chan.append(dict(_image="12chan/Bondage.jpg", image_name="marilyn.jpg (51 MiB)", op=True, text="bondage general", number="252164206"))
+        posts_chan.append(dict(text=">another fucking bondage general thread even though we had one of these like TWO HOURS AGO.\n\ni like girls tied up as much as the next girl but not LOL ALL BONDAGE ALL THE FUCKING TIME okay? that's stupid. ur stupid.", number="252165186"))
+        posts_chan.append(dict(text="ITT: Bondage and sexual restriction in the social mores of 16th century Korean poetry.", number="252166057"))
+        posts_chan.append(dict(text="LOL", number="252166445"))
+        posts_chan.append(dict(text=">trying way too hard to be wacky\nforced meme is forced", number="252166554"))
+        posts_chan.append(dict(text="Heo Chohui (1563–1589) was the sister of one of Joseon-era Korea’s most important writers, and because of that, in an incredible feat for a woman of her time, was able to learn become literate in Chinese, the intellectual lingua franca of the time.", number="252166754"))
+        posts_chan.append(dict(text="What is this I don't even", number="252166773"))
+        posts_chan.append(dict(text="wtf ur ruining everything.", number="252167408"))
+        posts_chan.append(dict(text=">actually more retarded than op", number="252167522"))
+        posts_chan.append(dict(text="Since women were not supposed to be literate beyond reading edicts about how to be a good wife, in keeping with Confucian tradition, she got into one little fight and her mom got scared, and said \"You’re movin’ with your auntie and uncle in Bel-Air.\" I whistled for a cab and when it came near, the license plate said fresh and it had dice in the mirror. If anything I could say that this cab was rare, but I thought, \"Nah, forget it. Yo, holmes to Bel-Air!\" I pulled up to the house about 7 or 8 and I yelled to the cabbie, “Yo holmes smell ya later!” Looked at my kingdom I was finally there, to sit on my throne as the prince of Bel-Air.", number="252168370"))
+        posts_chan.append(dict(text="...", number="252168841"))
+        posts_chan.append(dict(text=">17 year old copypasta", number="252168896"))
+        posts_chan.append(dict(text="Get the fuck out of here!", number="252169278"))
+        posts_chan.append(dict(text="ITT: ruining a perfectly good thread with forced \"comedy\"", number="252169638"))
+        posts_chan.append(dict(text="Fuck, never mind. It was actually BETTER when it was stupid and serious.", number="252169871"))
+        posts_chan.append(dict(text="ITT: bondage general olololololololololololololol", number="252170474"))
+        posts_chan.append(dict(text="olololololololololololololol", number="252170764"))
+        
+    
+    if charlotte_and_kendall:
+        "That's it for the day. Well... as far as classes go, anyway."
+        
+        "I picked up a pair of tickets from the office, just like she asked. It still seems... really surprising to me, though. I can't imagine that at all."
+        
+        $ wait(advice_for_kendall)
+        
+        "Kendall's probably already on her way to my office."
+        
+        $ wait_chan()
+        
+        "Well... that's enough dawdling from me. Time to go."
+        
+        scene bg hallway evening with dissolve
+        
+        $ renpy.pause(0.5)
+        
+        scene bg office evening
+        show john suit happy
+        show kendall uniform normal
+        with dissolve
+        
+        k "'sup, sir?"
+        
+        play music COOL_AND_HEAVY fadein 2.0
+        
+        j "Hey, I got you the tickets, and your change."
+        
+        "She takes the pair of tickets from me, but not the money."
+        
+        show kendall uniform worried
+        k "Uh, actually, there's something else I wanted to ask you, sir. It's... um... kind of a weird request, though."
+        
+        j "Of course... why don't you have a seat?"
+        
+        "She sits down, and I fidget with the refused money, somewhat awkwardly. What could this possibly be about? More drama? Great."
+        
+        "Just when I was thinking that I could finally just focus on worrying on academics, too..."
+        
+        show john suit sulky
+        j "So what's the problem?"
+        
+        k "Oh, no problem, sir. Just... I was thinking, the dance runs late, right? I kinda wanted to make it a whole evening thing. Big fancy date and all."
+        
+        show john suit normal
+        j "Makes sense."
+        
+        k "I kind of have the house to myself all that week. Parents off on vacation. So like, it would be rad if I invited her over afterward. You know, so —"
+        
+        show john suit surprised
+        j "Okay, {i}that{/i} part I understood. Don't explain. Please. I get the picture."
+        
+        "I try not to facepalm or wince, meaning that far more literally than I had ever intended. All the more power to her, but I really don't want to picture Kendall... taking Charlotte home."
+        
+        show john suit sulky
+        j "I don't think I can exactly help you with that, though."
+        
+        k "Actually, you totes can, sir."
+        
+        "I... kind of doubt that. Hell, what's she going to ask? I honestly can't even imagine at this point... what could she possibly be talking about?"
+        
+        k "I want it to be proper and romantic. I've got the whole thing worked out, except..."
+        
+        show kendall uniform uncomfortable
+        k "...well, could I get you to buy drinks for me, sir? I'm only 17, and I really don't want to pay for fake ID just for this one thing."
+        
+        "...oh.{nw}"
+        
+        menu:
+            extend ""
+            "Of course":
+                "I laugh."
+                
+                show john suit happy
+                j "Man, that's it? That's the big request? I thought it was going to be... I don't know, something weird. Sure. Of course."
+                
+                show kendall uniform very happy
+                k "O-M-G. T-Y, sir; this is going to be great."
+                
+                show kendall uniform happy
+                k "I've told you this before, but you are a true bro, sir. The bro-est of bros."
+                
+                show john suit sulky
+                j "Yeah, yeah, you've said it before. If that's supposed to be flattery, you don't need to bother, I did already agree."
+                
+                k "Lol, 'kay. True story."
+                
+                "Unprofessional? ...yeah, probably. But trying to prevent underage drinking is kind of a ridiculous joke. She might as well get something good out of it."
+                
+                "I mean, I would have never asked one of my teachers for something like that — it'd be unthinkably crazy — but Kendall is kind of unthinkably crazy, so."
+                
+                show john suit normal
+                j "Do you have plans after school? We could go right now, if you want."
+                
+                "...no, wait, she does."
+                
+                k "Er, sorry. Actually yes. Is later this evening cool...?"
+                
+                j "Yeah, that's completely fine. It'll give me a chance to change, anyway. Why don't we meet at Chester and Gerrard, at... is 7 good?"
+                
+                stop music
+                
+                k "Yeah, 7's totes rad. I'll seeya then. T-Y again, sir, you're a bro."
+                
+                $ transition("bg littlejapan evening", "7:05 PM")
+                show john casual normal
+                show kendall casual1 happy
+                with dissolve
+                
+                play music SACCHARINE fadein 2.0
+                
+                j "So did you have anything particularly in mind, or...?"
+                
+                k "Yeah, actually. I mean, I fig Charlotte is prob'ly not going to be much for beer."
+                
+                j "Probably not."
+                
+                k "How about a nice sake, though? She'd prob'ly dig that. Um, did I give you enough money for that?"
+                
+                j "I don't know. Don't worry about it."
+                
+                show kendall casual1 closed
+                k "You're a bro, sir."
+                
+                show kendall casual1 happy
+                j "So you keep saying..."
+                
+                "I go off, to find something for her. It occurs to me that this is a little bit ridiculous; the last time I left an underaged girl outside a liquor store while I went in... was probably before she was born."
+                
+                "Ridiculous."
+                
+                "I don't take too long in returning."
+                
+                scene bg sake with dissolve
+                show john casual awkward smile
+                show kendall casual1 very happy null
+                
+                j "Here you go, Miss Flowers."
+                
+                j "It's not the {i}really{/i} expensive sort, but it's what got me through every university dinner party. Just make sure to serve it warm, and it'll be perfect for a date."
+                
+                k "You got it, sir. T-Y, so much, I totes appreciate this like you would not believe."
+                
+                j "Yeah, well... have fun, Kendall. You can repay me by not ever telling me about the evening, okay?"
+                
+                scene bg littlejapan evening
+                show kendall casual1 very happy
+                with dissolve
+                
+                k "Ha ha, lol! Of course. T-Y again, sir."
+                
+                hide kendall with dissolve
+                
+                "I have to say, though... as ridiculous as this whole sequence of events has been..."
+                
+                "...Charlotte seems pretty lucky to have her. She masks it, in the weirdest way, and would probably talk about sex just as frankly as everyone else if I didn't stop her, but..."
+                
+                "...she really does care about her. I do know what Kendall's situation is like. Been there, done that."
+                
+                stop music
+                
+                "I hope it goes well for her."
+                
+            "It wouldn't really be professional...":
+                show john suit uncomfortable
+                j "I'm sorry, I don't... really think that would be professional of me to do so."
+                
+                k "Well —"
+                
+                j "I know you'll go get it anyway, I'm not stupid. But I'm sorry, I really can't go buy an underaged student alcohol for... your \"romantic evening.\""
+                
+                j "You understand, right?"
+                
+                "I hand her back the money."
+                
+                show kendall uniform normal
+                k "Yeah, whatevs, sir. 'course I understand. Forget I ever asked."
+                
+                show john suit awkward smile
+                j "Done."
+                
+                k "Well... I should get going, then. T-Y for the tickets, though."
+                
+                j "Sorry I couldn't help more."
+                
+                k "It's cool."
+                
+                hide kendall with dissolve
+                
+                "Well, that was..."
+                
+                "...still probably actually the least awkward private conversation I've ever had with a student."
+                
+                "Which is kind of embarrassing on my part, really."
+                
+        $ date = "Tuesday, December 8, 2027"
+        $ busy_night = Post(akira, "lol, busy night, bro? :3", kendall)
+        $ Post(arianna, "Hope you're both having fun!", charlotte)
+        $ great_time = Post(taylor, "had a great time at the dance!")
+        $ great_time.reply(arianna, "But you didn't stay up as late as the lesbians did, I take it.")
+        $ great_time.reply(taylor, "No, but I did meet a nice boy in grade 12. So it wasn't a total waste!")
+        $ great_time.reply(nolan, "Congrats")
+# WEDNESDAY, DECEMBER 8, 2027
+        $ transition("bg classroom day", "THE MORNING AFTER THE DANCE")
+        
+        "There are two very conspicuous absences."
+        
+        "The class is... really quiet, without Charlotte around to volunteer answers."
+        
+        $ how_long = Conversation(akira, nolan)
+        $ how_long.send(akira, "omg they're STILL not here. wow, how long did they stay up o.o")
+        $ how_long.send(nolan, "Yeah lol its starting to get pretty late")
+        $ Post(charlotte, "has updated her profile picture.")
+        $ charlotte.profile = "profiles/charlottekendall.jpg"
+        $ transition("bg classroom day", "...THE AFTERNOON AFTER THE DANCE")
+        show john suit normal
+        
+        "Just five minutes before the lunch bell is about to ring..."
+        
+        play music EASY_GOING fadein 2.0
+        show kendall casual2 smug at two_left
+        show charlotte casual smug at two_right
+        with dissolve
+        
+        "...they both come in at the same time. The whole class starts to chatter all at once."
+        
+        k "Hey, sir. Um, sorry we're late. Really sorry."
+        
+        "I stare at her. Why did she even bother coming in?!"
+        
+        j "...there's five minutes left in the period."
+        
+        k "Sorry. It was... um... we didn't really get much slee —"
+        
+        "Charlotte giggles, and jabs Kendall sharply in the arm."
+        
+        show charlotte casual awkward smile
+        c "Shut up, Kendall!"
+        
+        show kendall casual2 happy
+        show charlotte casual happy
+        k "Sorry, sorry. It was, um, a late night. You know how it is. Sir."
+        
+        j "...unfortunately, I do. Please go sit down, and stop talking."
+        
+        hide charlotte
+        hide kendall
+        with dissolve
+        
+        "They're both still giggling with each other as they go take their seats. I try to get back on topic, but it's completely pointless."
+        
+        play sound BELL
+        
+        "Just as I'm about to tell everyone to quiet down, the lunch bell rings. Of course. Everyone scrambles to leave. Well... some take their time."
+        
+        show kendall casual2 happy at four_left
+        show charlotte casual happy at two_left
+        show akira casual2 upset at two_right
+        show nolan uniform normal at four_right
+        with dissolve
+        
+        ak "O-M-G."
+        
+        c "Okay, okay, let's not make a big deal of anything."
+        
+        show akira casual2 amused
+        ak "Whatevs, bro. Come on, you both came in together! O-M-G, come on, how was the evening?"
+        
+        "Well, I'm glad I'm the only person in this room who's incredibly uncomfortable."
+        
+        show kendall casual2 uncomfortable
+        k "It was..."
+        
+        show charlotte casual smug
+        c "Rad?"
+        
+        show kendall casual2 very happy
+        k "Lovely."
+        
+        show charlotte casual very happy
+        c "Awwww."
+        
+        show charlotte casual happy
+        ak "You definitely look... tired."
+        
+        show kendall casual2 happy
+        show akira casual2 amused
+        k "Well... you know. It was a long night. We both went back to my house, and —"
+        
+        c "Danced."
+        
+        show kendall casual2 smug
+        k "Danced until 5 in the morning."
+        
+        show charlotte casual smug
+        c "She's a sweetheart, and a romantic, you know."
+        
+        show kendall casual2 awkward smile
+        k "Aheh... come on, sis, don't tell them that."
+        
+        c "It's true! It's a true story."
+        
+        k "You're embarrassing me!"
+        
+        show kendall casual2 happy
+        show akira casual2 upset
+        ak "Hey, Nolan... how come you never take me dancing?"
+        
+        show nolan uniform surprised
+        n "Uhhh... you... never asked?"
+        
+        show akira casual2 blushing
+        "Akira grabs Nolan's hands dramatically, which I notice despite trying not to watch."
+        
+        show charlotte casual surprised
+        show kendall casual2 surprised
+        ak "Nolan, my love, my {i}anata-kun{/i}, my bro of bros, take me dancing. Totes legit, I would love nothing more than to dance with you."
+        
+        show charlotte casual happy
+        show kendall casual2 smug
+        n "Man! Akira, you are the neediest boyfriend ever."
+        
+        ak "Come on, dance with me, right now! Let's do this."
+        
+        k "Lol, I don't think you can refuse him, Nolan."
+        
+        "Charlotte just giggles."
+        
+        show akira casual2 forceful
+        ak "Take me, now!"
+        
+        show akira casual2 blushing
+        "Akira starts to drag Nolan off to the front of the room, with playful protests."
+        
+        show nolan uniform awkward smile
+        n "Wait... did you mean the euphemism, or like, actually dancing?"
+        
+        ak "Oh, Nolan, if you really want to be my man..."
+        
+        "That's {i}it{/i}. I take a deep breath."
+        
+        show john suit upset
+        j "STOP TALKING ABOUT DANCING!"
+        
+        $ transition("bg bedroom evening", "End of chapter 6a.", end=True)
+        
+        jump end_start
+    else:
+        "That's it for the day. Well... as far as classes go, anyway."
+        
+        "I picked up a pair of tickets from the office. Hopefully this'll go over as well as we seem to think it will."
+        
+        "Akira and Nolan are probably already on their way to my office."
+        
+        $ wait_chan()
+        
+        "Well... that's enough dawdling from me. Time to go."
+        
+        scene bg hallway evening with dissolve
+        
+        $ renpy.pause(0.5)
+        
+        scene bg office evening
+        show john suit normal
+        show akira casual2 normal at two_right
+        show nolan uniform surprised at two_left
+        with dissolve
+        
+        n "Uh, hey, sir."
+        
+        play music COOL_AND_HEAVY fadein 2.0
+        
+        ak "Kendall said you wanted to see us, but didn't know why. Um, there's nothing wrong, right?"
+        
+        show nolan uniform disappointed
+        show john suit happy
+        j "No! No, of course not, nothing's wrong at all."
+        
+        j "The thing is that the office actually had a couple of tickets still left for the mid-winter dance, completely gratis. I was wondering if you two were interested."
+        
+        show akira casual2 upset
+        "There's a pause. I hope it's because they're considering it, not because they're scrutinizing how completely ridiculous that would actually be if it were true."
+        
+        show akira casual2 happy
+        n "Um, I dunno. You said they were $80, right? That's a lot for a dance."
+        
+        ak "Gratis means free, bro. He wants to give them to us. Which, um, is totes generous, really."
+        
+        show nolan uniform embarassed
+        n "Ohhhhh."
+        
+        show john suit uncomfortable
+        j "Well, are you interested? I know school dances seem a little silly, but... well, actually, I really regret thinking I was too cool for them at your age."
+        
+        show john suit happy
+        j "It'll probably be fun."
+        
+        show nolan uniform disappointed
+        n "I still dunno. I wouldn't mind... I mean... but it's probably not really Akira's thing."
+        
+        show akira casual2 indignant
+        ak "Hmph!"
+        
+        show nolan uniform surprised
+        "Akira grabs Nolan's hands dramatically, and leans forward."
+        
+        show akira casual2 blushing
+        ak "Nolan, my love, my {i}anata-kun{/i}, my bro of bros, if you want to be my man, you {i}are{/i} going to take me dancing."
+        
+        "Nolan seems taken aback at first, but laughs."
+        
+        show nolan uniform awkward smile
+        n "Um... well, looks like I don't really have much choice. We'll take them."
+        
+        j "Here, then."
+        
+        "They let go of each other, and I hand them over."
+        
+        show akira casual2 super happy
+        ak "T-Y, sir!"
+        
+        n "Uh, yeah, thanks. I'm sure it'll be a lot of fun."
+        
+        show akira casual2 happy
+        ak "It'll be nice and romaaaaaaaantic!"
+        
+        show nolan uniform amused
+        n "Geeze, Akira. Could you be any faggier?"
+        
+        show akira casual2 super happy
+        ak "Nope!"
+        
+        show akira casual2 happy
+        j "Well, have a good evening."
+        
+        n "Thanks again, sir. It's... you know, really nice of you."
+        
+        ak "You're a real bro, sir."
+        
+        j "That's what they keep telling me..."
+        
+        ak "Laters!"
+        
+        hide akira
+        hide nolan
+        show akira casual2 happy null
+        show nolan uniform surprised null
+        with dissolve
+        
+        "They both walk away together. I have to admit; I don't quite understand how, but... they do seem to make a pretty good couple."
+        
+        ak "'course, you know this means you're gonna have to dress up, right?"
+        
+        n "Aw shit..."
+        
+        "I feel a little bit bad taking the credit for Kendall and Charlotte's idea. But I don't think that could have been helped."
+        
+        "Really... I hope it goes well for them."
+        
+        $ date = "Wednesday, December 8, 2027"
+        $ busy_night = Post(kendall, "lol, busy night, bro? :3", akira)
+        $ Post(charlotte, "I hope you're both enjoying yourselves!", akira)
+        $ great_time = Post(taylor, "had a great time at the dance!")
+        $ great_time.reply(arianna, "But you didn't stay up as late as the boys did, I take it.")
+        $ great_time.reply(taylor, "No, but I did meet a nice boy in grade 12. I am so over them now. It wasn't really a waste. We're going to meet for lunch!")
+        $ great_time.reply(arianna, "I'm glad to hear that!")
+        
+# WEDNESDAY, DECEMBER 8 2027
+        $ transition("bg classroom day", "THE MORNING AFTER THE DANCE")
+        
+        "There are two very conspicuous absences."
+        
+        "It... doesn't really change the class dynamic at all. Or at least, it wouldn't, if Kendall didn't keep looking at their still-empty seats and giggling."
+        
+        $ nolan_update = Post(nolan, "has updated his profile picture.", picture=False)
+        $ nolan.profile = "profiles/akiranolan.jpg"
+        $ transition("bg classroom day", "...THE AFTERNOON AFTER THE DANCE")
+        show john suit normal
+        show kendall uniform happy at two_left
+        show charlotte uniform surprised at two_right
+        with dissolve
+        
+        c "I can't believe they didn't show up this morning at all!"
+        
+        play music EASY_GOING fadein 2.0
+        
+        show charlotte uniform smug
+        k "Well... must've been a long night for 'em both. Lol."
+        
+        c "Ha..."
+        
+        j "So long as things worked out well for them."
+        
+        "Just then, the door opens, and the two {i}incredibly{/i} tardy boys walk in."
+        
+        show kendall uniform happy at shift_four_left
+        show charlotte uniform smug at shift_two_left
+        with None
+        
+        show nolan casual2 happy at two_right
+        show akira casual1 amused at four_right
+        with dissolve
+        
+        "...neither in uniform, and both holding hands."
+        
+        ak "Hi!"
+        
+        n "Hey. Sorry that we're so late... um, we kind of... you know, slept in."
+        
+        "He doesn't actually mention what's implicit in that, which is good, because it's a mental image I'm trying desperately not to conjure."
+        
+        ak "Oh, you should've been there. It was fun as fuck, man, that was... that was really epic."
+        
+        n "Yeah. It really was, actually. I was surprised."
+        
+        show charlotte uniform happy
+        c "Well, come on, tell us all about it, then. How was the evening?"
+        
+        show akira casual1 affectionate
+        ak "Sooo fun. Once Nolan got the hang of it, he was so awesome. 'member that last song near the end?"
+        
+        n "Which one?"
+        
+        ak "You know. La la la laaaa la..."
+        
+        "He sings a few notes, and suddenly Nolan seems even more awkward than usual."
+        
+        show nolan casual2 surprised
+        n "Oh. Yeah, that. It was pretty good."
+        
+        show akira casual1 closed happy
+        ak "Lol. What he's not saying is, out of nowhere, he dipped me at the end. Like... all the way back, too."
+        
+        show akira casual1 affectionate
+        show charlotte uniform surprised
+        show kendall uniform surprised
+        c "Whoaaaaa."
+        
+        k "Oh, man. Did he follow through?"
+        
+        "Akira says nothing, but just starts to giggle."
+        
+        show charlotte uniform smug
+        show kendall uniform happy
+        k "O-M-G. No wai."
+        
+        show nolan casual2 embarassed
+        n "Well, it just... it seemed like the thing to do?"
+        
+        show akira casual1 super happy
+        ak "Swoon."
+        
+        show akira casual1 happy
+        show charlotte uniform happy
+        c "I'm really glad you had fun at the dance!"
+        
+        show kendall uniform smug
+        k "Also: after the dance."
+        
+        n "Y-yeah..."
+        
+        "Oh, come on, don't go there... just let it be private. Please, just let it be private."
+        
+        show akira casual1 blushing
+        ak "Ohhh, Nolan, lol, you should tell them about Ka-san."
+        
+        show nolan casual2 surprised
+        n "No! No, I am not telling that story."
+        
+        show akira casual1 amused
+        ak "Come on, it's totes hilarious. Seriously, you guys will rofl."
+        
+        show nolan casual2 upset
+        n "I'm not telling it!"
+        
+        show akira casual1 closed happy
+        ak "Bro, if you don't tell it, {i}I{/i} will. And I'll prob'ly use way more detail than you would..."
+        
+        show akira casual1 amused
+        show nolan casual2 normal
+        n "Okay, okay! But it's ridiculous. I thought he had always exaggerated about Hazuki, but no... his other mom is crazy. Totally crazy."
+        
+        ak "Lol, O-M-G, is she ever. Come on, tell them."
+        
+        k "Hey, it's cool, bro. Trust me. Everyone's got a crazy Hazuki story."
+        
+        show charlotte uniform happy
+        c "I haven't actually met her, but she sounds like a very fun person."
+        
+        show nolan casual2 upset
+        n "She's like, twenty Kendalls. I don't think you could handle her at all."
+        
+        ak "Come on! If you don't tell it..."
+        
+        show nolan casual2 normal
+        n "Okay, okay, okay. So we... uh, spent the whole night dancing, and I kinda forgot to bring my house key. And it was like midnight when it ended."
+        
+        show nolan casual2 speechless
+        n "So, you know, I didn't want to wake up my parents because I was locked out, so... I stayed the night at Akira's instead."
+        
+        "Kendall bursts out laughing, apparently buying his story about as much as everyone else does."
+        
+        k "Lol, cool story, bro."
+        
+        n "A-anyway, so... we both ended up sleeping in late. You know. Like an hour and a half ago. I wake up first, and really need to take a shower, so I go ahead."
+        
+        n "And that's fine. Almost got killed by a pile of weird shampoos and body washes, but other than that, it's fine."
+        
+        c "Well, his parents {i}are{/i} lesbians. I would imagine so."
+        
+        ak "Yeah, true story. Our bathroom is... pretty intense."
+        
+        show nolan casual2 smug
+        n "But that's fine. So I've just gotten out of the shower, and I need to pee, so... you know. Uh, here's the part I'm not clear about, Akira."
+        
+        show akira casual1 uncomfortable
+        n "He's standing there, waiting outside the door. I'm not really sure why."
+        
+        ak "I... was still half-asleep. It just seemed like the thing to do."
+        
+        show akira casual1 affectionate
+        n "Lol. Okay, fair enough."
+        
+        show nolan casual2 surprised
+        n "So, uh... I'm standing there, doing my thing, and I've just gotten out of the shower, so..."
+        
+        k "Totes naked. Gotcha."
+        
+        n "Y-yeah. So suddenly, just as I've finished, the door flies open. This wasn't Akira's doing. He was still standing half-asleep outside the door."
+        
+        show charlotte uniform awkward smile
+        c "Oh no! You don't mean..."
+        
+        ak "You gotta understand... Ka-san, um, is a late sleeper. And she had no idea I had brought Nolan home."
+        
+        "Kendall starts to giggle again."
+        
+        c "She didn't!"
+        
+        show charlotte uniform normal
+        show nolan casual2 smug
+        n "So his mother is standing there, in her pajamas, totally a mess, while I'm... you know... standing there. It's... this isn't the crazy part, okay." 
+        
+        n "If it had been left at that, it would just be weird. Regular weird. Awkward, but..."
+        
+        "He trails off."
+        
+        k "'kay, so what happened?"
+        
+        n "I figured she would freak out. You know. Slam the door shut, run away, curse out Akira for not warning her."
+        
+        ak "Lol, yeah, that's because he doesn't know Ka-san very well."
+        
+        show nolan casual2 surprised
+        n "No! Instead, she doesn't even blink, and gives me a twice-over. Swear to god."
+        
+        n "Then she just... you're not going to believe this part. This is the ridiculous part, it's completely nuts."
+        
+        n "I'm totally in shock, she just nods at me... then walks over to Akira, hugs him tightly, and shouts... how do you say it?"
+        
+        show akira casual1 forceful
+        ak "{i}Omedeto{/i}!"
+        
+        show akira casual1 blushing
+        show nolan casual2 upset
+        n "That's it. She accidentally sees her son's boyfriend naked, so her response is to hug him, and shout \"{i}omedeto{/i}!\" Swear to god."
+        
+        show charlotte uniform normal
+        c "What does that mean...?"
+        
+        ak "Congratulations."
+        
+        show charlotte uniform surprised
+        c "Ohhhhh. Oh geeze."
+        
+        show kendall uniform surprised
+        k "No wai. For reals?"
+        
+        show charlotte uniform happy
+        show akira casual1 awkward smile
+        ak "Completely true story. Friggin' Ka-san, bro."
+        
+        k "You're not trolling us or anything."
+        
+        $ nolan_update.reply(charlotte, "You two really make such a cute couple.")
+        
+        show akira casual1 amused
+        show nolan casual2 closed
+        "Nolan covers his face with his hand, and shakes his head. I feel like doing the same thing. I almost wish he was as tightly wound as he was before going out with Akira."
+        
+        $ nolan_update.reply(kendall, "omg, true story <3")
+        
+        "...at least that would make him tell less stories that feature him naked, in front of me."
+        
+        show nolan casual2 awkward smile
+        n "Man, you'd think I would make something like that up? It was the most embarrassing moment of my life. Just... man, {i}omedeto{/i}."
+        
+        $ omedeto = Post(kendall, "Omedeto~", akira)
+        
+        c "Wow, that's... you're right, she does sound pretty crazy."
+        
+        show charlotte uniform normal
+        c "Although I'm not really sure I quite get it. It's embarrassing, but why was she congratulating him? Hadn't she already met Nolan?"
+        
+        "Both Kendall and Akira start giggling like mad. Nolan just blushes more."
+        
+        show nolan casual2 embarassed
+        n "Yes, but... that was... well... when we met, I wasn't..."
+        
+        show akira casual1 blushing
+        ak "Lol, 'kay, what he's trying to say is, he didn't have his dick out at the time."
+        
+        show charlotte uniform upset
+        c "Ohhhhhhhhh. You mean — oh my."
+        
+        show kendall uniform very happy
+        k "{i}Omedeto{/i}!"
+        
+        "That's {i}it{/i}. I take a deep breath, and slam my hands against the desk."
+        
+        show john suit upset
+        j "If you're going to be hanging around in my classroom, STOP TALKING ABOUT HIS DICK!"
+        
+        $ transition("bg bedroom evening", "End of chapter 6b.", end=True)
+        
+        jump end_start
+</pre>

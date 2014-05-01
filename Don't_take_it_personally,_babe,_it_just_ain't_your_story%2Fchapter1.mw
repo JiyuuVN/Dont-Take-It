@@ -1,0 +1,1205 @@
+<pre>
+# MONDAY, OCTOBER 18, 2027
+label first_day:
+    $ date = "Monday, October 18, 2027"
+    st 9 0
+    $ save_name = "Chapter 1:\nThe Trouble with Trials"
+    scene bg black
+    
+    "There are, of course, some mistakes that you can see coming from miles ahead. Mistakes that you should've known better than to make."
+    
+    "There are mistakes where you realize as you go along that things are just getting worse. I've made a lot of those mistakes in life."
+    
+    "But then there are also mistakes that you could never see coming. You just have to leap in head-first, and all you can do is hope it's not one of those. Hope that your decision doesn't turn out to be a mistake."
+    
+    "...and it's on that high note that I start my first day of school."
+    
+    
+    $ Conversation(john, admin).send(admin, "Congratulations! You've got your brand new rebranded Amie XTablet Computer up and running!\n\nWe're so confident that you'll find it simple and intuitive to use, we're not even going to {i}give{/i} you any instructions. Your home screen will provide instant access to your mail, your favourite web sites, and whatever other widgets your system administrator has seen fit to load it with.\n\nYou can use our super-intuitive interface by tapping on the screen, or dragging your finger to scroll! It's that easy.\n\nIf you wish to install new applications or change your personal information, please contact your administrator.\n\nWe hope you enjoy your new computer!\n  Amie Microsystems, 2027")   
+    $ Conversation(john, admin).send(admin, "A welcome message from Principal Grisham.\n\nMr. Rook,\nIf you're reading this, you obviously have your computer set up. You should note that in addition to your own personal things — as part of our ongoing trial with giving students their own computers — you will be able to access all your students' social networking messages sent across our AmieConnect system, both public and private.\n\nMost teachers have found this to be an extremely effective way of monitoring online bullying; pragmatically, it's impossible to stop students from chatting in class, but you can at least be on top of it! There would be serious repercussions if the students ever found out, though, so please be discreet.\n\nLet me just welcome you again to Lake City Academy. You seem like an excellent teacher, and I'm sure will make a fine member of our team. Good luck!\n\nSincerely,\n\nMalcolm Grisham\nPrincipal")
+    $ title(1, "THE TROUBLE WITH TRIALS", "Monday, Oct. 18, 2027  — Thursday, Oct. 21, 2027", "bg classroom day", "arianna uniform embarassed")
+    
+    "Yes, I'm nervous, and I don't think there's much shame in that."
+    
+    play music COOL_MORNING fadein 2.0
+    
+    "The classroom is full by the time I arrive. I stare at the sea of unfamiliar faces, their eyes piercing as they stare back. And look at all those uniforms. It's outright intimidating."
+    
+    a 1
+    $ hot = Post(arianna, "Oh my god, is that our new homeroom teacher? SO HOT.")
+    
+    "Now isn't the time to be scared of 11th graders, though."
+    
+    "I take a deep breath, and introduce myself to my new class."
+    
+    show john suit happy
+    j "Good morning, everyone. I'm Mr. Rook, and starting today, I'll be taking over as your homeroom teacher."
+    
+    a 1
+    $ hot.reply(taylor, "...wow. I didn't know teachers could look like that. He'll do.")
+    
+    "A month into the year. Apparently their proper teacher became seriously sick and is on an extended leave."
+    
+    j "I'm really looking forward to spending the year with you guys."
+    
+    j "First I'm going to take attendance, so I have some idea who you all are. After that I'll tell you a bit about myself, then we can get started."
+    
+    "Helpfully enough, the class list is available on my computer."
+    
+    "And the glowing mail icon tells me that I have unread messages, which I can read any time. And probably should, soon."
+    
+    "Well, here goes..."
+    
+    show john suit sulky
+    j "Sorry in advance if I pronounce any of these wrong... Arianna Belle-Essai?"
+    
+    show arianna uniform surprised with dissolve
+    ar "H-here!"
+    
+    j "Alright.{p}...that's a cute name. Kendall Flowers?"
+    
+    hide arianna with dissolve
+    show kendall uniform bored with dissolve
+    
+    k "'sup, sir?"
+    
+    j "Good. Taylor Gibson?"
+    
+    hide kendall with dissolve
+    show taylor uniform happy with dissolve
+    
+    t "I'm here!"
+    
+    j "So you are. Next... sorry, Charlotte Grewal? Is that right?"
+    
+    hide taylor with dissolve
+    show charlotte uniform happy with dissolve
+    
+    c "Yes, that's right. Present."
+    
+    j "Just checking. How about Isabella Hart?"
+    
+    hide charlotte with dissolve
+    show isabella uniform non plussed with dissolve
+    
+    "...nobody says anything — or at least, not that I can hear — but a girl near the back of the class waves."
+    
+    j "Okay. Isabella is at the back... Nolan Striukas?"
+    
+    hide isabella with dissolve
+    
+    "No answer."
+    
+    a 3
+    $ hot.reply(nolan, "Oh of course. THAT'S you're kind of man, Taylor??")
+    
+    j "Nolan? Is Nolan here?"
+    
+    "Someone taps on the shoulder of one of the boys strongly. \"Nolan, say something! It's attendance.\""
+    
+    show nolan uniform bored with dissolve
+    
+    n "Oh. Here."
+    
+    j "Alright. And... Akira Yamazaki?"
+    
+    hide nolan with dissolve
+    show akira uniform2 amused with dissolve
+    
+    ak "Here!"
+    
+    "Uh, wow. Nice colours there. I realize the school's uniform policy is really more like a suggestion, but... wow."
+    
+    j "Alright, great."
+    
+    hide akira with dissolve
+    
+    "I go through the entire class list, and it looks like everyone is here, after all. Now I just have to start remembering the faces."
+    
+    "An introduction is in order, though. This'll be... interesting."
+    
+    "\"I'm the world's biggest fuck-up. I've managed to screw up a whole two marriages, and became a teacher because of a bizarre mid-life crisis. I'm looking forward to working with you all!\""
+    
+    "...is probably not what I should say."
+    
+    j "This will actually be my first full time teaching job. I studied English Literature in university, but I've spent the past fifteen years working in computers."
+    
+    j "Which I hope should serve as a warning to anyone who plans to go into computers: it is bleak, boring work. But here I am now."
+    
+    j "I'm not a hard-ass, and I never liked teachers who were when I was your age. If for any, any reason whatsoever, you're having trouble..."
+    
+    a 2
+    $ hot.reply(arianna, "I think that's everyone's kind of man. Listen to that. He's totally teh smex.")
+    $ Post(akira, "i think i like our new homeroom teacher. he seems like he'll be nice.")
+    
+    show john suit closed
+    
+    j "...whether it's academically, with your fellow students, or really, anything... talk to me. I'm flexible, and that's what I'm here for."
+    
+    j "I'm in my office most days after school, so just ask, no matter what it's about. Even if it seems trivial."
+    
+    "Yeah, I'm not going to be any of the assholes that {i}I{/i} had for teachers in high school, that's for sure."
+    
+    show john suit happy
+    
+    j "Regardless... I'm looking forward to working with you all!"
+    
+    "I look over the class, and I can tell that they look vaguely impressed. I didn't expect anything more."
+    
+    "Well, now it's time to get started on the boring things like going over the syllabus."
+    
+# TUESDAY, OCTOBER 19, 2027
+    st 9 0
+    $ date = "Tuesday, October 19, 2027"
+    $ transition("bg classroom day", "THE NEXT DAY")
+    
+    show john suit normal
+    
+    j "Okay! As I explained yesterday, today we're going to be starting our unit on pulp fiction with the novel Chain Mail!"
+    
+    play music DAY_TO_DAY fadein 2.0
+    
+    j "Can I see a show of hands for everyone who actually did the homework last night?"
+    
+    "Every hand in the room goes up. I would hope so, it was only forty — very short — pages."
+    
+    j "Alright! So what are your initial impressions of the premise?"
+    
+    a 3
+    $ lesbos = Post(taylor, "So can someone explain to me what exactly is up with the lesbians this week? All I see is a bunch of status updates and a whole lot of drama. What's different NOW?") 
+    
+    j "Obviously this is a novel that is fundamentally about an early era of internet culture; do you think it seems relatable? Unrelatable?"
+    
+    "Silence all around."
+    
+    j "Just your general thoughts. There's no right or wrong answer here."
+    
+    #$ waiting_on = lesbos
+    #call waiting
+    $ wait(lesbos)
+    
+    j "Anyone?"
+    
+    "After a bit of hesitation, the hand of the girl with pigtails and glasses goes up. It takes me a moment to remember her name: Charlotte."
+    
+    "Who should I call on to answer?{nw}"
+    
+    menu:
+        extend ""
+        "Call on Charlotte":
+            "As much as I am tempted to pick on Taylor for not paying attention in class, I decide the better of it. I'd be a jerk if I did."
+            
+            j "Yes, Charlotte?"
+            
+            show charlotte uniform normal with dissolve #expr
+            
+            c "Well, it seems like it's all really disconnected, isn't it? Everything's all about emails, and one private web site. That's very surprising."
+            
+            j "What about that struck you as surprising?"
+            
+            c "Specifically, how the girl wasn't able to reach out to anyone because she didn't know anyone's email addresses. It feels very disconnected, lonely."
+            
+            c "It wouldn't make much sense to have a story like that now. She could have just posted on her classmates' walls."
+            
+            j "Interesting. So would you say it's inherently more lonely because of the technology?"
+            
+            show charlotte uniform worried
+            
+            c "I don't know. Maybe?"
+            
+            j "That's okay. You can sit down now — that's a good segue, though, you've touched on some important themes."
+            
+            hide charlotte with dissolve
+            
+        "Call on Taylor":
+            "If she has time to be sending crass notes on her computer, she certainly has time to offer her opinion."
+            
+            show john suit smug
+            j "How about... Taylor? What did you think?"
+            
+            show taylor uniform uncomfortable with dissolve
+            
+            t "Um..."
+            
+            j "Just your initial impressions, please."
+            
+            t "Well, I thought it was very... hard to relate to? Because it's really old?"
+            
+            j "Please, go on. What did you think of the characters? Were they relatable, is the question."
+            
+            t "Well, the main character kind of is... I guess. She makes sense. Um, yes, then."
+            
+            "The book has three main characters, and the most prominent one certainly doesn't 'make sense.' Did she even do the reading...?"
+            
+            show john suit cross
+            j "And which main character would that be?"
+            
+            t "Um, you know..."
+            
+            j "Okay, why don't you have a seat. And please come better prepared next time."
+            
+            t "Nngh..."
+            
+            $ Post(taylor, "What the hell, way to put me on the spot like that...")
+            hide taylor with dissolve
+            
+            "I hope she learned her lesson."
+            
+    a 3
+    $ lesbos.reply(akira, "TAYLOR! don't be a bitch.")
+            
+    "I move on, and carry on with the lecture as intended. A couple people seem engaged, at least. The reluctance leaves me feeling worried, though."
+    
+    "Is it going to be really that hard to engage them? I thought my choice in reading material would help, at the least."
+    
+    "I deeply worry that I'm not cut out for this."
+    
+    a 130
+    $ hot_for_teacher = Conversation(arianna, isabella)
+    $ hot_for_teacher.send(arianna, "Hey, Iz, can I ask you a sort of weird question?")
+    
+    # ACT II
+    st 12 0
+    $ transition("bg classroom day", "LUNCH HOUR")
+    play sound BELL
+    
+    "The class files out impatiently the instant the lunch bell rings."
+    
+    play music EASY_GOING fadein 2.0
+    
+    "I lean over to get out my packed lunch. When I sit back up, I see a set of students waiting; not everyone is in a rush, it looks."
+    
+    show john suit normal
+    show charlotte uniform normal at three_left
+    show akira uniform2 normal at center
+    show isabella uniform normal at three_right
+    with dissolve
+    
+    c "Excuse me, Mr. Rook?"
+    
+    j "How can I help you?"
+    
+    c "Do you mind if we eat our lunches in here? It's what we used to do with our old homeroom teacher."
+    
+    j "Not in the cafeteria?"
+    
+    show akira uniform2 bored
+    
+    ak "Lol, yeah, right. Sorry, sir, but have you {i}seen{/i} the cafeteria?"
+    
+    ak "It's a miserable hole. Hideous, so noisy you can't even hear yourself think... it's really bad."
+    
+    i "Yeah."
+    
+    c "It's just incredibly unpleasant. If it's a problem, we'll understand, but..."
+    
+    show john suit surprised
+    j "No, no. Not at all, of course you can. I just never thought of it."
+    
+    show charlotte uniform very happy
+    show isabella uniform happy
+    c "Thank you!"
+    
+    i "Thanks."
+    
+    show charlotte uniform happy
+    
+    a 4
+    $ lesbos.reply(kendall, "easy, bro, it's cool. you don't gotta be a white knight on my part. taylor: it's pretty simple, we broke up. end of story.")
+    $ hot_for_teacher.send(isabella, "Of course.")
+    
+    show john suit normal
+    j "Not at all. Just don't make a mess, and it won't bother me one bit."
+    
+    "I go back to my lunch, and all three of them take seats near each other. I could conceivably try to avoid listening in on their conversation, but it'd be a challenge."
+    
+    ak "So level with me, Charlotte."
+    
+    show isabella uniform uncomfortable
+    i "Don't..."
+    
+    show akira uniform2 upset
+    ak "No, for reals! I'm serious."
+    
+    show isabella uniform exacerbated
+    i "Ohmigod, don't bring it up..."
+    
+    ak "Come on. Kendall is my bro, I would like to know what's going on with her."
+    
+    i "I'm sure she doesn't..."
+    
+    show charlotte uniform disappointed
+    c "It's fine, Bella. Why has everyone assumed that just because we fought, it means I don't ever want to speak of her ever again?"
+    
+    show isabella uniform uncomfortable
+    c "She's still my friend."
+    
+    show akira uniform2 bothered
+    ak "Uh, so why are you avoiding her?"
+    
+    a 3
+    $ hot_for_teacher.send(arianna, "Have you ever been in love?")
+    
+    c "We just need some time apart right now, that's all. There's no drama, it's over with."
+    
+    ak "Well, don't tell Taylor that."
+    
+    show charlotte uniform normal
+    c "Why? How is it any of her business?"
+    
+    a 4
+    $ hot_for_teacher.send(isabella, "You're right. That is a weird question. But... yes, I have. I don't know if I'm the best person to ask about that, though, it never worked out for me. Didn't I tell you about that?\n\nAnyhow, why do you ask?")
+    
+    ak "Uh, lol, do you really think that matters to her? It's Taylor. She's been trying to rattle the hornet's nest on Amie."
+    
+    show charlotte uniform smug
+    c "Well, let me tell you, from first-hand knowledge, I don't think it's going to work. Which is good, because Kendall when she's upset is..."
+    
+    c "It's not a fate I'd wish on even Taylor."
+    
+    a 1
+    $ lesbos.reply(taylor, "I'm sorry, I just assumed something was wrong, given what I've been hearing. Are you two alright?")
+    
+    show akira uniform2 amused
+    ak "Hahaha, lol, fair enough."
+    
+    "I mostly try to avoid looking up at any of the three students. I feel like an awkward interloper; I'd forgotten how ridiculous high school drama could be."
+    
+    "Will they be like this for the whole year?"
+    
+    a 2
+    $ hot_for_teacher.send(arianna, "Sorry. No, you never told me about that! What happened? Did he turn you down?")
+    $ lesbos.reply(kendall, "lol yes.")
+    
+    "Probably, now that I think of it. It's just been a long time. And it all seemed so reasonable when I was their age. I'll probably have to keep my eye on Taylor."
+    
+    "And... also on whatever is going on between those two girls."
+    
+    a 3
+    $ lesbos.reply(taylor, "What's that supposed to mean? It's just that I heard you two were seriously fighting, that's a big thing.")
+    
+    show charlotte uniform happy
+    c "Mr. Rook?"
+    
+    j "Oh. Yes?"
+    
+    a 2
+    $ lesbos.reply(kendall, "cool story sis. protip: we're not. the end. that's all i have to say.")
+    
+    c "How are you finding it so far? Our school, I mean. Not too disappointing, I hope?"
+    
+    show john suit sulky
+    j "It's... going to take some time to get used to, to be truthful. Have you been here since grade 9?"
+    
+    a 4
+    $ hot_for_teacher.send(isabella, "No, not exactly. It's a long story, really.")
+    $ nice = Conversation(akira, kendall)
+    $ nice.send(akira, "just saw your response to taylor. NICE. ur pretty much untrollable, I don't know why she thought you would be a good target.")
+    $ wth = Conversation(taylor, arianna)
+    $ wth.send(taylor, "I don't understand what's wrong with those two lesbos. I just express some concern and Kendall flips the hell out on me. She doesn't have to be such a bitch!")
+    
+    c "Yes, I have. But I understand."
+    
+    "The two of us make small talk for a bit, about first days of school and the such." 
+    
+    a 2
+    $ hot_for_teacher.send(arianna, "I had no idea! Do you want to talk about it? If not, I understand, of course!")
+    
+    "The other two don't seem to say anything; whether it's shyness or because they're too busy sending messages to other students, I can't tell. It might be both."
+    
+    a 12
+    $ nice.send(kendall, "i wasn't the target. it was charlotte, and it's probably going to work.\n\nshe'll probably say everything's cool but it'll crush her inside. what a bitch. it's not really just as simple as saying \"lol umad\" and then letting her go fuck off, it's going to hurt charlotte. trying to shut her down is basically all i can do. raging pretty hard, but what else can i do? sadface.")
+    a 3
+    $ wth.send(arianna, "It sucks, but, you know, it's Kendall. She's always like this. You really shouldn't have expected her to do anything {i}but{/i} flip out on you, it's what she does.")
+    $ hot_for_teacher.send(isabella, "I'd be happy to talk about it, but it's a long story.\n\nNot a very interesting one, but a long one. If you really care, we can talk about it some other time, if you want, but now's not the best time. What's up with you, though — I'm sure you have a reason for asking? Come on, I know you. Who do you want advice about?")
+    
+    "Eventually, they all leave at the end of lunch break for their other classes. I don't know what to make of any of what they were talking about, at all."
+    
+    a 80
+    $ hot_for_teacher.send(arianna, "You know me too well! Um, well, it's kind of embarrassing, actually... it's just that I have the BIGGEST crush on this guy, like, for serious. I really feel like I need to just follow my heart and make a move, even though I barely know him. Does that sound crazy to you?")
+    a 22
+    $ hot_for_teacher.send(isabella, "OMG! You don't mean who I think you mean, do you...?")
+    a 13
+    $ hot_for_teacher.send(arianna, "Don't laugh!\n\nBut... yes, I'm pretty sure I do.")
+    st 21 0
+    $ transition("bg bedroom evening", "THAT NIGHT")
+    
+    play music MIDNIGHT fadein 2.0
+    
+    "It's my second day on the job, and... I don't know what to think of all this."
+    
+    "I turn to what I can do, which is reviewing my lecture notes for tomorrow. It's probably my own fault for not being engaging enough. I'll have to try to do better."
+    
+    "That's all I can do."
+    
+    a 13
+    $ hot_for_teacher.send(isabella, "LOL, sorry, it just kind of is funny. But don't worry about it!\n\nI think ur absolutely right. And there's no question, the dude {i}is{/i} hot, and he seems smart... if ur into him, I think you totally should. What's the worst that could happen? You get shot down? Come on, you're a cute girl, he's an older man... what do you {i}think{/i} he's going to say?")
+# WEDNESDAY, OCTOBER 20, 2027
+    $ date = "Wednesday, October 20, 2027"
+    st 8 0
+    $ transition("bg classroom day", "NEXT MORNING")
+    
+    "Having nothing better to do, I stick around in the classroom even before the school day has technically begun."
+    
+    play music COOL_MORNING fadein 2.0
+    
+    "I'm reminded of when I was in high school; I was usually the first one in the room then, too. I guess not much has changed since then."
+    
+    "It doesn't take long before the first student comes in. And I'm not surprised when I see who it is."
+    
+    show john suit normal
+    show charlotte uniform2 normal with dissolve #expr
+    
+    c "Good morning, Mr. Rook!"
+    
+    "Of course it would be her, wouldn't it?"
+    
+    a 13
+    $ hot_for_teacher.send(arianna, "You're totally right. Okay. I am going to do this, then.\n\nI am going to dress up super nice, I'm going to make an excuse about talking about the book, and then I'm just gonna confess how I really feel. Thanks, Iz, I really needed your vote of confidence there.")
+    
+    show john suit happy
+    j "Hi, Charlotte."
+    
+    "I guess the thing to do would be to make small talk."
+    
+    j "Lovely weather today, isn't it?"
+    
+    show charlotte uniform2 worried
+    c "For now, I guess. It's supposed to rain later, though; didn't you know?"
+    
+    show john suit uncomfortable
+    j "Oh, sh– I mean, shoot. No, I didn't realize."
+    
+    show charlotte uniform2 happy
+    c "Should've checked the weather report!"
+    
+    j "Yeah..."
+    
+    c "Well, how do you get here?"
+    
+    show john suit annoyed
+    j "I walk. Well, maybe it'll stop by the time I have to leave."
+    
+    c "Better hope so!"
+    
+    "While I'm mentally kicking myself for not checking before I left, another girl walks in."
+    
+    show kendall uniform bored at four_right with dissolve
+    
+    j "Hi."
+    
+    k "'sup."
+    
+    hide kendall with dissolve
+    
+    "She barely even looks up, and definitely isn't expecting an answer. She just disappears to her desk — not even making eye contact with Charlotte — and stares at her computer."
+    
+    "I keep chatting with Charlotte, and eventually, the rest of the class starts to file in."
+    
+    a 32
+    $ Post(charlotte, "Mr. Rook might be cute, but he sure isn't very smart. :) He didn't even check the weather report before leaving for school! He's going to get soaked, walking home without an umbrella.", arianna)
+    st 10 30
+    $ transition("bg classroom day", "LATER")
+    
+    show john suit closed
+    
+    j "...another thing that is used to great effect is the story within a story. You might even argue that it's metafictional — that is, that it's a story about stories."
+    
+    play music DAY_TO_DAY fadein 2.0
+    
+    show john suit normal
+    j "What do you think? Do the details of the story being told by the four girls matter, or is it just there as filler detail?"
+    
+    "I look around, and raising her hand is... Arianna?"
+    
+    $ wait(hot_for_teacher)
+    
+    "...oh. I think I know why. My mind instantly goes to the wrong place; I'm not comfortable with this crush of hers {i}at all.{/i}"
+    
+    "Not that I can acknowledge it in any way. What can I say, anyway?"
+    
+    show john suit awkward smile
+    j "Go ahead, Arianna."
+    
+    show arianna casual2 very happy with dissolve #expr
+    
+    ar "I think the details are extremely important. They reflect on the story as a whole, so you could, like, learn what's really going on from them."
+    
+    show john suit normal
+    j "Good, that's valid."
+    
+    ar "And also they're important because they're written by the characters. You can learn a lot about someone from how they write."
+    
+    j "Yes, that's also very good. Do you have any examples?"
+    
+    hide arianna with dissolve
+    
+    "...and she just goes on, completely dominating the class discussion. But it's clear she's engaged in the material, at least, so I can hardly shut her down."
+    
+    "I'm glad she's taking it seriously, at least."
+    
+    st 12 0
+    play sound BELL
+    
+    "Eventually, the lunch bell rings, and the class starts to file out, in a hurry as ever."
+    
+    "Staying behind is the same group as yesterday."
+    
+    show charlotte uniform2 happy at four_left
+    show akira uniform2 normal at two_left
+    show isabella uniform normal at two_right
+    show arianna casual2 worried at four_right
+    with dissolve
+    
+    "...no, not quite the same group as yesterday."
+    
+    a 5
+    $ hot_for_teacher.send(isabella, "You look GREAT. I love that dress; the blue is perfect for you. Knock him dead!")
+    
+    ar "Excuse me, Mr. Rook?"
+    
+    j "Yes?"
+    
+    ar "I have to go buy lunch now, but... you know how you said you're always available to talk, right?"
+    
+    "Oh, shit."
+    
+    j "Yeah. What's up?"
+    
+    ar "Could I stop by after class to talk about the book we're doing? There's some things I still don't think I get, so I'd like to go over them more."
+    
+    "...yeah, I highly doubt that's really why."
+    
+    "But I can't exactly say no, can I? I did promise..."
+    
+    show john suit sulky
+    j "Sure, of course you can. Come by at around 4, we'll talk about what's giving you trouble."
+    
+    show isabella uniform very happy
+    show arianna casual2 very happy
+    ar "Thanks, Mr. Rook! I'm looking forward to it!"
+    
+    hide arianna with dissolve
+    show charlotte uniform2 happy at shift_three_left
+    show akira uniform2 normal at shift_center
+    show isabella uniform very happy at shift_three_right
+    
+    "Meanwhile, the other three are chatting away, just like before; I'm just left on my own to worry about how I'm going to deal with Arianna."
+    
+    "Maybe it'll just go away. She'll get over it. Yeah, of course, that's it. Schoolgirl crushes are always fleeting."
+    
+    c "So how are things going with you two?"
+    
+    show isabella uniform happy
+    i "Good."
+    
+    ak "Oh, well, you know..."
+    
+    st 15 55
+    $ transition("bg classroom rain", "3:55 PM")
+    
+    play music RAINY_DAY fadein 2.0
+    
+    python:
+        seen_posts_chan = False
+        posts_chan = [ ]
+        posts_chan.append(dict(op=True, _image="12chan/MLA2 Title.jpg", image_name="title.jpg (3 MiB)", text="Has anyone tried playing Magical Love Adventure II? Pretty awesome visual novel, bros.", number="247119102"))
+        posts_chan.append(dict(text="ITT: OP's new porn game", number="247119273"))
+        posts_chan.append(dict(text="It's not porn! It's highly sophisticated! It's all about character development and heartfelt emotions!", number="247119862"))
+        posts_chan.append(dict(text="lol porn", number="247120224"))
+        posts_chan.append(dict(text="so what kind of characters is it about", number="247121018"))
+        posts_chan.append(dict(text="The most interesting is Hime-chan, your younger classmate who was a childhood friend, who starts to realize she's in love with you as she starts adolescence. It's a heart-warming character arc.", number="247121071"))
+        posts_chan.append(dict(text="lol porn", number="247121796"))
+        posts_chan.append(dict(text="It's not about the sex! It's about a young girl growing to understand her feelings!", number="247122296"))
+        posts_chan.append(dict(text="so there is sex, then", number="247122569"))
+        posts_chan.append(dict(text="Well, yes, but it's an important part of her character arc.", number="247123092"))
+        posts_chan.append(dict(text="lol porn", number="247123618"))
+        posts_chan.append(dict(text="You just don't understand what it's really about! Just give it a try, bro, you'll see what I mean.", number="247124113"))
+        posts_chan.append(dict(_image="12chan/MLA2 Screenshot.jpg", image_name="himechan3.jpg (2.5 MiB)", text="just played it, oh sh — \n\nactually OP was right, it is pretty awesome\n\nhime-chan is my waifu, great story", number="247124235"))
+        posts_chan.append(dict(text="I told you it wasn't just porn, mang. So what did you like about it?", number="247124241"))
+        posts_chan.append(dict(text="yeah\n\n i liked the part where you fuck a 15-year-old", number="247124741"))
+        posts_chan.append(dict(text="COME ON.", number="247125250"))
+        posts_chan.append(dict(text="i did", number="247125590"))
+        posts_chan.append(dict(text="olololololololololololololol", number="247125841"))
+        posts_chan.append(dict(text="Okay, yeah, so did I. olololololololololololololol", number="247125853"))
+    
+    "That's it for the day. Well... as far as classes go, anyway."
+    
+    "Sure enough, Charlotte was right; by the end of the day, it's started to rain."
+    
+    "Arianna's probably already on her way to my office."
+                
+    $ wait_chan()
+    
+    "Well... that's enough dawdling from me. Time to go."
+    
+    scene bg hallway rain with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg office rain 
+    show john suit annoyed
+    show arianna casual2 happy
+    with dissolve
+    
+    ar "Hi, Mr. Rook!"
+    
+    j "Hi, Arianna. Why don't you have a seat, and we'll talk about what you were having trouble with?"
+    
+    "She sits down, crossing her skinny legs with exaggerated motion."
+    
+    "It's a pretense, of course. I know it, she definitely knows it, and I feel deeply uncomfortable going along with this. We, of course, do discuss the novel, as she requested, and she does ask the right questions."
+    
+    "But it's obvious that's not why she's here."
+    
+    "Even if she hadn't mentioned it to Isabella, I would have noticed. For sure. It's not just the way she's trying too hard to care about the book, or the length of her dress..."
+    
+    "Every time she asks a question, she leans forward, fiddling with the end of her hair with her long fingers. I notice, of course."
+    
+    "Every time she's waiting for an answer, she puts her hands on her knees, and with a smile, rubs one of her bare, smooth legs against the other. I notice, of course."
+    
+    "Every time I speak, she stares just a little too deeply back with those dark, young eyes. I notice, of course."
+    
+    "Despite it having never happened once in my life before, I have absolutely no doubt in my mind: she is trying to seduce me."
+    
+    "I have to wrap this up. I have to end this now, and I definitely have to get out of here now. I move, getting ready to stand up; she just follows my lead."
+    
+    j "Okay, well, it's starting to get late. Do you have any other questions about the book?"
+    
+    show arianna casual2 very happy
+    ar "No, I think that's all, for now. I definitely do have a better understanding, now. Thanks so much for the help, Mr. Rook."
+    
+    j "Oh, it's nothing. I'm glad to help."
+    
+    ar "I mean it! I really want you to know... you seem like a great teacher, and I appreciate that a lot. I really like you."
+    
+    "Oh, dammit, here it comes. Can I get out before she manages to clarify that into a confession?"
+    
+    show john suit sulky
+    j "Ah, well, I'm glad. Anyway, I should get going. It was good to talk to you..."
+    
+    "I get up, and get all the way to the doorway. Could it be that I can avoid it getting awkward after all?"
+    
+    ar "Likewise!"
+    
+    "I just have to say goodbye, and I'm gone. Problem solved. Just have to say —"
+    
+    show arianna casual2 closed
+    ar "Say, Mr. Rook... aren't you going to take your umbrella? Or did you not bring one?"
+    
+    show arianna casual2 very happy
+    "{i}Aw shit,{/i} she's good."
+    
+    "She's got me. I know {i}exactly{/i} what she's going to say if I tell the truth. What should I do...?{nw}"
+    
+    menu:
+        extend ""
+        "Lie about it":
+            show john suit uncomfortable
+            j "Uh, yeah, I do. Anyway, I should —"
+            
+            show arianna casual2 awkward smile
+            ar "Um, Mr. Rook... why are you lying to me? I was just trying to be polite... I know you didn't."
+            
+            "Shit.{nw}"
+            
+            menu:
+                extend ""
+                "Apologize":
+                    jump apologize
+                    
+                "Continue to lie":
+                    j "What are you talking about? I did."
+                    
+                    show arianna casual2 cross
+                    ar "Why, Mr. Rook? Come on, if you're just trying to dismiss me, don't lie about it..."
+                    
+                    "I...{nw}"
+                    
+                    menu:
+                        extend ""
+                        "Apologize":
+                            jump apologize
+                            
+                        "Don't apologize":
+                            show john suit cross
+                            j "Fine. No, I don't have one. I don't need one. I'll be fine."
+                            
+                            show arianna casual2 embarassed
+                            ar "Are — are you sure? We could share one... if..."
+                            
+                            j "I don't think that would be appropriate, Arianna."
+                            
+                            ar "It's not a big deal! I just —"
+                            
+                            "I really hope this gets the point across. I don't know what else to do."
+                            
+                            j "I understand perfectly, Arianna, and I don't think it would be appropriate. I'm your teacher, and you are not even half my age."
+                            
+                            j "I'm sorry, Arianna, but... do I make myself perfectly clear?"
+                            
+                            "She starts to cry. I was really hoping it wouldn't come to that."
+                            
+                            show arianna casual2 sad
+                            ar "Fine... fine..."
+                            
+                            show john suit uncomfortable
+                            j "I'm sorry, it's just —"
+                            
+                            ar "Forget it! Forget I said anything... I... I..."
+                            
+                            hide arianna with dissolve
+                            
+                            "She storms off before I can say anything more."
+                            
+                            "That... could have gone better."
+                            
+                            scene bg street rain with dissolve
+                            
+                            "All I can think is... I sure fucked that one up, didn't I? Yeah, it's uncomfortable. I can't think of any better way to handle it."
+                            
+                            "But now she's going home in tears, and I'm going home in a miserable storm... not that I envy her, but it sucks all around."
+                            
+                            "What an awful situation."
+                            
+                            scene bg bedroom evening with dissolve
+                            
+                            "When I get home, I immediately undress, towelling myself off; and all I can think about is her."
+                            
+                            "What's she doing right now? She's probably at home, in her own room... and probably still crying."
+                            
+                            "I can practically see her right now, sitting on the edge of her bed, in tears. Maybe shouting through the door at her parents, telling them that she doesn't want to talk about it."
+                            
+                            "Poor kid."
+                            
+                            "I mean, she'll get over it. Schoolgirl crushes are always fleeting, of course..."
+                            
+                            "...but still. Poor kid."
+                            
+                            $ arianna_kiss = False
+                            
+                            jump arianna_next_day
+        
+        "Tell the truth anyway":
+            j "No... I didn't realize it was going to rain. I didn't think to bring one."
+            
+            jump walk_together
+    
+label apologize:
+    show john suit awkward smile
+    j "Sorry. You're right — I wasn't thinking. I don't."
+    
+label walk_together:
+    show arianna casual2 very happy
+    ar "That's okay! Why don't we walk together, then? We can share mine!"
+    
+    "...and there it is."
+    
+    show john suit uncomfortable
+    j "I don't —"
+    
+    ar "Come on, you don't want to be caught out in that storm, do you? You'd get soaked, and probably get sick, for sure. Really, it wouldn't be a problem!"
+    
+    "Rationally, I know better. Rationally, I know I planned to shut her advances down, to be the mature adult and just not even give her a chance."
+    
+    "Rationally, I know that you can't get sick from being out in the rain, and rationally, I know that following along with her plan would be irresponsible of me."
+    
+    "Rationally, I know that it's wrong to find how she's managed to catch me so perfectly offguard charming in any way."
+    
+    "Rationally, I know that I shouldn't find that smile she's giving, the one that says she knows I'm going to say yes, so adorable."
+    
+    "Rationally, I know I should say no."
+    
+    scene bg street rain
+    show john suit normal
+    show arianna casual2 happy
+    with fade
+    
+    ar "So you actually live around this neighbourhood? Like, within walking distance? I figured we'd just be walking to the subway."
+    
+    "...I guess it turns out I'm not as good at acting rationally as I'd like."
+    
+    j "Yeah. Just a few blocks away, actually."
+    
+    ar "Ohhhh. Have you been here long?"
+    
+    j "Only a week, actually. I only moved into the neighbourhood once I got the job here."
+    
+    ar "Oh, I see. So... do you live alone?"
+    
+    "Come on, don't ask that!"
+    
+    j "Yeah... for several years now."
+    
+    "I leave that hanging as a reminder of how old I am. I've been {i}divorced,{/i} kid. Twice! With any luck, she'll pick up on that."
+    
+    ar "Ohhh. Well, that must be nice, having things all to yourself."
+    
+    "As she says that, she moves in even closer than she was before, so I can feel her arm pressing against mine. So much for having any luck."
+    
+    j "Well, it's... not always so bad."
+    
+    "That's not honest at all. It's a lie, the biggest lie. I hate living on my own; it's lonely, it's soul crushing, it's terrible. It's always, always so bad."
+    
+    show arianna casual2 closed
+    ar "I'll bet!"
+    
+    show arianna casual2 very happy
+    "And that's when I make my mistake: I look back down at her. I make eye contact, and she just responds with the biggest grin."
+    
+    "She's happy right now. She's so happy, I can tell... and all I can think, as I look at that poor kid, is that I know the only thing she's thinking of right now is me."
+    
+    "It's... it's... one hell of a thought."
+    
+    "I look away, and we keep walking down the street, but it's too late. I've humoured her, I've gone along with her... and I've practically acknowledged it to her, now."
+    
+    "She just babbles away, happily, and I realize there isn't going to be an easy way out. This crush of hers isn't something that I can ignore and it'll go away."
+    
+    "After what feels like the longest walk home ever, finally, we arrive at my building."
+    
+    show john suit normal
+    j "This is me. Thanks for the umbrella."
+    
+    "I have to do something, and it has to be now."
+    
+    ar "Okay! It's not a problem at all, though. I really enjoyed talking with you, a lot."
+    
+    show john suit uncomfortable
+    j "Well..."
+    
+    show arianna casual2 embarassed
+    ar "Actually, there's, um... there's something I'd like to tell you."
+    
+    "All around us, rain pours heavily."
+    
+    "My stomach sinks."
+    
+    "And then... she takes my hand with her own, squeezing with those delicate fingers of hers. Despite the rain, still, they're so soft to the touch..."
+    
+    "She smiles sweetly at me, getting ready to confess to me, and I realize with horror..."
+    
+    "...as that girl prepares, with her short dress, with her surprisingly deep eyes, with her unsubtle flirting, with her delicate grip..."
+    
+    "...with all those things standing right in front of me, I realize, in spite of myself, I'm becoming just a bit hard."
+    
+    "I have to do something now! Before she says anything.{nw}"
+    
+    menu:
+        extend ""
+        "Pull her hand off":
+            "I have to get control of myself. I can't afford to be thinking with my dick here; I've already gone along with this for far too long. I pull her hand off from mine."
+            
+            show john suit annoyed
+            j "Please, stop there, Arianna."
+            
+            ar "I just want to tell yo —"
+            
+            j "I know what you want to tell me. It's obvious. Arianna... I'm flattered, really. But please, just don't say it. Okay?"
+            
+            show arianna casual2 surprised
+            ar "What?"
+            
+            "She looks shocked — as if her intentions aren't obvious! — and seems to be lost for words."
+            
+            j "It wouldn't be appropriate, Arianna. In fact... this is {i}already{/i} completely inappropriate. I shouldn't be walking students back to my apartment." 
+            
+            show john suit uncomfortable
+            j "Do you know how bad that looks?"
+            
+            show arianna casual2 embarassed
+            ar "I promise I won't tell anyone! Mr. Rook, I really like you, I just want —"
+            
+            j "I'm sorry. I truly am sorry, but I know what you want, and..."
+            
+            "This is the worst rejection I've ever given in my life. This is the worst. I'm babbling, she's babbling, and there's no way this won't end in crushed feelings."
+            
+            j "I'm your teacher, Arianna."
+            
+            j "You're a cute girl who obviously knows how to use her charms; you shouldn't be chasing guys over twice your age. You can do better."
+            
+            "Oh my god, what the fuck am I even {i}saying?{/i} This isn't a rejection, it's just playing hard to get! What is wrong with me?!"
+            
+            ar "No, I couldn't. Don't be so hard on yourself... you're hot, you're smart, and you're modest. Of course I like you. There's nothing wrong with that."
+            
+            "I can't do this gently. I am apparently incapable of doing this gently, without coming across like an absolute retard. I guess...{nw}"
+            
+            menu:
+                extend ""
+                "...I'll have to give in.":
+                    pass
+                    
+                "...I'll have to be a jerk.":
+                    j "Stop, please! Just... stop."
+            
+                    show john suit upset
+                    j "Arianna, you're embarrassing yourself, and you're embarrassing me!"
+                    
+                    show john suit cross
+                    j "You're too young, it wouldn't be right, and frankly, I would feel disgusted with myself if I said yes. Do you understand?!"
+                    
+                    "She stares at me, and in that moment, it finally seems to go through to her: whatever she wants from me, it's never going to happen. It can't."
+                    
+                    ar "I... I..."
+                    
+                    show arianna casual2 sad
+                    
+                    ar "I just... I thought..."
+                    
+                    j "I'm sorry, Arianna. Please go home."
+                    
+                    ar "Fine! Forget it! Forget I said anything... I... I..."
+                    
+                    hide arianna with dissolve
+                    
+                    "She runs off, disappearing into the rain, probably crying even harder."
+                    
+                    scene bg bedroom evening with dissolve
+                    
+                    "I go inside my apartment, and resist the urge to just repeatedly slam my head into the wall until I stop feeling so bad about what I said."
+                    
+                    "What a truly, deeply awful thing to say to someone."
+                    
+                    "I sit on the edge of my own bed, and I all I can do is wonder: where did I go wrong? How did it turn out this way?"
+                    
+                    "Poor kid. All she had was a harmless schoolgirl crush, and the guts to follow through on it."
+                    
+                    "She sure didn't deserve to have some old teacher flip out on her like that."
+                    
+                    "I sigh."
+                    
+                    "I mean... she'll get over it. Schoolgirl crushes are always fleeting, of course..."
+                    
+                    "...but still. Poor kid."
+                    
+                    $ arianna_kiss = False
+                    
+                    jump arianna_next_day
+            
+        "Squeeze her hand tightly":
+            pass
+            
+    "...fuck it. Who am I fooling, anyway?"
+    
+    "I squeeze her hand tightly, and I just shake my head at her."
+    
+    show john suit smug
+    j "Shhhh. Don't say anything."
+    
+    "She doesn't, of course, she just starts to quiver a little; for the first time today, she's not the one in control, as she hangs waiting on my next word."
+    
+    "I just squeeze tighter, leaving her waiting for another few seconds."
+    
+    ar "I —"
+    
+    j "I know."
+    
+    "Then I give her what she obviously wants; I take her shoulder with my other hand, and then I pull her in close, letting her go up on the tips of her toes to kiss me."
+    
+    scene bg kiss with dissolve
+    
+    "She closes her eyes, and I can tell, as I delve into her small, warm mouth, that this is her first time ever. Her confidence from earlier is gone; so I take the lead."
+    
+    "Arianna shivers under me, as I kiss her in the rain, letting out a high pitched murmur as my tongue teases hers; I shift my legs, making sure she doesn't notice what's growing in my pants."
+    
+    "It's a nice feeling. Her mouth is sweet and her hair is soft, and she's so easy to tease."
+    
+    "Eventually, she starts to grip tightly herself, and tentatively kisses back, still not truly in control. I break off slowly, and smile at her."
+    
+    scene bg street rain
+    show john suit closed amused
+    show arianna casual2 forceful at center
+    with dissolve
+    
+    j "Was that what you wanted to say?"
+    
+    "She's speechless."
+    
+    show arianna casual2 very happy
+    
+    "After a second, she grins madly, then bursts out giggling."
+    
+    ar "Something like that."
+    
+    "Then she pauses again; and then, clearly proud of how clever she is, adds:"
+    
+    show arianna casual2 smug
+    ar "You put it more eloquently, though."
+    
+    "Gently, I stroke her cheek. It's so much softer than I'd imagined; she's so delicate. I have to be careful with her, I know..."
+    
+    show john suit smug
+    j "I should be going in now..."
+    
+    ar "Yeah, probably..."
+    
+    "The other possibility goes unspoken of; even if I can't help but undress her in my mind, imagining her small body naked on my bed... it wouldn't be right. Not now."
+    
+    "Even if this is what she wants, I won't go that fast. The kid deserves better than that, even in the form of being given a chance to change her mind."
+    
+    "Still..."
+    
+    show arianna casual2 embarassed
+    "When I give her a goodbye kiss, I let my mouth linger against hers just long enough to keep her on her toes."
+    
+    scene bg bedroom evening with dissolve
+    
+    "Poor kid, though."
+    
+    "She deserves a whole lot better than to chase after someone so much older than her..."
+    
+    "Oh well. I'm sure it's not going to last long, anyway. Schoolgirl crushes are always fleeting, of course..."
+    
+    "Or at least, that's what I tell myself as I change out of my suit. But still, I feel an odd taste left on my lips, that doesn't seem to leave."
+    
+    "It tastes like a 16-year-old girl's lip gloss... and it tastes like compromise."
+    
+    $ arianna_kiss = True
+        
+label arianna_next_day:
+    st 22 30
+    a 2
+    $ awful = Post(nolan, "Can someone remind me why we're reading this piece of shit for english class? it's AWFUL.")
+    $ how_it_went = Conversation(isabella, arianna)
+    a 8
+    $ how_it_went.send(isabella, "So? How'd it go? Come on, you have to let me know!")
+    a 12
+    $ awful.reply(taylor, "Wow, you're actually bothering? lol why?")
+    if arianna_kiss:
+        a 2
+        $ how_it_went.send(arianna, "I'm sorry, Iz, I can't. I don't kiss and tell! ^.~")
+        a 8
+        $ how_it_went.send(isabella, "OMG. NICE.\n\nYou are the luckiest girl around!")
+        a 2
+        $ how_it_went.send(arianna, "I know, right? I'm just... I'm not going to lie, my heart is STILL racing, just thinking about it. I can't wait to see him again. I {i}really{/i} can't wait. OMgosh, I still can't believe that actually happened!")
+        a 16
+        $ how_it_went.send(isabella, "I'm so happy for you. Anyway, I really should get to bed now...")
+        a 2
+        $ how_it_went.send(arianna, "Yeah, me too. Well, try, anyway, you have no idea how excited I am.")
+        a 3
+        $ how_it_went.send(isabella, "Sweet dreams, baby. Try not to let him keep you up too long!")
+        a 2
+        $ how_it_went.send(arianna, "Hahahaha. Good night!")
+    $ awful.reply(nolan, "I DONT KNOW :/")
+    
+# THURSDAY, OCTOBER 21, 2027
+    st 8 30
+    $ date = "Thursday, October 21, 2027"
+    $ transition("bg classroom day", "THE NEXT DAY")
+    show john suit normal
+    
+    "It's absolutely beautiful out; but I checked the weather report before heading out this morning, all the same."
+    
+    play music KEEPING_IT_REAL fadein 2.0
+    
+    if not arianna_kiss:
+        show arianna uniform awkward smile with dissolve #expr
+        "This time, it's not Charlotte who's the first to come in; it's her. I grimace, praying she doesn't make things more awkward than they already are."
+        
+        ar "Excuse me... Mr. Rook?"
+        
+        "I sigh."
+        
+        show john suit uncomfortable
+        j "Yes?"
+        
+        show arianna uniform uncomfortable
+        ar "I just wanted to say... um... I'm sorry."
+        
+        ar "I was... way out of line before. I really should have kept it together. That was... that was really immature of me."
+        
+        "Oh good."
+        
+        ar "Can you forgive me?"
+        
+        "I sigh again. Of course I can — I just want to forget the whole affair ever happened to begin with."
+        
+        show john suit happy
+        j "Of course. Let's just pretend it never happened, okay? Start with a fresh slate."
+        
+        ar "Alright..."
+        
+        ar "...thanks."
+        
+        hide arianna with dissolve
+        
+        "After that, she goes to take her seat."
+        
+        a 10
+        $ how_it_went.send(arianna, "Shot down!\n\nIt didn't really go over well. I guess I'm just not very good with men... god I HATE myself, I've never been so humiliated in my life. I knew there was a chance it could go wrong, but I didn't know it would hurt so much. I... kind of cried myself to sleep. I think I was just too direct with him. I guess I need to work on my subtlety.")
+        
+    show charlotte uniform normal with dissolve #expr
+        
+    "And it doesn't take too long for Charlotte to arrive."
+    
+    show john suit happy
+    j "Hi."
+    
+    c "Good morning, Mr. Rook. I hope your walk home yesterday wasn't too bad."
+    
+    if arianna_kiss:
+        j "Nope. It's funny, sometimes things have a way of working out."
+        
+        c "Oh, well, I'm glad to hear that."
+    else:
+        show john suit uncomfortable
+        j "Not so much, no. I'm never skipping checking the weather before I leave again."
+        
+        c "That's too bad. A good plan, though."
+        
+    "We continue to make idle chit-chat, as the class slowly files in."
+    
+    hide charlotte with dissolve
+    
+    "After the night I had yesterday... I'm not particularly in any hurry to get started. Today's lecture is going to be at a leisurely pace."
+    
+    if not arianna_kiss:
+        a 35
+        $ how_it_went.send(isabella, "Oh, baby, I'm so sorry. I understand perfectly, believe me. That really sucks. You can always move on to others, though, right?")
+    
+    show john suit normal
+    j "So... as you've probably figured out, this is the part of the story where you get the hint that things are going to start to get really weird."
+    
+    a 4
+    $ Post(taylor, "is looking forward to the party this weekend. Anyone else going??")
+    a 2
+    $ zzz = Post(nolan, "zzzzzzzzzzzzzzz")
+    
+    j "From here on out, you're going to discover that things are a lot more complicated than they might seem."
+    
+    "I pause, for effect."
+    
+    j "So what do you think of the use of foreshadowing in the chapter you read last night? How does it differ from at the start of the novel?"
+    
+    if arianna_kiss:
+        "After a couple seconds, two hands go up. I'm sure Charlotte has the better answer, but... well... I couldn't {i}not{/i} call on Arianna, could I?"
+        
+        "I smile in her direction, and for the briefest of seconds, she blushes."
+        
+        a 3
+        $ Post(isabella, "Lucky!", arianna)
+        
+        show john suit happy
+        j "Go ahead, Arianna."
+        
+        show arianna casual2 very happy with dissolve
+        
+        ar "Well, I think it's really important, because..."
+        
+    else:
+        a 3
+        $ how_it_went.send(arianna, "Are you kidding? No way. I'm not giving up that easily.\n\nWhat I realized last night was that I wouldn't have been so upset if it wasn't really love. But if it hurts so badly, it has to be. That's fine. If I'm not good enough for him now, then I'm just going to have to try harder, right? I'll be able to do it for sure. ^_^")
+        
+        "After a couple seconds, a single hand goes up. I can't say I'm terribly surprised. Disappointed in the rest, maybe... but not surprised that it's not Arianna."
+        
+        j "Go ahead, Charlotte."
+        
+        show charlotte uniform normal with dissolve
+        
+        c "Well, it indicates that we're going to see a sudden shift of tone, I think. The biggest thing I noticed was..."
+        
+        a 4
+        $ how_it_went.send(isabella, "Hugs, and good luck. I have faith in you; I'm sure you can do it!")
+        
+    "And so she goes on."
+    
+    jump nolan_start</pre>

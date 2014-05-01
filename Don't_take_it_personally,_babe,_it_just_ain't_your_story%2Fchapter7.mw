@@ -1,0 +1,1231 @@
+<pre>
+# THURSDAY, DECEMBER 9, 2027
+label end_start:
+    $ date = "Thursday, December 9, 2027"
+    $ save_name = "Chapter 7:\nPawn Captures Rook"
+    show john casual normal
+    
+    "After what feels like not nearly long enough, the final day of school before exams approaches."
+    
+    play music MIDNIGHT fadein 2.0
+    
+    "I have one last review lesson for the class prepared for tomorrow morning... then after that, it's all up to them."
+    
+    "I'm tweaking my notes — really, stressing out despite the fact that there's not much I can do — when my phone rings."
+    
+    j "Hello?"
+    
+    "???" "Hi, I'm looking for John Rook. The school said I could reach him at this number?"
+    
+    j "I'm John. Speaking."
+    
+    "Ms. Yamazaki" "It's Ichigo Yamazaki calling."
+    
+    j "Oh, hello, Ms. Yamazaki. How are you doing this evening?"
+    
+    "Ms. Yamazaki" "Perfectly fine, thank you. But I think we need to have a conversation about what's been going on with the school's social networking service."
+    
+    "The words hit me like a kick in the face. I can't respond, I'm just stunned."
+    
+    "I immediately reach the obvious conclusion: she's talking about my eavesdropping. Oh, shit, it's come back to get me. I start to panic. My heart is pounding. This is where it all goes to hell."
+    
+    "My heart is racing so fast, so heavily, I almost worry that she can hear it on the other end. I try to stay calm. I try."
+    
+    show john suit uncomfortable
+    j "Yeah, I ca —"
+    
+    "Ms. Yamazaki" "What would be a good time for me to come in? I work during the day, but I could come by Thursday morning, if that's alright with you."
+    
+    j "Yeah. Yeah. That's... that's fine."
+    
+    "Ms. Yamazaki" "Good. I'll see you then."
+    
+    j "Okay..."
+    
+    "Ms. Yamazaki" "Goodbye."
+    
+    "She hangs up before I can say anything; not that I have anything to say. At least... at least I have a few days to think about it."
+    
+    "The school's not going to protect me here. If there's an angry parent... well, she's the one paying Akira's tuition, not me. I imagine they said to be discreet for a reason."
+    
+    "I'm terrified. Just... absolutely terrified. Is there anything I can say to her that'll not end in disaster for me? Anything at all?"
+    
+    stop music
+    
+    "...the question keeps me up half the night."
+    
+    if not charlotte_and_kendall:
+        $ sorry_ichigo = Post(ichigo, "Hazuki told me about what happened the morning you stayed over, and I just want to say, on her behalf, I am very, very sorry. She can... sometimes be like that.")
+        $ sorry_ichigo.reply(nolan, "Uh it's okay don't worry about it")
+        $ sorry_ichigo.reply(akira, "by which mom means that ka-san is TOTALLY CRAZY @_@")
+    $ backlog = Post(akira, "has a backlog of like twenty shows he can't start until after exams ._.;")
+    $ backlog.reply(kendall, "i no rite. so unfair.")
+    $ backlog.reply(akira, "oh hey. rehearsal for that presentation at lunch good with you?")
+    $ backlog.reply(kendall, "kk")
+# FRIDAY, DECEMBER 10, 2027
+    $ date = "Friday, December 10, 2027"
+    $ title(7, "PAWN CAPTURES ROOK", "Thursday, Dec. 9  — Monday, Dec. 20", "bg street day", "john special")
+    show john suit surprised
+    
+    play music QUIET_DAY fadein 2.0
+    
+    "The winter morning's air is cool, and the morning is quiet, as I walk to school. I'm still shaken, I still don't know how I'm going to deal with Ms. Yamazaki in a couple days."
+    
+    "Will I get fired to appease her? If she really does raise it with the school, probably. Is there anything I can do to prevent that if it comes down to it? I doubt it. No way. I'm new, I'm expendable."
+    
+    "Would she? I don't know... she's probably angry, though. Thinking about it, I would be. That sort of huge breach of privacy? I would be absolutely furious."
+    
+    "I'm screwed. I'm absolutely screwed. Somehow I fucked up, she figured it out... and now I'm probably going to be destroyed by that."
+    
+    "Unless I can figure out some way to make it okay. But what could I possibly do...? What would excuse that?"
+    
+    "I've got nothing."
+    
+    "Absolutely nothing."
+    
+    "That's all I can think about as I walk, that I have to think of something. There must be something I can do to put it all right."
+    
+    "Or I'm fucked."
+    
+    "I'm so lost in thought that I takes me a good moment to realize that the silence has been broken by the sound of crying, from right behind me. Startled, I turn around, to see..."
+    
+    play music UNSETTLING
+        
+    show yukata yukata sad with dissolve
+    
+    "...{i}her{/i}!"
+    
+    y "H-her spirit can't pass on because of you! Why did you let her down?!"
+    
+    j "I —"
+    
+    y "Why, John Rook? She's tormented! She's tormented, and it's all your fault... i-if you'd only stopped her..."
+    
+    "She rushes forward, grabbing my lapels, sobbing heavily against my chest. What the —"
+    
+    y "It's so awful. So, so awful. Why didn't you just stop her, John, why?"
+    
+    j "She wasn't —"
+    
+    y "It would have been so easy! Y-you just had to say something! B-but no, you had to let her die..."
+    
+    "Suddenly, she shoves me away. She stares with the creepiest smile in the world, a smile that could pierce your very soul; I'm horrified."
+    
+    show yukata yukata happy
+    y "It doesn't matter. It doesn't matter..."
+    
+    y "She'll come back for you. Isabella will come back for you... for one last goodbye."
+    
+    "She turns, and runs away."
+    
+    hide yukata with dissolve
+    
+    j "W-wait! Come back here!"
+    
+    "I shout, and start to give chase, but it's too late, she's already disappeared."
+    
+    "All I can do is stand there, catching my breath."
+    
+    "This is too much. This is too surreal. I don't know how to respond here."
+    
+    "What the hell has happened to my life?"
+    
+    scene bg outside day with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg hallway day with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg classroom day with dissolve
+    show john suit sulky
+    
+    "I arrive later than most of the class, and it's all I can do to not look too terrified while I sit there, waiting." 
+    
+    "I fidget like an absolute madman. I keep glancing back and forth at the computer, desperate for some sort of brief distraction, tapping my fingers... I just hope it's not too noticeable."
+    
+    show akira uniform2 normal with dissolve
+    
+    ak "Hey, sir... my mom got a hold of you last night, right?"
+    
+    "In more ways than one."
+    
+    j "Y-yeah, she did. We didn't talk long."
+    
+    ak "'kay. I mean, I know, she wanted me to be there. Thursday, 11 AM... is meeting in your office cool, or...?"
+    
+    j "That's... that's fine. I mean, I'll be in school during the entire exam period, but... yeah, we can talk about it then."
+    
+    ak "Great, 'kay. I'll tell her that."
+    
+    j "Right..."
+    
+    "I try not to stare at him. It's not his fault, he hasn't done anything unreasonable... and he's not the one threatening me, it's his mother."
+    
+    "His mother, who I still can't think of any way to deal with. There has to be something. At least {i}one{/i} of these insane things in my life, I have to be able to deal with!"
+    
+    show akira uniform2 very upset
+    ak " — sir?"
+    
+    show akira uniform2 normal
+    show john suit normal
+    j "I'm sorry. Did you say something?"
+    
+    ak "Just... me and Kendall are doing our presentation today, right?"
+    
+    j "Oh. Yeah. Right."
+    
+    ak "Can we present after school? We kinda wanna rehearse at lunch, if it's no prob."
+    
+    j "Yeah... sure. It's no problem."
+    
+    show akira uniform2 happy
+    ak "T-Y."
+    
+    hide akira with dissolve
+    
+    "He sits back down, and not long afterwards, the last exam review class begins."
+    
+    $ whats_on = Post(charlotte, "Does... anyone know what's actually supposed to be on the Literature exam? I was sure, right up until Mr. Rook's review lecture...")
+    
+    "...needless to say, it goes terribly. Just absolutely terribly."
+    
+    "My mind is just too far elsewhere, dwelling on the oncoming catastrophe. Between their exams, that weird girl's message, and Ms. Yamazaki..."
+    
+    $ whats_on.reply(kendall, "yeah, this is pretty lolwut")
+    
+    "...it's just too much for me to handle!"
+    
+    $ whats_on.reply(nolan, "I am really glad its not just me")
+    
+    $ transition("bg classroom evening", "3:55 PM")
+    
+    "That's it for the day. Well... as far as classes go, anyway."
+    
+    "Somehow, I manage to calm myself down a little, by the end. I'm still scared, I still can't think of anything, but... I'm a grown man. I need to sack up and stop freaking out."
+    
+    "Grow a fucking pair. Yeah, it's scary. Yeah, I still don't know what to do. Everything could go wrong. Everything probably will go wrong."
+    
+    "I'll just have to deal with it, I tell myself. Easier said than done, but... I'll be damned if I don't try."
+       
+    show kendall uniform normal at two_left
+    show akira uniform2 normal at two_right
+    show john suit normal
+    with dissolve
+    
+    k "'sup, bro?"
+    
+    ak "Hey, sir."
+    
+    j "Hi, you guys. So you have a presentation... are you both ready to start, or do you need a couple minutes?"
+    
+    k "Gimme a sec. I need to get the music queued up."
+    
+    j "Okay..."
+    
+    show akira uniform2 happy
+    ak "In this, I'll be playing the role of Anonymous."
+    
+    show kendall uniform happy
+    k "'kay, got it. And my role will be that of Anonymous."
+    
+    "Kendall presses a button on her computer to start playing... her music, and Akira turns off the lights."
+    
+    play music RARIBOU
+    
+    show bg classroom dark
+    show kendall uniform normal silhouette
+    show akira uniform2 normal silhouette
+    with dissolve
+    
+    "Both clear their throats, waiting a moment."
+    
+    anon_k "IN THIS THREAD: SPOILERS!"
+    
+    anon_a "Darth Vader is Luke's father!"
+    
+    anon_k "Bruce Willis was actually a ghost!"
+    
+    anon_a "It was really just Earth, in the future!"
+    
+    anon_k "Tyler Durden was the name of his alternate personality!"
+    
+    anon_a "Snape kills Dumbledore!"
+    
+    anon_k "Rosebud was the name of his sled!"
+    
+    anon_a "The missing girl was secretly just an AI!"
+    
+    anon_k "And the dead girl actually just moved away as part of an elaborate trick!"
+    
+    anon_a "...wait, what? What was that last one?"
+    
+    anon_k "Lol, you know. The sequel to the thing you said."
+    
+    anon_a "For reals? I never actually understood what the hell happened in it."
+    
+    anon_k "My face when! ...implying it's not really easy to understand."
+    
+    anon_a "Implying it is!"
+    
+    anon_a "S'r'sly, bro, W-T-F was the story there?"
+    
+    anon_k "'kay 'kay."
+    
+    anon_k "The feudal lord is suddenly forced to take over for a band of apprentices — each representing the twelve animals of the Chinese zodiac."
+    
+    anon_k "But he's completely ill equipped for it!"
+    
+    anon_a "He takes everything too seriously, right?"
+    
+    anon_k "Way too seriously. For s'r's."
+    
+    anon_a "So... what, then he starts spying on them? Oh underscore big oh."
+    
+    anon_k "Well yeah. Of course. He's their lord, that's what lords {i}do{/i}. He's supposed to train them to be just like him, that's his job."
+    
+    anon_a "'kay, so... what was the whole deal, then?"
+    
+    anon_k "So then the apprentices all conspire together, and hatched a plan to make their lord look ridiculous. Y'know, bring him down to earth a little."
+    
+    anon_a "Lol, oh right. That's the deal with the girl, right? The one who represented the dog?"
+    
+    anon_k "You mean Yoh? Yeah, totes."
+    
+    anon_k "You don't find out until the end, though. See, the thing was that she actually was planning on running away to return to her home village anyway."
+    
+    anon_k "Her village was in the middle of a famine, and they couldn't afford to have their eldest daughter off in the lord's study anymore."
+    
+    anon_a "Ohhhh, right. So that's what that scene was. They wake up the lord and make it look like she's killed herself."
+    
+    anon_k "Implying you didn't understand what happened; clearly understanding exactly what happened. Um, lol, so what part didn't you get, then?"
+    
+    anon_a "What was the deal with the ghost?"
+    
+    anon_k "Bruce Willis?"
+    
+    anon_a "...lol, are you mad? No, the one that haunted the lord."
+    
+    anon_k "Aw, too bad you didn't mean Bruce Willis. He's totally hot."
+    
+    anon_a "Forced meme is forced, bro. My face when you couldn't actually explain what the deal with the ghost was."
+    
+    anon_k "Lol. The deal with the ghost was that she was actually just a servant of the dog girl. She had conspired with the mother of Yoh's best friend."
+    
+    anon_a "She wasn't really a ghost?"
+    
+    anon_k "Lol no."
+    
+    anon_a "So W-T-F was the ending supposed to be?"
+    
+    anon_k "In the end, Yoh returns to reveal that the whole thing was merely a comic farce! Then she delivers the morale of the story."
+    
+    anon_a "Which is...?"
+    
+    anon_k "Well, Yoh Dog puts the morale in his hands, so he can lord it over them while he lords over them."
+    
+    anon_a "...what."
+    
+    anon_k "Trollface dot P-N-G."
+    
+    anon_a "Get the fuck out of here!"
+    
+    "After a long dramatic pause... Kendall does a curtsy, and Akira bows."
+    
+    j "So... is that it?"
+    
+    anon_k "That's it."
+    
+    j "Then... could you please explain to me what dramatic techniques that was supposed to show an understanding of?"
+    
+    anon_k "Glad you asked, sir."
+    
+    anon_a "Foreshadowing!"
+    
+    "I stare at them."
+    
+    j "...a pun? Seriously?"
+    
+    anon_k "Ahahahahahahahahahahahahahah!"
+    
+    anon_a "Ahahahahahahahahahahahahahah!"
+    
+    # fade music
+    stop music
+    
+    show bg classroom evening
+    show kendall uniform smug
+    show akira uniform2 happy
+    with dissolve
+    
+    j "...okay then. Thank you."
+    
+    j "There's one more class this semester, that comes after all the exams. I'll... let you know what your marks are then, okay?"
+    
+    ak "'kay. Seeya, sir."
+    
+    k "Yeah, laters, sir!"
+    
+    j "Good luck on the exam..."
+    
+    hide kendall
+    hide akira
+    with dissolve
+    
+    "Well... that's enough of that. Time to go."
+    
+    $ date = "Thursday, December 16, 2027"
+    $ invited = Conversation(akira, nolan)
+    $ invited.send(nolan, "Hey after your last exam today, want to come over and hang out? Weve barely talked in the past week")
+    $ invited.send(akira, "love to, i miss you! stupid exams. what's the plan, bro?")
+# THURSDAY, DECEMBER 16, 2027
+    $ transition("bg classroom day", "THURSDAY")
+    show john suit normal
+    
+    "The exam's come and gone; now I just have to wait for the exam period to finish for all their other classes. It's nervewracking."
+    
+    play music CONTEMPLATION fadein 2.0
+    
+    "It's supposed to be an easy break for me. Just a time to relax, finish the semester's marking, and take it easy knowing there isn't any more real material to teach until January."
+    
+    "...but of course I'm not. How can I take it easy when everything wrong is converging?"
+    
+    $ invited.send(nolan, "LOL dunno hadnt thought that far\n\nI just got a new PKK game if your interested. it's multiplayer. co-op. Or we could do something else its no big deal really")
+    
+    "I can't help but feel crushed by the weight of my failures."
+    
+    "Two divorces, a sudden career change as a mid-life crisis... just so I could completely screw it up right when I started?"
+    
+    $ invited.send(akira, "i'm not really that good at vidya. that's why i like just watching you. :3 but if we can do it together sure, why not?")
+    
+    "I'm a creep, and a shitty teacher. I let completely invading my students' privacy become banal to me... and managed to completely fail Isabella."
+    
+    "And all I can think is, it might look bad if my students do poorly on their exams! All I can think is, \"oh woe is me, I could lose my job if Ms. Yamazaki gets upset!\" Never mind {i}why{/i}."
+    
+    $ invited.send(nolan, "Or we could just make an excuse for you to come over and then just make out on my couch for an hour\n\nLike last time.")
+    
+    "I'm fucked; and I'm a fuck-up who absolutely deserves it."
+    
+    $ invited.send(akira, "LOL! oh nolan, ur a man after my own heart <3 <3 <3\n\nno srsly tho i am totes interested in playing vidya with you, it'd be fun, i know how much ur into that sort of thing. let's do this thing. i'm looking forward to it ^_^")
+    
+    "She's probably already on her way to my office."
+    
+    $ invited.send(nolan, "Okay. We can walk home together after the history exam")
+    $ invited.send(akira, "it's a date! :3")
+    
+    "Time to go face the music..."
+    
+    show bg hallway day with dissolve
+    
+    "I head down the hallway — it's empty, and completely quiet, what with everyone being in the middle of exams right now. The building is mostly deserted."
+    
+    "But then suddenly, from around the corner, appears someone..."
+    
+    show isabella casual happy with dissolve
+    
+    "Holy shit!"
+    
+    i "Hello, Mr. Rook. I've been looking for you."
+    
+    show john suit surprised
+    "I stare at her, shocked. It's like the girl said... {i}Isabella will come back for you{/i}...{nw}"
+    
+    menu:
+        extend ""
+        "\"I... thought you died!\"":
+            "My heart races. I can't believe it's her. I can't believe she's {i}alive{/i}."
+            
+            j "Y-you're... I thought you died!"
+            
+            show isabella casual very happy
+            i "I heard. No, I didn't die, I just moved to Ajax. Which I suppose is essentially the same thing, really."
+            
+            show isabella casual happy
+            j "Then..."
+            
+            i "And lol, from what Katelyn tells me, she really scared the hell out of you with the ghost story, too."
+            
+            "She grins, and says, in a goofy voice..."
+            
+            show isabella casual surprised
+            i "{i}Isabella will come back for you{/i}! Ooooooooh."
+            
+            show isabella casual happy
+            j "...oh my god. I... thought you were dead. I thought you killed yourself!"
+            
+            
+        "\"Are you here to haunt me?\"":
+            "My heart races. I can't believe it's her. I can't believe what the girl said was {i}true{/i}."
+            
+            show john suit surprised
+            j "Y-you're... are you here to haunt me?"
+            
+            show isabella casual surprised
+            i "I don't know, Mr. Rook. I like you, you seemed like a good teacher, but... I don't know if it would really be worth haunting you."
+            
+            "No... no, that can't be right. What am I saying?"
+            
+            show isabella casual happy
+            i "Oh, don't look at me like that! I'm not dead, silly. I can't believe the look on your face, though."
+            
+            show isabella casual exacerbated
+            i "I thought Katelyn was just exaggerating. You scare easily, don't you?"
+            
+            show isabella casual happy
+            j "I... I just thought you were dead. I thought you killed yourself!"
+            
+        "\"Everyone thought you were dead...\"":
+            "I can't believe she's here. I mean, I was always a little skeptical about the rumour, but... after she disappeared for months..."
+            
+            j "What... happened to you? Everyone thought that you killed yourself!"
+            
+    i "Really? Where did you ever get that impression from?"
+            
+    "And I stop, to think about it. Where {i}did{/i} I get that impression from? Did anyone ever say anything to me about her? Or... did I just read about it on Amie?"
+    
+    i "No, I only killed myself socially. My parents... can't really afford tuition here anymore. We had to move back out into the boonies."
+    
+    show isabella casual worried
+    i "I was going to tell you, but it was all very sudden. Then... well, I'm sure you figured out the rest."
+    
+    show isabella casual happy
+    show john suit uncomfortable
+    j "I'm... starting to get an idea."
+    
+    "I just keep staring in shock; I'm an even bigger idiot than I had ever realized."
+    
+    j "So the girl was just... your friend. Your friend, who was completely in on the joke."
+    
+    i "A friend of Ichigo's, actually. It was all her idea, you know. Anyhow, she's waiting in your office."
+    
+    i "I have to go now, but I'll be back later. Bye."
+    
+    show isabella casual very happy
+    i "It was really nice to see you."
+    
+    show isabella casual happy
+    j "Y-yeah, it was nice to see you, too..."
+    
+    hide isabella with dissolve
+    
+    "But... she must have known that it was only something anyone ever said on Amie. And if that's the case... I don't understand. I don't understand what's going on at all!"
+    
+    "I'm glad to see she's alive, of course, but... now I just feel even more confused, as I walk to my office."
+    
+    show bg office day
+    show ichigo suit happy
+    show akira uniform2 bored at four_right
+    with dissolve
+    
+    j "Hi, Ms. Yamazaki, Akira..."
+    
+    ich "Please, just call me Ichigo. Why don't you have a seat?"
+    
+    "I sit down, and so do the two of them; I try to make eye contact, but it's hard."
+    
+    j "I... guess I should just come clean, then."
+    
+    show ichigo suit normal
+    ich "Hm?"
+    
+    stop music
+    
+    "My heart races. Time to just be a man, and say it."
+    
+    j "I've been reading all the class's social networking messages, the whole semester. I... won't try to defend myself."
+    
+    j "It was so easy to justify... to stop bullying, to make sure they were paying attention in class. But it wasn't. It was just creepy and voyeuristic."
+    
+    j "I should've been better than that."
+    
+    j "I'm really sorry. I mean, I know, it's hard to forgive an incursion into your privacy like that — Akira — and I don't expect you to, but..."
+    
+    j "Well..."
+    
+    j "I'm truly sorry. I just wanted you to know."
+    
+    "There's a long, awkward silence, as they both just stare at me, taking it in. This is what they wanted to confront me about, I know... I guess they weren't expecting me to confess right away."
+    
+    "Maybe I didn't have to... no, I definitely did. Even if I could've denied it."
+    
+    show ichigo suit upset
+    ich "Huh?"
+    
+    ak "Um, lol... what?"
+    
+    show ichigo suit normal
+    ich "I don't know what you're talking about. That's... not exactly what I came here to talk about."
+    
+    "Now it's my turn to stare in shock."
+    
+    j "Y-you didn't already know...?"
+    
+    show ichigo suit upset
+    ich "Ehh? No, of course I knew. Don't be ridiculous, everyone knows that."
+    
+    j "What?"
+    
+    show akira uniform2 indignant
+    ak "See, mom?"
+    
+    show akira uniform2 bored
+    show ichigo suit embarassed
+    ich "Shush, Akira."
+    
+    play music ICHIGO_STRIKES_BACK fadein 10.0
+    
+    show ichigo suit happy
+    ich "John, I just came here to apologize for how the prank with Isabella got out of hand."
+    
+    ich "I thought it would be a funny way to get you to lighten up, and encouraged it..."
+    
+    show ichigo suit embarassed
+    $ ich ("...but I didn't realize Akira was sending you creepy messages at all hours of the night. And Katelyn " + katelyn_surname + " went a little over the top.")
+    
+    ich "I want to apologize on their behalf."
+    
+    j "I..."
+    
+    show ichigo suit worried
+    ich "...sorry, but let's go back to what you were saying. I don't understand. What were you trying to apologize for...?"
+    
+    j "I... well, I violated your son's privacy, for starters. Sorry, Akira — I've read everything you've posted on Amie."
+    
+    j "I guess you caught on, that's why you did the prank. To get me to lay off. I guess I was too dense to take the hint."
+    
+    show akira uniform2 very upset
+    ak "Lol! No, bro, we did the prank 'cause we wanted to get you to {i}lighten up{/i}. You always pretended that you didn't!"
+    
+    show akira uniform2 bored
+    j "I don't think you understand. Even the private ones."
+    
+    ak "Um, so?"
+    
+    show ichigo suit normal
+    ich "I don't think you really quite get it; they all knew that. They all knew from the very start, even; why {i}wouldn't{/i} you be?"
+    
+    ich "You keep saying \"privacy.\" What a weird, antiquated concept to keep bringing up."
+    
+    j "What? Antiquated? I mean, I know modern society can be invasive, but... antiquated?"
+    
+    show ichigo suit embarassed
+    ich "Oh dear. Well, John, it's like this... Akira, can you define with it means?"
+    
+    show ichigo suit normal
+    show akira uniform2 speechless
+    ak "Huh? Privacy?"
+    
+    ich "That's right."
+    
+    show akira uniform2 closed
+    ak "Um... I guess... if you're private, that means you just hide everything about yourself? So it's kind of like that?"
+    
+    show john suit surprised
+    show akira uniform2 bored
+    "I stare at him. In the months I've known him, somehow, this is the first time I've ever heard anything like that. He... honestly doesn't understand the concept. That's terrifying."
+    
+    j "That's... I... don't want to be rude, but that's alarming. He... doesn't really know what it means, does he?"
+    
+    show ichigo suit happy
+    ich "What, his generation? No, of course not! Why would he? For that matter, why would you?"
+    
+    ich "That's a really old idea, you know. I'm surprised you have so much... attachment to it. Didn't you grow up on Facebook?"
+    
+    j "I... what? No, not really. It came around when I was in high school, I guess, but I never saw the point. I'm a lot older than I look."
+    
+    ich "Huh. And a lot older than you act, too."
+    
+    ich "Truthfully, neither did I. Understand, things in Japan aren't quite the same as they are here, and I didn't move until later. But still, I'm surprised."
+    
+    j "I'm shocked. It's just... I realize it's been eroded so much, but I didn't realize it would be completely {i}foreign{/i}."
+    
+    ich "You're being so silly, though. You said... \"voyeuristic\"? How is it that?"
+    
+    j "Well, I read their private exchanges."
+    
+    ich "Oh, come now. Surely you passed written messages to your classmates when you were his age, too. It was just on paper, right?"
+    
+    j "Yeah..."
+    
+    ich "Well, did you ever write anything on those that you'd be truly upset if the teacher ended up taking it from you?"
+        
+    "I have to think about it. I guess not, actually."
+    
+    show john suit sympathetic
+    j "No. But that's not the same thing at all. We still knew that privacy was important, we were just... careful."
+    
+    ich "Akira, have you ever written anything on Amie that you'd be truly upset about Mr. Rook seeing?"
+    
+    ak "Uh, no? It's weird that he'd {i}wanna{/i} read my love letters to Nolan, but... no? 'course not?"
+    
+    j "So... what are you saying, then? Nothing's really changed at all since then? \"Things aren't different; things are things.\" Is that it...?"
+    
+    show ichigo suit very happy
+    "She just laughs."
+    
+    ich "Oh, you know, that was actually my favourite book at his age. No, I think that's wrong, though."
+    
+    ich "Things are different, of course; there's no sense of privacy. It's a silly, outdated concept, that feels so... unsocial? Does that sound right, Akira?"
+    
+    show ichigo suit normal
+    show akira uniform2 normal
+    ak "Totes legit. \"Unsocial\" is a good way to put it."
+    
+    "That sounds...{nw}"
+    
+    menu:
+        extend ""
+        "...like it makes perfect sense":
+            j "I guess that makes sense, in a way."
+            
+            ich "The fundamental misunderstanding, I think, is mistaking privacy for control of your personal boundaries."
+            
+            j "But... isn't it? Isn't that what it means?"
+            
+        "...incredibly dangerous":
+            j "But... you have to have privacy, you have to! If you don't have that... how can you be okay with him just opening up to anyone?"
+    
+            ich "I think your fundamental misunderstanding, John, is mistaking privacy for control of your personal boundaries."
+    
+            j "But it is!"
+    
+    show ichigo suit happy
+    show akira uniform2 bored
+    ich "But it isn't. I mean, that's what we always supposed it was, wasn't it? But we're both grumpy old fogeys who were slow to adapt."
+    
+    ich "We always assumed it was just binary. There's things you keep to yourself, and things you have public, and the two don't mix."
+    
+    ich "That's kind of stupid, though, isn't it? What's wrong with his generation assuming that knowing more about someone is always a good thing?"
+    
+    ich "What's wrong with controlling your image? He understands that; far more than I ever will, in fact."
+    
+    ich "You're not thinking in terms of... sorry, I'm not sure how to put this in English. It's in terms of degrees, maybe?"
+    
+    ich "It's not as though discrimination doesn't exist. You can still hide things, or show things only selectively. You just don't hide everything by default."
+    
+    ich "I mean... let me put it this way."
+    
+    show ichigo suit very happy
+    ich "They managed to organize an entire class into an elaborate hoax at your expense, and you think {i}you're{/i} the manipulative one? Really?"
+    
+    "I... it's completely foreign to me, what she's saying. I want to dismiss her, to just say that's stupid, but... the last part rings true. The last part makes me stop and reconsider."
+    
+    show ichigo suit embarassed
+    ich "I'm terribly sorry, I've been rambling, haven't I?"
+    
+    show ichigo suit normal
+    show john suit surprised
+    j "It's... alright."
+    
+    "She stands up, and offers her hand to shake. I follow her lead."
+    
+    show ichigo suit happy
+    ich "Well, I hope that makes some sense to you. Anyhow, I want to apologize again for Akira and Katelyn going over the top. You shouldn't feel bad."
+    
+    "She shakes my hand, then looks at her son."
+    
+    ich "Is there anything else you wanted to add?"
+    
+    "He thinks about it."
+    
+    show akira uniform2 bothered
+    ak "Um... I'd say... sir, if you want to creep us on Amie, that's fine, totes legit. But you don't have to be so {i}serious business{/i} all the time."
+    
+    show akira uniform2 very upset
+    ak "I don't really get what mom's talking about with privacy and whatevs, but... if you want to know something, or help, why not just ask?"
+    
+    show akira uniform2 happy
+    ak "It's not like I want to hide stuff from you. I want to be your friend. Is that crazy, bro?"
+    
+    "Is that what it all comes down to? Really? That's it... that's the moral? That's the big lesson to be learned at the end of it all?"
+    
+    hide ichigo
+    hide akira
+    with dissolve
+    
+    "After they leave, I sit back down in the office chair, and stare out the window."
+    
+    "Somehow... the world didn't come crashing down on me, after all."
+    
+    $ date = "Monday, December 20, 2027"
+    $ akira_avg = Post(akira, "90 average, bitches!")
+    $ akira_avg.reply(nolan, "Congrats dude")
+    $ sooner_die = Post(taylor, "would sooner die than write another exam.")
+    $ sooner_die.reply(arianna, "I feel your pain. So much hate.")
+    $ sooner_die.reply(charlotte, "It could be worse. You could be bleeding the whole time.")
+    $ Post(nolan, "HATES EXAMS")
+    $ marks = Conversation(john, admin).send(admin, "Mr. Rook,\n\nYour students' marks have officially been updated as of December 20, including their exam scores. Please keep in mind that as the Lake City Academy is an extremely competitive collegiate with a reputation to maintain, we expect all our classes to maintain a high standard of excellency in grades.\n\nRemember, in the province of Ontario, university admissions are based solely on high school marks upon graduation; a mediocre class reflects very poorly on the school, and undermines our students' success in the real world!\n\nIn keeping with this high standard of excellence, your students' Literature marks have been curved according to school policy:\n  — Arianna Bell-Essai: 91\n  — Kendall Flowers: 88\n  — Taylor Gibson: 86\n  — Charlotte Grewal: 98\n  — Nolan Striukas: 91\n  — Akira Yamazaki: 93\n\nIn the future, please be sure your students marks are acceptable {i}before{/i} submission, as otherwise this creates more work for our administrative staff.\n\nThanks,\n\nEmily Robin\nAdministrative Assistant")
+    $ transition("bg classroom day", "DECEMBER 20")
+    show john suit normal
+    
+    "The last day of class until January comes at last. Everyone seems excited again; there's no real work of any kind, it's just a day to come pick up marks."
+    
+    play music KEEPING_IT_REAL fadein 2.0
+    
+    $ sooner_die.reply(taylor, "EW. Wow, that's the only thing worse.")
+    $ period = Conversation(kendall, charlotte)
+    $ period.send(kendall, "omg i feel so terrible. i just want to curl up and die, this is the WORST DAY EVER. i feel so so so so so gross.")
+    
+    "I guess they're all glad to have a chance to unwind after exams. I can't say that I don't understand what it feels like to be massively relieved."
+    
+    $ wait(marks)
+    $ period.send(charlotte, "Oh, dear. Cramps?")
+    
+    "I can't believe absolutely all my worrying was for nothing. I mean... what was I thinking?"
+    
+    $ period.send(kendall, "yeah. wait, how did you know?")
+    
+    "The marks turned out okay, my job turned out okay, Isabella turned out okay... my dignity didn't really turn out too well, but if that's my biggest problem, I can probably live with that."
+    
+    show isabella casual happy at four_left
+    show charlotte uniform happy at two_left
+    show kendall uniform smug at two_right
+    show akira casual1 normal at four_right
+    with dissolve
+    
+    k "Lol, so how are the boonies?"
+    
+    show kendall uniform happy
+    show isabella casual exacerbated
+    i "I think the suicide story would be better. At least that would be quick and painless."
+    
+    show isabella casual happy
+    ak "That bad, bro?"
+    
+    c "I don't suppose there's terribly much to do out there, is there? You're in Pickering, right?"
+    
+    i "Ajax."
+    
+    c "Ohhhhhhhh."
+    
+    $ sooner_die.reply(arianna, "So what are your plans post-exams?")
+    
+    show akira casual1 very upset
+    ak "What's the difference?"
+    
+    show akira casual1 happy
+    show kendall uniform smug
+    k "One has three intersections with traffic lights. The other has {i}four{/i}."
+    
+    show charlotte uniform normal
+    c "It's not quite that terrible, is it really?"
+    
+    show isabella casual exacerbated
+    i "...no, pretty much."
+    
+    $ sooner_die.reply(taylor, "I am going to drink until I either forget about the exams, or how to keep drinking. It doesn't really matter which.")
+    
+    show isabella casual normal
+    j "It's a shame you can't come into town more often. It's not that far away." 
+    
+    show john suit sulky
+    j "Ajax might be half an hour out, but despite what you guys tried to convince me, it's not exactly Elysium. There's a train, isn't there?"
+    
+    show isabella casual uncomfortable
+    i "School's been busy."
+    
+    show kendall uniform smug
+    show isabella casual non plussed
+    show akira casual1 uncomfortable
+    k "Lol, \"try.\" B-T-W, awesome work with that, Akira. High five, bro."
+    
+    "They exchange a high five, although Akira doesn't look {i}too{/i} pleased about it."
+    
+    $ sooner_die.reply(arianna, "Good luck with that!")
+    $ elysium = Post(akira, "wait, wut's elysium?", charlotte)
+    
+    show charlotte uniform very happy
+    c "I'm sorry, Mr. Rook, but it really was actually very funny."
+    
+    show john suit uncomfortable
+    j "Yeah, yeah, laugh it up..."
+    
+    j "Clearly, it's not like I wanted you to take me seriously anyway..."
+    
+    play sound BELL
+    
+    hide kendall
+    hide charlotte
+    hide isabella
+    hide akira
+    with dissolve
+    
+    $ elysium.reply(charlotte, "The Greek afterlife, where souls wander forever.")
+    "The bell rings early, since it's only a half day; time for them to move onto their other classes."
+    
+    stop music
+    
+    $ elysium.reply(kendall, "think hel, limbo, purgatory, rainbow road, etc.")
+    "Everything feels so... relaxed. I guess things worked out in the end, after all."
+    
+    show bg outside day with dissolve
+    show john suit normal
+    
+    $ period.send(charlotte, "Because your period is always three days after mine, remember? We have this conversation every single month!")
+    $ period.send(kendall, "o rite. guh. this is the worst, i think i'm going to have to bail out on you guys. need to go home and lie down forever.")
+    $ period.send(charlotte, "Aww, I'm so sorry. I really hope you feel better!")
+    
+    "When noon comes, I pack up my stuff early, too, and leave at the same time as the students. No real reason to stick around for the rest of the day."
+    
+    play music REFLECTION fadein 2.0
+    
+    if arianna_kiss:
+        "From afar, I see Arianna approaching in my general direction. This could be weird, there's... a lot that's come to light since the last time we really talked.{nw}"
+        
+        menu:
+            extend ""
+            "Walk away":
+                "No... I'm not really ready to deal with that."
+                
+                "All I can really do is just turn and walk away."
+                
+            "Wave her over":
+                show arianna uniform awkward smile with dissolve
+                
+                ar "Hey... John? Can we talk?"
+                
+                show john suit uncomfortable
+                j "I think we have to."
+                
+                "I know what I'm going to say, and I know exactly what she's going to say, too. Yet we both pause, not sure who should go first."
+                
+                show arianna uniform worried
+                ar "I... kind of deceived you this whole time."
+                
+                j "Yeah..."
+                
+                "...but can I really hold it against her? Of course not. I got what I deserved, and so I can certainly forgive her."
+                
+                j "It's okay. And... you know, now you've definitely shown that you can be discreet."
+                
+                show arianna uniform uncomfortable
+                "She looks awkward, but giggles."
+                
+                ar "I... guess so. Really, though, I'm sorry."
+                
+                show john suit sympathetic
+                j "Don't worry about it. Besides... what I did was way worse."
+                
+                show arianna uniform surprised
+                ar "What? You never did anything wrong at all!"
+                
+                j "Yeah, I did. I read all your messages, Arianna... even the private ones. You know, even the ones to Taylor."
+                
+                ar "Yes?"
+                
+                show arianna uniform embarassed
+                
+                ar "Oh, right, those."
+                
+                show john suit uncomfortable
+                j "I mean, I know, I know, \"antiquated ideas of privacy,\" but... that was still... something I shouldn't have seen. I'm really sorry."
+                
+                j "Even still, I should have showed some self-restraint, at least. I've been a shitty friend to you."
+                
+                ar "Don't be sorry! I... I meant every word that I said, you know."
+                
+                ar "It wasn't really for Taylor's benefit... if it was, we would've just talked at lunch. I... I was actually hoping you would read those."
+                
+                "I stare at her."
+                
+                show john suit embarassed
+                j "O-oh."
+                
+                show arianna uniform very happy
+                ar "And... besides. I don't want you to be my friend. I have lots of friends."
+                
+                "She grabs my hand, in a way that seems strangely familiar."
+                
+                ar "I want you to be my lover."
+                
+                "I give her a good, long, hard look."
+                
+                "Before, my feelings for her had mostly been pity, combined with the obvious physical attraction... but it's in that moment, I see something else. Something stronger than I'd realized."
+                
+                "If we keep this up... it's still going to have to be a secret. It's going to be one of those things that are... not private, private means nothing to her. But less exposed."
+                
+                "For the time being, I'll have to remain a neatly compartmentalized part of her life, one that can only be alluded to in conversation between close friends. But... now I actually truly want to be."
+                
+                "Not just because I think the lonely girl deserves pity, not just because she makes me hard, not just because it's a chance to be a good man to her."
+                
+                "God help me, I think I'm in love with her."
+                
+                show john suit awkward smile
+                j "I'll try."
+                
+                "She pulls gently on my hand, leading me away from the crowd in front of the school."
+                
+                ar "Well, then, come on! This story should have a happy ending!"
+        
+    elif arianna_maybe:
+        show arianna uniform worried with dissolve
+        
+        ar "Excuse me, Mr. Rook, can we talk?"
+        
+        "I want to just say no and run away, but I guess I can't really do that."
+        
+        j "I guess so."
+        
+        "It's especially awkward with her. I know... far more about her feelings for me than I should, thanks to what I've read. I can't stop thinking of that one conversation with Taylor."
+        
+        show john suit uncomfortable
+        j "I... should apologize to you. I guess you already caught on, but... I've read all your Amie messages. Even the private ones."
+        
+        ar "We all know. That's hardly a secret."
+        
+        j "Well, even the ones you sent to Taylor, about..."
+        
+        show arianna uniform embarassed
+        
+        ar "Oh, right, those."
+        
+        j "I mean, I know, I know, \"antiquated ideas of privacy,\" but... that was still... something I shouldn't have seen. I'm really sorry."
+        
+        ar "Don't be sorry! I... I meant every word that I said, you know."
+        
+        ar "It wasn't really for Taylor's benefit... if it was, we would've just talked at lunch. I... I was actually hoping you would read those."
+        
+        "I stare at her. Really...?"
+        
+        show john suit embarassed
+        
+        j "O-oh."
+        
+        ar "So... you probably remember what Taylor's advice was, then. I guess I'm just going to do that. No more cutesy beating around the bush."
+        
+        show arianna uniform forceful
+        "She looks down, and then takes a deep breath."
+        
+        show arianna uniform awkward smile
+        ar "Mr. Rook. For some reason, I like you a lot. I think you could be a really good friend and a really good lover. I would like to spend time with you out of school."
+        
+        ar "You know I can keep a secret! You know I'm discreet. You know I can be an adult where it counts."
+        
+        ar "I... I think you've been unfair to me. I think if you give it a chance... just give it a chance!" 
+        
+        ar "If you don't... fine, we'll both be worse for it. But I'll accept that and move on. I'm not going to be Taylor about it, don't worry."
+        
+        show john suit uncomfortable
+        j "I don't —"
+        
+        ar "Just give it a chance. Take me out for lunch, tell me about your life; if you don't want to take me home afterwards, that's fine!"
+        
+        ar "But... come on. What do you say? Why don't you just take me out for a nice innocent lunch, and we'll see what happens?"
+        
+        "What do I say to that...?{nw}"
+        
+        menu:
+            extend ""
+            "Okay":
+                "Maybe she's right. Maybe it wouldn't hurt to give it a shot, at least. Maybe she deserves that much."
+                
+                show john suit awkward smile
+                j "Okay."
+                
+                "Her reaction is delayed, taking her a moment to realize that I've actually just agreed."
+                
+                show arianna uniform surprised
+                ar "R-really? Oh, that's great..."
+                
+                j "I don't see why we can't have lunch, anyway. Come on, I know this really nice place nearby, I'll show you."
+                
+                show arianna uniform very happy
+                "We walk off together, and she has a skip in her step, grinning all the way."
+                
+                ar "So, Mr. Rook, tell me about yourself... just how old are you, anyway?"
+                
+                j "I'm not telling. It's embarrassing; that's going to have to stay private."
+                
+                show arianna uniform surprised
+                "She pauses, and gives me the oddest look."
+                
+                ar "Private? I don't understand."
+                
+            "No":
+                j "I... don't think so, Arianna. I don't feel comfortable with that."
+                
+                "She looks sad, and sighs, but doesn't get as worked up as she has in the past; I think... deep down... she expected as much."
+                
+                show arianna uniform disappointed
+                ar "Okay. That's... fair enough, then, Mr. Rook. I won't ask again."
+                
+                ar "I hope you have a good winter break."
+                
+                j "You too..."
+                
+                hide arianna with dissolve
+                
+                "She walks away slowly, and I watch her every step of the way. She turns the corner, and doesn't once look back."
+                
+                "I guess that's the last of the loose ends tied up. I hope she realizes it wasn't anything personal. But after all that... I can't."
+                
+                "I'm not ready for that."
+                
+                "There's so much that I've been surprised by, and so much I've been completely unable to understand, or to deal with."
+                
+                "I wish I could've made things better for her, I truly do. But I just can't do that."
+                
+                "Still..."
+                
+                "Somehow, everything else has had a way of working out in the end. Maybe she'll be fine after all."
+                
+                "Maybe it's just that kind of story."
+                
+    else:
+        show charlotte uniform happy with dissolve
+        
+        c "Hey, Mr. Rook!"
+        
+        j "Hi, Charlotte. Did things turn out well in your other classes?"
+        
+        show charlotte uniform very happy
+        c "They did! 96 average, in fact, so I'm quite happy with that."
+        
+        show charlotte uniform happy
+        show john suit happy
+        j "That's good. Congratulations."
+        
+        c "Anyway, the rest of the Literature class is over there, and they were looking for you. I think there's plans for a big lunch thing."
+        
+        c "I mean, you were invited."
+        
+        j "Oh, thanks. Are you going to be going?"
+        
+        show charlotte uniform worried
+        if charlotte_and_kendall:
+            c "No... I'm going to go check on Kendall. She had to go home early, because she wasn't feeling well, so I'm going to make sure she's okay."
+            
+            j "Oh. Well, that's very sweet of you."
+            
+            c "That's me! I'm a regular sweetheart. Well, take care, Mr. Rook, and have a good winter break!"
+            
+            j "You too!"
+        else:
+            c "No... I actually have prior plans with my family, I'm afraid, and it wouldn't be nice to bail out."
+            
+            j "Oh. Well, have fun with that."
+            
+            c "Thanks, Mr. Rook. Take care, and have a good winter break!"
+            
+            j "You too!"
+        
+        hide charlotte with dissolve
+        
+        "Sure enough, just moments later, the mob of students finds me."
+        
+        show isabella casual happy at five_right
+        show arianna uniform happy at center
+        show taylor uniform normal at four_right
+        show nolan uniform normal at five_left
+        show akira casual1 amused at three_left
+        with dissolve
+        
+        ak "Hey, sir! We're all going out for one big lunch together, to celebrate the end of the semester."
+        
+        j "Yeah, Charlotte told me."
+        
+        ak "You wanna come with?"
+        
+        show john suit sulky
+        j "I..."
+        
+        "If I was going to be a stick in the mud, I'd say no. If I was going to be one of those teachers I hated in high school, I'd say no. If I was going to be the humourless jerk Akira thought I came across as before... well..."
+        
+        show john suit happy
+        j "I'd love to. I think we could all use that."
+        
+        show akira casual1 super happy
+        ak "Totes legit, bro, totes legit."
+        
+        show akira casual1 amused
+        i "We can catch up on everything else."
+        
+        show arianna uniform smug
+        ar "Oh, {i}finally{/i} he agrees..."
+        
+        show akira casual1 closed
+        ak "Too bad Kendall couldn't come, though."
+        
+        show akira casual1 amused
+        show taylor uniform smug
+        t "Lol..."
+        
+        ar "Come on. She's alright."
+        
+        show taylor uniform worried
+        t "Sorry, I wasn't trying to be mean."
+        
+        $ looks_down = Post(akira, "k, who wants to bet he looks at his computer in the next minute?")
+        $ looks_down.reply(taylor, "If he {i}doesn't{/i} look down, I will personally bet the price of the entire lunch.")
+        $ looks_down.reply(akira, "lol, ur on")
+        $ looks_down.reply(arianna, "I don't think he will...")
+        
+        show akira casual1 uncomfortable
+        "Suddenly, a couple of them pause, tapping away at their computers."
+        
+        "It takes me a good moment to consider whether or not I want to check."
+        
+        if not looks_down.unread():
+            "Akira watches me closely, giggling."
+            
+            show akira casual1 amused
+            ak "Guess I'll have to buy you lunch, Taylor."
+            
+            show taylor uniform happy
+            t "Looks like it."
+            
+            show john suit awkward smile
+            j "...funny, guys. {i}I'll{/i} buy it. I'm pretty sure the only person who lost that bet was me."
+            
+            ak "Lol, true story."
+        else:
+            "...no, forget it. That's not important right now."
+            
+        $ show_ui = None
+        
+        show john suit happy
+        j "Anyway, it's good to see you all together. Now that it's all over, let me just say, it's been a crazy semester."
+        
+        show arianna uniform happy
+        ar "Really? It seemed to go by pretty quickly to me."
+        
+        show nolan uniform amused
+        n "Same here. Probably not for the same reason, though."
+        
+        show taylor uniform closed
+        t "Well, that's easy for you to say. He's right. This has been... one hell of a term. I am so glad this is through with."
+        
+        show taylor uniform disappointed
+        i "Why so crazy, Mr. Rook? The prank?"
+        
+        show john suit uncomfortable
+        j "That's..."
+        
+        "I have trouble figuring out how to summarize the ridiculous torrent of fear and uncertainty I've gone through over the last couple of months. How do you even put that in words without sounding ridiculous?"
+        
+        j "That's part of it. It just felt like... everything was building up to this insane, world-shaking drama, that would change my life forever."
+        
+        show taylor uniform smug
+        t "Then it just turned out to be a couple jerks just conspiring to take you down a peg?"
+        
+        ak "Lol."
+        
+        show john suit annoyed
+        j "Then it turned out that I didn't know a damn thing. It seemed obvious how this story would end: everything comes crashing down! Ruined forever!"
+        
+        show john suit happy
+        show isabella casual worried
+        i "Well, don't take it personally, babe, but..."
+        
+        "I smile, and nod. It is ridiculous, of course."
+        
+        j "I know what you're going to say. But... it's not my story, right?"
+        
+        show isabella casual very happy
+        i "No. That's stupid. Why would I say that...?"
+        
+    stop music
+    $ transition("bg white", "End of chapter 7.", end=True)
+    jump credits
+</pre>

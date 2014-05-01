@@ -1,0 +1,835 @@
+<pre class="brush:python">
+init:
+    python:
+        import time, locale
+        
+        def show_blur():
+            if persistent.use_blur:
+                renpy.layer_at_list([ just_crop ], layer='blur')
+                renpy.restart_interaction()
+            
+        def hide_blur():
+            renpy.layer_at_list([ dont_show ], layer='blur')
+            
+        def toggle_blur():
+            persistent.use_blur = not persistent.use_blur
+            if not persistent.use_blur:
+                hide_blur()
+                renpy.restart_interaction()
+            else:
+                show_blur()
+                
+        def right_now():
+            return "2027" # effectively disables it, because it turns out to be a kind of bad idea
+            m = h = "0"
+            n = "PM"
+            
+            if store.game_time[1] < 10:
+                m += str(store.game_time[1])
+            else:
+                m = str(store.game_time[1])
+                
+            if store.game_time[0] > 12:
+                h = str(store.game_time[0]-12)
+            else:
+                h = str(store.game_time[0])
+                if store.game_time[0] < 12:
+                    n = "AM"
+                    
+            return h + ":" + m + " " + n
+            
+        def nop():
+            pass
+            
+        persistent._file_page = "1"
+    
+    screen computer:
+        on "show" action show_blur
+        on "hide" action hide_blur
+        
+        default hide_action = Return()
+        
+        button action hide_action background None xpadding 0 xmargin 0 xalign 0:
+            null width (1024-670) height 640
+    
+    screen say_overlay:
+        on "show" action hide_blur
+        
+        python:
+            unread_count = len(unread_total()) + unread_posts()
+            if not unread_count:
+                unread_count = ""
+            messages_alpha = 0.5 + 0.4*int(bool(unread_count))
+            mail_alpha = 0.5 + 0.4*int(bool(store.john.unread_messages()))
+        
+        if store.show_ui:
+            hbox xanchor 1.0 xpos 1000 ypos 15 spacing 10:
+                button action ShowMenu("all_inbox") background im.Alpha("messages.png", messages_alpha) hover_background im.Alpha("messages-hover.png", messages_alpha) xminimum 70 yminimum 70:
+                    text str(unread_count) text_align 0.5 minwidth 30 drop_shadow None color "#fff" size 30 yalign 0.4
+                null width 5
+                button action ShowMenu("computer_inbox") background im.Alpha("mails.png", mail_alpha) hover_background im.Alpha("mails-hover.png", mail_alpha) xminimum 70 yminimum 70:
+                    null
+                button action ShowMenu("computer_overlay") background im.Alpha("config.png", 0.9) hover_background im.Alpha("config-hover.png", 0.9) xminimum 70 yminimum 70:
+                    null
+    
+    screen say:
+        tag main_screen
+        default side_image = None
+        
+        on "show" action Show("say_overlay")
+         
+        
+        window id "window":
+            has vbox
+    
+            if who:
+                text who id "who"
+    
+            text what id "what"
+            
+        if side_image:
+            add side_image at portrait_pos
+         
+    python:
+        def twelve_channel():
+            if store.posts_chan:
+                renpy.music.play(RARIBOU)
+            return ShowTransient("twelvechannel")()
+         
+    screen computer_overlay:
+        tag main_screen
+        tag computer
+        
+        use computer
+        $ use_time = time.strftime("%I:%M %p")
+        
+        window style style.window["computer"]:
+            has vbox
+            null height 30
+            #text (use_time.split(" ")[0] + " {size=72}" + use_time.split(" ")[1] + "{/size}") text_align 0.5 size 92 bold True minwidth 640
+            text "Amie XTablet зарегестрирован на: {b}Джон Рук{/b}" text_align 0.5 size 32 minwidth 640
+            text date text_align 0.5 minwidth 640 size 46 bold True 
+            null height 20
+            null height 15
+            hbox spacing 10:
+                grid 2 3:
+                    button action ShowTransient("computer_inbox") bottom_padding 15 style style.button["app"]:
+                        has vbox yalign 1.0 xalign 0.5 
+                        add im.Alpha("mails-app.png", 0.7) xalign 0.5
+                        text "Почта" style style.button_text["app"]
+                    button action ShowTransient("all_inbox") style style.button["app"]:
+                        has vbox yalign 1.0 xalign 0.5 
+                        add im.Alpha("networking-app.png", 0.7) xalign 0.5
+                        text "ЭмиКоннект" style style.button_text["app"]
+                    button action twelve_channel style style.button["app"]:
+                        has vbox yalign 1.0 xalign 0.5 
+                        add im.Alpha("12chan-app.png", 0.7) xalign 0.5
+                        text "12чаннел" style style.button_text["app"]
+                    button action ShowMenu("preferences") style style.button["app"]:
+                        has vbox yalign 1.0 xalign 0.5 
+                        add im.Alpha("prefs-app.png", 0.7) xalign 0.5
+                        text "Настройки" style style.button_text["app"]
+                    button action ShowMenu("saveload") style style.button["app"]:
+                        has vbox yalign 1.0 xalign 0.5 
+                        add im.Alpha("save-app.png", 0.7) xalign 0.5
+                        text "Сохр/Загр" style style.button_text["app"]
+                    button action ShowTransient("quit") style style.button["app"]:
+                        has vbox yalign 1.0 xalign 0.5 
+                        add im.Alpha("power-app.png", 0.7) xalign 0.5
+                        text "Выход" style style.button_text["app"]
+                
+                vbox spacing 3 yalign 0.5:
+                    for i in character_list:
+                        button background None action ShowTransient("profile", user=i):
+                            has hbox spacing 5
+                            window background "tiny-profile.png" hover_background "tiny-profile-hover.png" xminimum 35 xmaximum 35 yminimum 35 ymaximum 35 xpadding 0 ypadding 0 yalign 0.5:
+                                null
+                            vbox spacing -5:
+                                text i.name size 26 hover_color "#7c0055" hover_drop_shadow_color ((0,0,0,0))
+                                text ("Новые: " + str(i.unread_messages()) + " письма, " + str(i.unread_replies()) + " посты" )  xpos 10 hover_color "#7c0055" hover_drop_shadow_color ((0,0,0,0))
+                
+            
+            
+        text "Главное меню" style style.text["computer-title"]
+        button action Return() style style.button["back"]:
+            null width 86 height 38
+        
+    screen message_button:
+        default profile_menu = True
+        if not profile_menu:
+            $ use_user = conversation.messages[-1].sender
+        else:
+            for party in conversation.parties:
+                if party is not user:
+                    $ use_user = party
+                
+        $ profile_image = profile_hover = use_user.profile
+        if profile_image:
+            $ profile_image = im.Scale(use_user.profile, 100, 100, xpos=20, ypos=20)
+            $ profile_hover = im.MatrixColor(profile_image, im.matrix.opacity(0.7), xpos=20, ypos=20)
+        
+        button action ShowTransient("message", user=user, conversation=conversation, profile_menu=profile_menu) style style.button["unread-" + str(bool(conversation.unread()))] foreground profile_image hover_foreground profile_hover:
+            has vbox
+            hbox:
+                text use_user.name size 30 bold True minwidth 220 drop_shadow None hover_color "#666"
+                text conversation.messages[-1].post_time size 22 color "#545454" ypos 6 text_align 1.0 minwidth 220 drop_shadow None hover_color "#888"
+            if conversation.unread():
+                text ("{b}Непрочитано{/b} " + (conversation.messages[-1].message + "\n").split("\n")[0])  hover_color "#666" xmaximum 440 xminimum 440
+            else:
+                text ((conversation.messages[-1].message + "\n").split("\n")[0])  hover_color "#666" xmaximum 440 xminimum 440
+                    
+    screen post_button:
+        default profile_menu = True
+        if post.replies:
+            $ use_post = post.replies[-1]
+        else:
+            $ use_post = post
+            
+        $ profile_image = profile_hover = use_post.poster.profile
+        if profile_image:
+            $ profile_image = im.Scale(use_post.poster.profile, 100, 100, xpos=20, ypos=20)
+            $ profile_hover = im.MatrixColor(profile_image, im.matrix.opacity(0.7), xpos=20, ypos=20)
+        
+        button action ShowTransient("wall_post", user=post.recepient, post=post, profile_menu=profile_menu) style style.button["unread-" + str(bool(post.unread()))] foreground profile_image hover_foreground profile_hover:
+            has vbox
+            hbox:
+                text use_post.poster.name size 30 bold True minwidth 220 drop_shadow None hover_color "#666"
+                text use_post.post_time size 22 color "#545454" ypos 6 text_align 1.0 minwidth 220 drop_shadow None hover_color "#888"
+            if post.unread():
+                text ("{b}Непрочитано{/b} " + (use_post.message + "\n").split("\n")[0])  hover_color "#666" xmaximum 440 xminimum 440
+            else:
+                text ((use_post.message + "\n").split("\n")[0])  hover_color "#666" xmaximum 440 xminimum 440
+
+    screen computer_inbox:
+        tag computer
+        default user = store.john
+        
+        use computer
+        
+        window style style.window["computer"]:
+            has vbox
+            if user:
+                if user is not store.john:
+                        button action ShowTransient("profile", user=user) bottom_padding 14 top_padding 10:
+                            has hbox spacing 10
+                            add "profile.png"
+                            text "Профиль" size 24 yalign 0.5 bold True hover_color "#666"
+                text ("Личная переписка с {b}"+ user.name + "{/b}") size 24 drop_shadow None text_align 0.5 minwidth 650
+                null height 10
+            hbox:
+                viewport child_size (620, 500) draggable True mousewheel True id "vp" xmaximum 640:
+                    has vbox spacing 5
+                    
+                    if user:
+                        for i in reversed(user.messages):
+                            if user is store.john:
+                                use message_button(user=user, conversation=i, profile_menu=False)
+                            else:
+                                use message_button(user=user, conversation=i)
+                    else:
+                        $ unread = unread_total(use_conversation=True)
+                        if unread or unread_posts():
+                            text ("Непрочитанные личные сообщения и записи на стенах") size 24 drop_shadow None text_align 0.5 minwidth 620
+                            null height 10
+                            
+                            for conversation in reversed(unread):
+                                use message_button(user=conversation.messages[-1].sender, conversation=conversation, profile_menu=False)
+                            for i in character_list:
+                                for post in i.wall:
+                                    if post.unread():
+                                        use post_button(user=post.poster, post=post, profile_menu=False)
+                        else:
+                            null height 280
+                            text ("Нет непрочитанный сообщений.") size 24 text_align 0.5 minwidth 650
+        
+        if not user:
+            text "ЭмиКоннект" style style.text["computer-title"]
+        else:
+            text "Почта" style style.text["computer-title"]
+        button action ShowTransient("computer_overlay") style style.button["home"]:
+            null width 86 height 38
+    
+    screen all_inbox:
+        tag computer
+        use computer_inbox(user=None)
+            
+    python:
+        def refresh_unread(new_screen, _conversation, **kwargs):
+            for i in _conversation.messages:
+                i.unread = False
+                
+            if new_screen == "return":
+                return Return()()
+            return ShowTransient(new_screen, **kwargs)()
+            
+    screen message:
+        tag computer
+        default profile_menu = True
+        
+        use computer(hide_action=renpy.curry(refresh_unread)("return", conversation))
+            
+        window style style.window["computer"]:
+            has vbox
+            hbox spacing 10:
+                if profile_menu or user is store.john:
+                    button action renpy.curry(refresh_unread)("computer_inbox", conversation, user=user) ypadding 15:
+                        has hbox spacing 10
+                        add "inbox.png"
+                        text "Входящие" size 24 yalign 0.5 bold True hover_color "#666"
+                        
+                    if profile_menu:
+                        button action renpy.curry(refresh_unread)("profile", conversation, user=user) bottom_padding 14 top_padding 10:
+                            has hbox spacing 10
+                            add "profile.png"
+                            text "Профиль" size 24 yalign 0.5 bold True hover_color "#666"
+                else:
+                    button action renpy.curry(refresh_unread)("all_inbox", conversation) ypadding 15:
+                        has hbox spacing 10
+                        add "inbox.png"
+                        text "Непрочитанные письма" size 24 yalign 0.5 bold True hover_color "#666"
+                
+            for party in conversation.parties:
+                if party is not user:
+                    text ("Личная переписка между {b}" + user.name.split(" ")[0] + "{/b} и {b}" + party.name.split(" ")[0] + "{/b}") size 24 drop_shadow None text_align 0.5 minwidth 650
+                    
+            null height 10
+            hbox:
+                viewport child_size (620, 0) draggable True mousewheel True xmaximum 640:
+                    has vbox spacing 5
+                    
+                    for i in conversation.messages:
+                        hbox:
+                            if i.sender.profile:
+                                add im.Scale(i.sender.profile, 100, 100)
+                                null width 20
+                            else:
+                                null width 120 height 120
+                            vbox:
+                                hbox:
+                                    text i.sender.name size 30 bold True minwidth 220 drop_shadow None
+                                    text i.post_time minwidth 220 style style.text["time"] size 22 ypos 6
+                                if i.unread:
+                                    text ("{b}Непрочитано{/b} " + i.message) 
+                                else:
+                                    text i.message 
+                                if i.link:
+                                    hbox:
+                                        text "Прикреплено: "
+                                        button action renpy.curry(refresh_unread)("picture", conversation, conversation=conversation, user=user, profile_menu=profile_menu, link=i.link) background None ymargin 0 xmargin 0 ypadding 0 xpadding 0 ypos -1:
+                                            text i.link["url"] bold True hover_color "#7c0055" hover_drop_shadow_color ((0,0,0,0))
+                            
+        text "Сообщения" style style.text["computer-title"]
+        button action renpy.curry(refresh_unread)("computer_overlay", conversation) style style.button["home"]:
+            null width 86 height 38
+            
+    python:
+        def func(a):
+            store.password = a
+            
+        def submit(user, conversation, profile_menu, link):
+            if store.password == "Morgan":
+                return ShowTransient("picture", user=user, conversation=conversation, profile_menu=profile_menu, link=link, showing=True)()
+    
+    python:
+        def refresh_unread_replies(new_screen, posts, all, **kwargs):
+            for post in posts:
+                post._unread = False
+                
+                if all:
+                    for i in post.replies:
+                        i.unread = False
+                elif post.replies:
+                    post.replies[-1].unread = False
+                
+            if new_screen == "return":
+                return Return()()
+            return ShowTransient(new_screen, **kwargs)()
+            
+    screen picture:
+        default showing = None
+        tag computer
+        
+        use computer
+        
+        if not showing:
+            window style style.window["computer"]:
+                has vbox spacing 20
+                null height 180
+                text ("Добро пожаловать на NOUsendit, самый защищенный сервис размещения файлов! Для загрузки " + link["filename"] + " (" + link["size"] + "), просто введите пароль и нажмите Submit.") size 22 xmaximum 550 xpos 50
+                hbox xalign 0.5 xoffset 35:
+                    window background Frame("button-hover.png", 15, 15) right_margin 30 xpadding 14 ymargin 0 ypadding 14 xmaximum 250 yminimum 20:
+                        input color "#000" size 22 changed func default store.password
+                    button action renpy.curry(submit)(user, conversation, profile_menu, link) ypadding 15 xpadding 30:
+                        text "Submit" yalign 0.5 bold True hover_color "#666"
+        else:
+            window style style.window["computer"]:
+                has vbox
+                hbox spacing 15:
+                    add link["image"] yoffset 20
+                    window style style.button["app"] top_padding 15 bottom_padding 20 yminimum 0 yoffset 10:
+                        has vbox
+                        hbox:
+                            text "Имя файла:" minwidth 100 bold True
+                            text link["filename"]
+                        hbox:
+                            text "Размер:" minwidth 100 bold True
+                            text link["size"]
+                        hbox:
+                            text "Разрешение:" minwidth 100 bold True
+                            text "3330 x 5000"
+                        hbox:
+                            text "Личное:" minwidth 100 bold True
+                            text "Да"
+                text "© 2020-2027 NOUsendit. Мы не отвечаем за размещенное пользователями содержимое. Все права защищены." text_align 0.5 minwidth 630 yoffset 30 bold True
+            
+        text "NOUsendit" style style.text["computer-title"]
+        button action ShowTransient("message", user=user, conversation=conversation, profile_menu=profile_menu) style style.button["home"]:
+            null width 86 height 38
+            
+            
+    screen profile:
+        tag computer
+        
+        use computer(hide_action=renpy.curry(refresh_unread_replies)("return", user.wall, False))
+            
+        window style style.window["computer"]:
+            has vbox
+            hbox spacing 10:
+                vbox:
+                    button action renpy.curry(refresh_unread_replies)("computer_inbox", user.wall, False, user=user) ypadding 15:
+                        has hbox spacing 10
+                        add "inbox.png"
+                        text "Входящие" size 24 yalign 0.5 bold True hover_color "#666"
+                    if user.profile:
+                        add im.Scale(user.profile, 180, 180) yalign 1.0
+                    else:
+                        window background Solid((255,255,255,255)) xmaximum 180 ymaximum 180 xpadding 0 ypadding 0 yalign 1.0:
+                            null height 180 width 180
+                vbox:
+                    text user.name size 30 bold True
+                    text user.about 
+                    text ("{b}Дата рождения:{/b} " + user.birthday)  minwidth 280
+                    text ("{b}Город:{/b} " + user.hometown) 
+                    text ("{b}Пол:{/b} " + user.gender) 
+                    text ("{b}Нравятся:{/b} " + user.interested_in) 
+                    text ("{b}Религиозные взгляды:{/b} " + user.religious_views) 
+                    text ("{b}Политические взгляды:{/b} " + user.political_views) 
+                    text ("{b}Отношения:{/b} " + user.relationship_status) 
+                    text "{b}Школа:{/b} Lake City Academy, Grade 11" 
+                    text ("{b}Телефон:{/b} " + user.phone) 
+            text "{u}Последние записи                                             {/u}" size 30
+            
+            viewport child_size (620, 0) draggable True mousewheel True xmaximum 640 ymaximum 270:
+                has vbox spacing 5
+                for post in user.wall:
+                    hbox:
+                        if post.picture:
+                            if post.poster.profile:
+                                add im.Scale(post.poster.profile, 100, 100)
+                                null width 20
+                            else:
+                                null width 120 height 120
+                        vbox:
+                            text ("{size=28}{b}" + post.poster.name + " {/b}{/size}" + post.message) 
+                            text post.post_time style style.text["time"]
+                            
+                            if post.replies:
+                                if len(post.replies) > 1:
+                                    button background None action renpy.curry(refresh_unread_replies)("wall_post", user.wall, False, post=post, user=user) xpadding 0 xmargin 0:
+                                        text ("Показать " + str(len(post.replies)-1) + " скрытых ответов")  bold True hover_color "#7c0055" hover_drop_shadow_color ((0,0,0,0))
+                                hbox:
+                                    if post.replies[-1].sender.profile:
+                                        add im.Scale(post.replies[-1].sender.profile, 50, 50) ypos 8
+                                        null width 10
+                                    else:
+                                        null width 60 height 60
+                                    vbox:
+                                        text ("{size=24}{b}" + post.replies[-1].sender.name + " {/b}{/size}" + post.replies[-1].message) 
+                                        text post.replies[-1].post_time style style.text["time"]
+            
+        text "ЭмиКоннект" style style.text["computer-title"]
+        button action renpy.curry(refresh_unread_replies)("computer_overlay", user.wall, False) style style.button["home"]:
+            null width 86 height 38
+            
+    screen wall_post:
+        tag computer
+        default profile_menu = True
+        
+        use computer(hide_action=renpy.curry(refresh_unread_replies)("return", [ post ], True))
+                    
+        window style style.window["computer"]:
+            has vbox
+            hbox spacing 10:
+                if profile_menu:
+                    button action renpy.curry(refresh_unread_replies)("computer_inbox", [ post ], True, user=user) ypadding 15:
+                        has hbox spacing 10
+                        add "inbox.png"
+                        text "Входящие" size 24 yalign 0.5 bold True hover_color "#666"
+                else:
+                    button action renpy.curry(refresh_unread_replies)("all_inbox", [ post ], True) ypadding 15:
+                        has hbox spacing 10
+                        add "inbox.png"
+                        text "Непрочитанные" size 24 yalign 0.5 bold True hover_color "#666"
+                        
+                button action renpy.curry(refresh_unread_replies)("profile", [ post ], True, user=user) bottom_padding 14 top_padding 10:
+                    has hbox spacing 10
+                    add "profile.png"
+                    text "Профиль" size 24 yalign 0.5 bold True hover_color "#666"
+                    
+            text ("Запись на стене {b}" + user.name.split(" ")[0] + "{/b}") size 24 drop_shadow None text_align 0.5 minwidth 650
+                    
+            null height 10
+            viewport child_size (620, 500) draggable True mousewheel True xmaximum 640:    
+                has hbox
+                if post.picture:
+                    if post.poster.profile:
+                        add im.Scale(post.poster.profile, 100, 100) ypos 8
+                        null width 20
+                    else:
+                        null width 120 height 120
+                vbox:
+                    text ("{size=28}{b}" + post.poster.name + " {/b}{/size}" + post.message) 
+                    hbox spacing 10:
+                        text post.post_time style style.text["time"]
+                        if post._unread:
+                            text "Непрочитано" bold True 
+                    
+                    for reply in post.replies:
+                        hbox:
+                            if reply.poster.profile:
+                                add im.Scale(reply.poster.profile, 50, 50) ypos 8
+                                null width 10
+                            else:
+                                null width 60 height 60
+                            vbox:
+                                text ("{size=24}{b}" + reply.sender.name + " {/b}{/size}" + reply.message) 
+                                hbox spacing 10:
+                                    text reply.post_time style style.text["time"]
+                                    if reply.unread:
+                                        text "Непрочитано" bold True 
+                                        
+            null height 20
+        
+        text "ЭмиКоннект" style style.text["computer-title"]
+        button action renpy.curry(refresh_unread_replies)("computer_overlay", [ post ], True) style style.button["home"]:
+            null width 86 height 38
+            
+    screen image_post:
+        default op = False
+        default _image = ""
+        default number = "24718298"
+        if op:
+            $ background = None
+        else:
+            $ background = Frame(im.MatrixColor("button-hover.png", im.matrix.tint(0.7, 1.0, 0.7)), 15, 15)
+        
+        hbox:
+            if op and _image:
+                vbox:
+                    add _image
+            window background background left_padding 20 right_padding 40 bottom_padding 20 yminimum 0:
+                has vbox
+                text ("{font=fonts/MetaBoldLFC.otf}Анонимус{/font} " + date.split(",")[1] + "/2027   No. " + number) size 22
+                if _image:
+                    text image_name
+                null height 10
+                hbox spacing 10:
+                    if _image and not op:
+                        add _image
+                    elif not op:
+                        null
+                    text text 
+            
+    screen twelvechannel:
+        default page = 0
+        
+        tag computer
+        
+        use computer
+            
+        window style style.window["computer"]:
+            has vbox
+            if store.posts_chan:
+                viewport child_size (0, 531) xmaximum 640 ymaximum 531 yalign 0.5:
+                    has vbox
+                    for i in store.posts_chan[page:page+4]:
+                        use image_post(**i)
+            else:
+                null height 280
+                text ("Больше проходящих сквозь дебильный фильтр тредов нет. Попробуйте позже.") size 24 text_align 0.5 minwidth 650 layout "subtitle"
+        
+        if store.posts_chan:
+            if page > 0:
+                button action ShowTransient("twelvechannel", page=page-1) top_padding 10 bottom_padding 13 ypos 0.92 xpos (1024-550):
+                    text "Предыдущий пост" size 20 minwidth 200 text_align 0.5 drop_shadow (1,1) style style.button_text
+            if page+4 < len(store.posts_chan):
+                button action ShowTransient("twelvechannel", page=page+1) top_padding 10 bottom_padding 13 ypos 0.92 xpos (1024-300):
+                    text "Следующий пост" size 20 minwidth 200 text_align 0.5 drop_shadow (1,1) style style.button_text
+            else:
+                $ store.seen_posts_chan = True
+            
+        text "12чаннел" style style.text["computer-title"]
+        button action ShowTransient("computer_overlay") style style.button["home"]:
+            null width 86 height 38
+            
+    screen quit:
+        if not globals().has_key("show_ui"):
+            $ Quit(False)()
+            
+        $ return_to = ShowTransient("computer_overlay")
+        if not store.show_ui:
+            $ return_to = Return()
+        
+        tag computer
+        
+        use computer
+        
+        window style style.window["computer"]:
+            has vbox
+            null height 150
+            text "Уверены, что хотите выйти?" size 36 text_align 0.5 minwidth 650
+            null height 10
+            hbox xalign 0.5 xoffset -10:
+                button action return_to bottom_padding 15 style style.button["app"]:
+                    has vbox yalign 1.0 xalign 0.5 
+                    add im.Alpha("back-app.png", 0.7) xalign 0.5
+                    text "Отмена" style style.button_text["app"]
+                button action MainMenu(False) style style.button["app"]:
+                    has vbox yalign 1.0 xalign 0.5 
+                    add im.Alpha("mainmenu-app.png", 0.7) xalign 0.5
+                    text "Главное меню" style style.button_text["app"]
+                button action Quit(False) style style.button["app"]:
+                    has vbox yalign 1.0 xalign 0.5 
+                    add im.Alpha("power-app.png", 0.7) xalign 0.5
+                    text "Выход" style style.button_text["app"]
+                
+            
+        text "Система" style style.text["computer-title"]
+        if store.show_ui:
+            button action return_to style style.button["home"]:
+                null width 86 height 38
+    
+    screen save_button:
+        default can_save = True
+        
+        if can_save:
+            $ save_action = ShowTransient("yesno_prompt", yes_action=FileSave(file, confirm=False), message="Вы уверены, что хотите перезаписать соханение?")
+        else:
+            $ save_action = None
+        
+        button action save_action top_padding 12 bottom_padding 18 left_margin 20 left_padding 18 yminimum 135 xminimum 500 style style.button["save-" + str(can_save)]:
+            has hbox spacing 15
+            
+            if str(file).startswith("auto-"):
+                $ auto_number = file.split("auto-")[1]
+                add FileScreenshot(auto_number, page="auto") yalign 0.5
+                vbox:
+                    text "Автосохранение" size 30 bold True minwidth 220 drop_shadow None hover_color "#666"
+                    text FileTime(auto_number, page="auto") style style.text["time"]
+                    text FileSaveName(auto_number, page="auto")  hover_color "#666" xmaximum 440 xminimum 440
+            else:
+                add FileScreenshot(file) yalign 0.5
+                vbox:
+                    text ("Сохранение #" + str(file)) size 30 bold True minwidth 220 drop_shadow None hover_color "#666"
+                    text FileTime(file) style style.text["time"]
+                    text FileSaveName(file)  hover_color "#666" xmaximum 440 xminimum 440
+    
+    python:
+        def sort_time(a, b):
+            a, b = str(a), str(b)
+            if not a.startswith("auto-"): a = "1-" + a
+            if not b.startswith("auto-"): b = "1-" + b
+            
+            return int(renpy.scan_saved_game(a)[2]-renpy.scan_saved_game(b)[2])
+                
+    screen saveload:
+        default can_save = True
+        tag computer
+        
+        if can_save:
+            use computer
+        else:
+            use computer(hide_action=Hide("saveload"))
+            
+        python:
+            new_file = 0
+            avail_saves = renpy.list_saved_games(regexp=r'[0-9]\b')
+            auto_saves = renpy.list_saved_games(regexp=r'auto-[0-3]\b')
+            
+            all_saves = range(len(avail_saves), 0, -1)
+            for i in auto_saves:
+                all_saves.append(i[0])
+            all_saves.sort(sort_time, reverse=True)
+        
+        window style style.window["computer"]:
+            has vbox
+            #text "Please select a save file."  size 24 drop_shadow None text_align 0.5 minwidth 650
+            viewport child_size (620, 0) draggable True mousewheel True xmaximum 640:
+                has vbox
+                if can_save:
+                    button xminimum 620 left_margin 20 style style.button["save-True"] yminimum 105 action FileSave(len(avail_saves)+1):
+                        text "Новое сохранение" xalign 0.5 yalign 0.5 size 36
+                for i in all_saves:
+                    hbox:
+                        if str(i).startswith("auto-"):
+                            use save_button(file=i, can_save=None)
+                            $ load_name = str(i)
+                        else:
+                            use save_button(file=i, can_save=can_save)
+                            $ load_name = "1-" + str(i)
+                        button xminimum 120 yminimum 135 action renpy.curry(renpy.load)(load_name) style style.button["save-True"]:
+                            text "Загр" xalign 0.5 yalign 0.5 size 36
+                   
+        text "Сохранение/Загрузка" style style.text["computer-title"]
+        if globals().has_key("show_ui"): 
+            button action ShowTransient("computer_overlay") style style.button["home"]:
+                null width 86 height 38
+            
+    screen main_menu:
+        tag menu
+        
+        imagemap xalign 0 yalign 1.0:
+            ground "mainmenu.png" hover "mainmenu-hover.png"
+            
+            hotspot (0, 111, 393, 38) action Start()
+            hotspot (0, 150, 393, 38) action ShowTransient("saveload", can_save=None)
+            hotspot (0, 192, 393, 38) action ShowTransient("preferences", home_button=False)
+            hotspot (0, 233, 393, 38) action Quit(False)
+            
+    python:
+        def confirm(action):
+            action()
+            ShowTransient("saveload")()
+            
+    screen yesno_prompt:
+        tag computer
+        
+        use computer
+        
+        window style style.window["computer"]:
+            has vbox
+            null height 150
+            text _(message) size 36 text_align 0.5 minwidth 650
+            null height 10
+            hbox xalign 0.5 xoffset -10:
+                button action renpy.curry(confirm)(yes_action) bottom_padding 15 style style.button["app"]:
+                    text "Да" style style.button_text["app"] size 36 yalign 0.6 xalign 0.5
+                button action ShowTransient("saveload") style style.button["app"]:
+                    text "Нет" style style.button_text["app"] size 36 yalign 0.6 xalign 0.5
+                    
+        text "Система" style style.text["computer-title"]
+        
+    screen chapter:
+        zorder 100
+        
+        timer 4.0 action Hide("chapter", transition=dissolve)
+        
+        button background None action nop:
+            null width 1024 height 640
+        
+        add Solid((255,255,255,255)) at fadein
+        add im.Alpha("montage.jpg", 0.3) at fadein
+        add ImageReference(character) at [ title_pos, fadein ]
+        
+        vbox xpos 400 yalign 0.5:
+            text ("Глава " + chapter) font "fonts/MetaNormalLFC.otf" size 32 drop_shadow None at fadein
+            text title font "fonts/MetaNormalLFC.otf" size 42 drop_shadow None at fadein
+            if title2:
+                text title2 font "fonts/MetaNormalLFC.otf" size 42 xalign 1.0 drop_shadow None at fadein
+            text date font "fonts/MetaNormalLFC.otf" size 28 drop_shadow None at fadein
+            
+    screen preferences:
+        default home_button = True
+        tag computer
+        
+        if home_button:
+            use computer
+        else:
+            use computer(hide_action=Hide("preferences"))
+        
+        window style style.window["computer"]:
+            has hbox spacing 20
+            
+            vbox:
+                window style style.window["pref_window"] size_group "prefs" xalign 0.5:
+                    has vbox
+                    text "Громкость музыки" size 28
+                    bar value Preference("music volume")
+                    
+                window style style.window["pref_window"] size_group "prefs" xalign 0.5:
+                    has vbox
+                    text "Громкость эффектов" size 28
+                    bar value Preference("sound volume")
+                        
+                button action Preference("skip", "toggle") bottom_padding 15 style style.button["app"] yminimum 100 size_group "prefs" xalign 0.5:
+                    has hbox xalign 1.0 yalign 0.5 
+                    add im.Alpha("skip.png", 0.7) yalign 0.5 xalign 0 yoffset 5
+                    if not _preferences.skip_unseen:
+                        text "Проп. виденного" style style.button_text["app"] minwidth 200 size 28 yoffset 5
+                    else:
+                        text "Пропуск все" style style.button_text["app"] minwidth 200 size 28 yoffset 5
+                        
+                button action Preference("after choices", "toggle") bottom_padding 15 style style.button["app"] yminimum 100 size_group "prefs" xalign 0.5:
+                    has hbox xalign 1.0 yalign 0.5 
+                    add im.Alpha("save-app.png", 0.7) yalign 0.5 xalign 0 yoffset 5
+                    if not _preferences.skip_after_choices:
+                        text "Проп. после выб." style style.button_text["app"] minwidth 200 size 28 yoffset 5
+                    else:
+                        text "Останов. на выб." style style.button_text["app"] minwidth 200 size 28 yoffset 5
+                        
+                window style style.window["pref_window"] size_group "prefs" xalign 0.5:
+                    has vbox
+                    text "Скорость текста" size 28
+                    bar value Preference("text speed")
+                    
+                window style style.window["pref_window"] size_group "prefs" xalign 0.5:
+                    has vbox
+                    text "Время автоперехода" size 28
+                    bar value Preference("auto-forward time")
+            
+            vbox:
+                button action Preference("display", "toggle") bottom_padding 15 style style.button["app"] yminimum 100 size_group "prefs" xalign 0.5:
+                    has hbox xalign 1.0 yalign 0.5 
+                    add im.Alpha("fullscreen.png", 0.7) yalign 0.5 xalign 0 yoffset 5
+                    if not _preferences.fullscreen:
+                        text "Оконный" style style.button_text["app"] minwidth 200 size 28 yoffset 5
+                    else:
+                        text "Полноэкранный" style style.button_text["app"] minwidth 200 size 28 yoffset 5
+                        
+                button action toggle_blur bottom_padding 15 style style.button["app"] yminimum 100 size_group "prefs" xalign 0.5:
+                    has hbox xalign 1.0 yalign 0.5 
+                    add im.Alpha("transition.png", 0.7) yalign 0.5 xalign 0 yoffset 5
+                    if persistent.use_blur:
+                        text "Сглаживание вкл" style style.button_text["app"] minwidth 200 size 28 yoffset 5
+                    else:
+                        text "Сглаживание выкл" style style.button_text["app"] minwidth 200 size 28 yoffset 5
+                
+                null height 200
+                                
+                vbox:
+                    grid 2 5:
+                        text "Пропустить" size 24
+                        text " — ctrl" size 24
+                        text "Пропуск" size 24
+                        text " — tab" size 24
+                        text "Скрыть окно" size 24
+                        text " — right-click" size 24
+                        text "Быстр. выход" size 24
+                        text " — esc" size 24
+                        text "Прокрутка" size 24
+                        text " — mousewheel" size 24
+            
+                
+        text "Настройки" style style.text["computer-title"]
+        if home_button:
+            button action ShowTransient("computer_overlay") style style.button["home"]:
+                null width 86 height 38
+        else:
+            button action Hide("preferences") style style.button["back"]:
+                null width 86 height 38
+                
+    screen no_click:
+        modal True
+        
+        timer 5.0 action Hide("no_click")
+        </pre>

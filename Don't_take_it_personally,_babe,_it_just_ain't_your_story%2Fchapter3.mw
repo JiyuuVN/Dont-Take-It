@@ -1,0 +1,708 @@
+<pre>
+# FRIDAY, NOVEMBER 5, 2027
+label isabella_start:
+    st 9 0
+    $ date = "Friday, November 5, 2027"
+    $ save_name = "Chapter 3:\nYour Real Problem Iz..."
+    $ transition("bg black", "End of chapter 2.", black=True) # a week later
+    show john suit closed cross
+    
+    a 12
+    $ isabella_love = Conversation(arianna, isabella)
+    $ isabella_love.send(arianna, "Hey, so you never did tell me about the time you were in love. Did you want to tell me about it? It sort of sounded like you did.")
+    a 14
+    $ saw_eniko = Conversation(akira, kendall)
+    $ saw_eniko.send(akira, "i finally ended up watching the rest of eniko. ur right, it really IS awesome. what a cute couple, and a great ending ;_;")
+    a 12
+    $ trolling = Post(taylor, "is really curious if she's the only straight person in this whole class.")
+    a 6
+    $ sorry = Conversation(nolan, akira)
+    $ sorry.send(nolan, "Uh hey sorry about last night I know that was really abrupt. Its just that it was dinner time and my parents couldnt wait any longer, sry, I didnt mean to be a jerk or whatever.")
+    a 8
+    $ disturbing = Post(charlotte, "is kinda disturbed by what she's reading for Literature class...")
+    a 2
+    $ shit_sucks = Post(isabella, "Airy told me about the party this Friday. Sorry, I don't think I'll be able to go :/ But thanks for inviting me!", taylor)
+    a 1
+    $ saw_eniko.send(kendall, "yeah it really is super badass.\n\nbut... it's kinda got me thinking. i was going to fangirl out about it but i feel awkward.")
+    
+    j "Let me just warn you right now: this story is going to end in bloodshed."
+    
+    j "You'll find that you've become attached to a character, only for them to die senselessly, and it's going to hit hard."
+    
+    j "So I just want you to be forewarned that there isn't a happy ending here. You should know what you're getting into."
+    
+    show john suit normal
+    
+    j "There's a lot of value, of course, and I want you to take a good hard look at what that emotional impact means, despite the fact that you see it coming."
+    
+    j "This isn't a story about plot. It's a story about feeling. You definitely need to focus on that or you're going to feel like it's pointless."
+    
+    show bg classroom day with dissolve
+    
+    j "Yes, Kendall, you have a question?"
+    
+    show kendall uniform normal with dissolve
+    
+    k "Is the book like the movie?"
+    
+    "I figured one of the two class otaku would ask that; I just wasn't sure if it was going to be her or Akira. It annoys me all the same."
+    
+    show john suit annoyed
+    j "Battle Royale the book is nothing like the movie, aside from superficially having the same story. You have to understand, this is entirely serious."
+    
+    k "Gotcha, sir."
+    
+    hide kendall with dissolve
+    
+    j "So let me just give you some context for this tragedy, before we start."
+    
+    $ title(3, "YOUR REAL PROBLEM IZ...", "Friday, Nov. 5  — Tuesday, Nov. 15", "bg classroom day", "isabella uniform sad")
+    show john suit normal
+    
+    "I'm really excited about this unit. I think this could be the one that finally gets the people who don't normally pay attention into it."
+    
+    play music KEEPING_IT_REAL fadein 2.0
+    
+    "Sure, it's really long... but it's also incredibly exciting. I've got a good feeling about it."
+    
+    play sound BELL
+    st 12 0
+    
+    "The lunch bell rings. It's been down to just Charlotte and Isabella eating lunch in the classroom, ever since Akira has been... spending his time with Nolan instead."
+    
+    show kendall uniform worried with dissolve
+    
+    k "Hey, sir? Do you mind if I eat in here, too?"
+    
+    a 3
+    $ isabella_love.send(isabella, "Yeah... actually, I kinda do. It's a long story, though. :/ I mean, it's just... not the worst thing ever. I guess. But it sucks.")
+    
+    "Wow... I think that's probably the most she's ever said to me, ever."
+    
+    j "No, go right ahead."
+    
+    show kendall uniform happy
+    k "Thanks. You're a real bro, sir."
+    
+    show john suit awkward smile
+    j "Thanks, I think...?"
+    
+    "She goes off to join the other two girls in the classroom."
+    
+    show kendall uniform worried at shift_three_left with None #expr
+    show charlotte uniform normal at center #expr
+    show isabella uniform normal at three_right #expr
+    with dissolve
+    
+    k "Hey... um... 'sup, Charlotte?"
+    
+    a 5
+    $ sorry.send(akira, "np! it's okay bro, we were on the phone for like two hours anyway ^.^;;")
+    
+    c "Hiya, Kendall."
+    
+    show isabella uniform happy
+    i "You're both talking again?"
+    
+    a 3
+    $ saw_eniko.send(akira, "??? really? i would've thought you'd be on and on about how eniko is your waifu or something for sure")
+    a 2
+    $ sorry.send(nolan, "Lol true enough\n\nHey, why are we chatting like this when youre sitting right next to me anyway?? rofl")
+    
+    show charlotte uniform cross
+    c "Bella! There's no need to channel Akira."
+    
+    show isabella uniform uncomfortable
+    i "Sorry. I just meant, I'm glad."
+    
+    show isabella uniform happy
+    k "Only if you're okay with that. Sorry. I can still give you room if you want."
+    
+    a 3
+    $ sorry.send(nolan, "OMG STFU, dont say that, youre embarrassing me, lol")
+    
+    show charlotte uniform very happy
+    c "Don't be silly, of course I'm okay with that."
+    
+    show charlotte uniform happy
+    show kendall uniform blush
+    k "Sorry."
+    
+    c "Knock that off. Come on, this whole thing where we've been avoiding each other is silly, let's just both promise not to do that again."
+    
+    a 1
+    $ sorry.send(akira, ":3")
+    
+    show kendall uniform happy
+    k "'kay. I promise, Charlotte."
+    
+    c "Haha, oh, you still sound like you're trying too hard. Relax. Can't we just go back to plain old \"lol, bro\" Kendall?"
+    
+    a 1
+    $ sorry.send(nolan, "...catface?? Can you actually DO that?")
+    
+    show kendall uniform uncomfortable
+    "Kendall looks uncomfortable for a moment, but laughs."
+    
+    show kendall uniform smug
+    k "...lol. 'kay, sis, I can do that."
+    
+    c "That's better. It really is good to talk to you with the air clear, Kendall."
+    
+    show kendall uniform happy
+    k "Yeah..."
+    
+    "Meanwhile, I can't help but notice that Isabella looks as uncomfortable as I've ever seen her, caught awkwardly in their reconcilliation."
+    
+    a 2
+    $ isabella_love.send(arianna, "Don't worry about that. Come on, I'm your friend, you can tell me.")
+    
+    "I decide to...{nw}"
+    
+    menu:
+        extend ""
+        "...throw her a line.":
+            j "Hey, Isabella? Can you come here for a second?"
+            
+            hide kendall
+            hide charlotte
+            with dissolve
+            show isabella uniform normal at shift_center
+            
+            i "Yes, what is it?"
+            
+            show john suit sulky
+            j "Nothing. I just thought it looked like you needed an out from those two making up."
+            
+            show isabella uniform worried
+            i "Yeah... thanks. It's a bit awkward. I'm happy for them, though."
+            
+            show john suit normal
+            j "It seems like it's been a long time coming for those two? I've gathered that there's a lot of history."
+            
+            i "Yeah..."
+            
+            show isabella uniform normal
+            i "It's a long story."
+            
+            j "That's the impression I got."
+            
+            "There's an awkward pause."
+            
+            j "Anyway, you're welcome to stick around, or go back. I just thought you could use the choice."
+            
+            i "Thanks."
+            
+            i "No, I don't think I need to be in the middle of that."
+            
+            "Staring at her, it occurs to me that maybe it's not just an awkward silence; I think her mind's just somewhere else entirely."
+            
+            "Where... I have no idea."
+            
+            show john suit awkward smile
+            j "Is something the matter?"
+            
+            show isabella uniform non plussed
+            i "I'm not sure. Maybe."
+            
+            j "Okay. Well, if there is something..."
+            
+            i "Sure. I understand, it's just that I'm not sure myself right now. I'll let you know."
+            
+            show john suit uncomfortable
+            j "Sorry, no pressure or anything. I just wanted to put that out there."
+            
+            show isabella uniform embarassed
+            i "It's okay, I understand. Thanks."
+            
+        "...leave her alone.":
+            "I don't want to be presumptuous. Maybe she's actually interested in what they're saying."
+            
+            "I try to block it out, though; I'm glad they're talking, but clearly I'm missing way too much context to make sense of the situation."
+            
+            "All I can tell is that it seems like it's a long time coming for the two, and that there's a lot of history between them... although who knows what."
+            
+            "Instead I just focus on my lunch, and prep work for the next assignment."
+            
+            "Still..."
+            
+            "I keep getting distracted by Isabella."
+            
+            "It occurs to me that maybe I was wrong, she's not looking uncomfortable because of the conversation; I think her mind's just somewhere else entirely."
+            
+            "Where... I have no idea."
+            
+            "Is she okay? I sure hope so."
+    
+    $ saw_eniko.send(kendall, "it's not that. i mean i really liked it, it's awesome, and i do love eniko for reals. it's just... it's the fangirl thing in general i'm not feeling. feel kind of weird about the whole thing now. honestly feel kind of weird in general.")
+    $ disturbing.reply(akira, "yeah, for reals.")
+    $ disturbing.reply(taylor, "I know, what the hell is up with that?")
+    $ disturbing.reply(arianna, "I kind of like it, actually...")
+      
+# MONDAY, NOVEMBER 8, 2027    
+    $ date = "Monday, November 8, 2027"
+    $ love_poem = Post(akira, "a love poem, a looooooove poem~, a love love poem!")
+    $ transition("bg classroom day", "THREE DAYS LATER")
+    show john suit normal
+    
+    j "Okay, let's try something different today. Today we're going to focus on chapters 60 to 65 in particular: that's the whole lighthouse scene."
+    
+    play music SERIOUS_MORNING fadein 2.0
+    
+    j "I've put up three questions on the board. I'd like for you to break up into groups of two or three and answer them."
+    
+    "Immediately they all start chattering, figuring out who they'll partner with."
+    
+    a 5
+    $ Post(taylor, "is bored as hell in class.")
+    
+    j "It has to be with someone you haven't worked with this semester, though, if that's possible. Let's mix things up a bit."
+    
+    $ isabella_love.send(isabella, "His name was Alan Mason. He was my first boyfriend ever, back when I was 13, and... well, at least, if you ask me, we were dating. We spent all our lunch hours together, walked home together every day, and spent our evenings talking endlessly about the silly music we both liked. He was a year younger, and wasn't I guess the most mature boy around — all my friends always made fun of him — but I really admired him, you know?")
+    j "Okay, in half an hour, we'll go over each of your answers."
+    
+    "I clap my hands, and sit back down, letting them all get organized on their own."
+    
+    a 2
+    $ isabella_love.send(arianna, "Oh... you haven't been in love since you were 13?")
+    a 8
+    $ fagging_it_up = Conversation(arianna, taylor)
+    $ fagging_it_up.send(taylor, "Can you believe it? Nolan's snubbed me yet again, so he can just go keep fagging it up with Akira! It's hurtful — what the hell, has he just totally replaced me? Just like that? What a dick!")
+    
+    "I give them a few minutes to break apart into their own groups, and actually get started on talking about them. I have no idea how well this is going to go — I sure hope it works."
+    
+    a 4
+    $ wait(fagging_it_up)
+    $ love_poem.reply(taylor, "WTF")
+    
+    "...and of course, it's Taylor who seems to get distracted first."
+    
+    show taylor uniform disappointed at two_left
+    show charlotte uniform worried at two_right
+    with dissolve
+    
+    a 3
+    $ saw_eniko.send(akira, "sorry about the late reply, got distracted >.>; what do you mean by that?")
+    a 2
+    $ fagging_it_up.send(arianna, "Don't get too upset at him, it wasn't a personal snub! :(")
+    
+    show john suit closed cross
+    j "And how's your discussion going? Taylor?"
+    
+    show taylor uniform worried
+    t "Well, actually... I didn't quite get that far."
+    
+    show john suit cross
+    j "Uh huh."
+    
+    c "I've just been going over what happens with her, before we start to tackle the questions."
+    
+    j "Really."
+    
+    a 5
+    $ isabella_love.send(isabella, "It's not really like that. I mean, there's been a couple since, but never any serious. Honestly... it wasn't even really that serious with Alan, either.\n\nWe got together honestly mostly because it seemed like it was convenient to, and we broke up in the same way. If you ask him now, he'll even deny that we ever dated. I guess that's okay with me. It's not like it was ever really a big deal or anything...\n\nEvery so often I see him, and I just feel awful.")
+    a 2
+    $ love_poem.reply(kendall, "lolwut")
+    
+    show taylor uniform smug
+    c "Yes, Mr. Rook. Sorry, I've just been looking something up myself, because I couldn't quite remember the sequence of events."
+    
+    "...I guess I can't really call either of them on that excuse, then, as loath as I am to admit it. Dammit."
+    
+    a 6
+    $ isabella_love.send(arianna, "Why's that?")
+    a 1
+    $ love_poem.reply(akira, "A LOVE POEM.")
+    
+    show john suit annoyed
+    j "Alright. Carry on, then, but try to get to the questions quickly; you don't have {i}that{/i} much time."
+    
+    show charlotte uniform normal
+    c "Of course."
+    
+    hide taylor
+    hide charlotte
+    with dissolve
+    
+    scene bg classroom2 day
+    show john suit normal
+    show kendall uniform normal at two_left
+    show isabella uniform closed at two_right
+    with dissolve
+    
+    "...and then I turn my attention to the other group that {i}also{/i} doesn't seem to be being productive."
+    
+    a 2
+    $ isabella_love.send(isabella, "Every time we meet, it's always the same. He says we should see each other more than only every half a year accidentally, or something like that. And we agree that we should meet again soon and talk, catch up. And deep in my heart I hope that it leads to something more. That maybe now that we're both older and wiser we could have a real relationship; I'd love nothing more than that. I secretly dream of all the dates we could have that he would be proud to tell his friends about.\n\nWe never do, of course. We never even end up meeting that once to catch up. I saw him at a concert just the other month; and while all those possibilities flashed in my mind, I approached him, and we ended up going home together. Just like the old times. And we agreed we should meet up again soon to do something.\n\nBut we didn't, of course. We never do. It doesn't stop me from imagining it; but I realize, in all those fantasies of love... I don't know him at all. I don't think it's even him that matters, really, he just happens to fill the role. I'm in love with the idea of Alan Mason, and nothing more.")
+    a 3
+    $ love_poem.reply(nolan, "Omg your embarrassing me")
+    
+    show john suit cross
+    j "Ahem."
+    
+    k "'sup, sir?"
+    
+    show isabella uniform normal
+    "She doesn't even look up. Isabella does, briefly, but says nothing."
+    
+    show john suit closed cross
+    j "You're supposed to be discussing the questions, Kendall. Are you both really done already?"
+    
+    show kendall uniform bored
+    k "Lol, not much to discuss, sir. We're done."
+    
+    show john suit annoyed
+    j "Really."
+    
+    a 2
+    $ isabella_love.send(arianna, "That's so sad. It's really tragic that it never works out with you two!\n\nWhat are you going to do about it?")
+    a 1
+    $ love_poem.reply(akira, ":3")
+    
+    "Isabella says nothing, but nods."
+    
+    "I'm not impressed here, and I don't believe for a second that they talked about it. I doubt they've even read the chapters. I should...{nw}"
+    
+    menu:
+        extend ""
+        "...just move on.":
+            "Forget it. This one's hopeless."
+            
+        "...try to trip them up.":
+            j "If you're prepared to answer them already, then... let's take the first."
+            
+            j "How would you say that Takami uses grotesque death imagery as a form of emphasis in the lighthouse scene?"
+            
+            show kendall uniform uncomfortable
+            "Kendall looks up, and hesitates."
+            
+            j "Then you sho —"
+            
+            show kendall uniform closed
+            k "Implying that he does." 
+            
+            k "The whole point of the scene is that the grotesque imagery ain't there. It's unemphasized because it doesn't exist, and that's totes shocking."
+    
+            k "Like, realistically, the scene should be this bloody horror. If you think about it, it doesn't make any sense to have so many shooting deaths without any gore."
+            
+            k "But instead all that the protagonist notices is the death, not the crazy visceral stuff. The most important gore is the protagonist bleeding, but he's {i}alive{/i}."
+            
+            k "It's not the death that's grotesque. The death is just there. It's his blood that indicates he's alive that's grotesque, as he strains himself."
+            
+            show kendall uniform smug
+            k "Too long, didn't read: it uses grotesque {i}life{/i} imagery, not death. You're asking the wrong questions."
+            
+            "...well, she's certainly a smart-ass."
+            
+            "I'm not impressed by the way she's blowing me off entirely, but I can't say that she doesn't understand the material. It's {i}obnoxious{/i}, but... I can't scold her, it'd make me look like a jackass."
+            
+            "I think I'm going to have to hand her this one."
+            
+            show john suit surprised
+            j "Okay. That's a really interesting perspective, good work."
+            
+            k "Lol, 'kay."
+            
+            "...moving on..."
+            
+    a 5
+    $ love_poem.reply(nolan, "lol he is ACTUALLY MAKING THAT FACE RIGHT NOW it's hilarious")
+    a 2
+    $ isabella_love.send(isabella, "Kill myself, probably. It'd be less dramatic, and less stupid. :/")
+    a 2
+    $ saw_eniko.send(kendall, "i'm just... not really sure about it.\n\ni mean, normally, that's the thing to do after watching something awesome. downloadan the osts, makean wallpapers, talkan about the foreshadowing at the start, all that shit. and i mean i do like the music, and there are probably some great wallpapers, but it just feels like... you know that feeling? that really big empty one you get at the end of a show or book you really like? and you just do all those things in some sort of effort to cling onto it however you can? what the fuck is UP with that?\n\ni mean eventually you either find something else to fill that gap or you turn into one of those single-minded fangirls right? isn't that kind of ridiculous?\n\nyou know what the feeling reminds me of? it's fucking love. you fall in love for twelve episodes, then your heart gets broken, and then you listen to the soundtrack on repeat all day so it doesn't feel like it's over. isn't that kind of bullshit?\n\ntl;dr: man i don't even know. it just seems kinda fucked up.")
+    scene bg classroom day with dissolve
+    show john suit normal
+    
+    "The class discussion ends up going well enough, I guess."
+    
+    "Actually, I'm a little bit surprised; it sounds like Taylor actually managed to express an informed opinion for once, even if it was with the help of Charlotte."
+    
+    "Maybe there's hope for her yet."
+    
+    a 6
+    $ saw_eniko.send(akira, "this is about charlotte, isn't it? do you want to talk about it?")
+    
+    play sound BELL
+    st 12 0
+    
+    "When the lunch bell rings, it seems far too quick; and of course, even though I was midsentence, everyone immediately packs up their things."
+    
+    show kendall uniform normal at three_left
+    show charlotte uniform happy at center
+    show isabella uniform worried at three_right
+    with dissolve
+    
+    a 1
+    $ isabella_love.send(arianna, "That's awful! Don't even joke about that.")
+    
+    i "Excuse me, Mr. Rook?"
+    
+    j "Yes? How can I help you?"
+    
+    show isabella uniform uncomfortable
+    i "There's something I'd like to talk to you about."
+    
+    show isabella uniform worried
+    j "Of course, any time. Is this what was up earlier? Or would you rather talk about it somewhere more privately?"
+    
+    i "It is. Not right now, though. How about after school?"
+    
+    j "Certainly. Do you know where my office is?"
+    
+    a 2
+    $ saw_eniko.send(kendall, "...yeah. it's about charlotte. ._.; um honestly not really, sorry, i'm just kinda rambling. i'll let you know if i'm ever ready to talk about it.")
+    
+    i "Yes. Room twelve, right? I've been there several times."
+    
+    show john suit happy
+    j "Okay... great. I'll see you there, then."
+    
+    show isabella uniform happy
+    i "...thanks."
+    
+    "Awkward."
+    
+    "I wonder what's up with her. I hope this time it's actually something I can help with. I'm really not sure about her... she's {i}always{/i} so quiet. It worries me."
+    
+    i "Kendall, do you know where Akira is?"
+    
+    show kendall uniform smug
+    k "Off having sexy shenanigan with Nolan, prob'ly."
+    
+    a 3
+    $ saw_eniko.send(akira, "k. any time you do, bro, just let me know.")
+    
+    show charlotte uniform disappointed at center
+    c "Kendall..."
+    
+    k "I hope so, anyway. Bro deserves it!"
+    
+    c "That's not very helpful."
+    
+    show kendall uniform uncomfortable
+    
+    k "...sorry. Um, for serious, I think they've been eating lunch together up on the roof. I'd check there first, sis."
+    
+    i "Thanks."
+    
+    hide isabella with dissolve
+    show kendall uniform worried at shift_two_left
+    show charlotte uniform disappointed at shift_two_right
+    
+    show john suit sulky
+    j "Is it just me, or does she seem even more aloof than usual?"
+    
+    show charlotte uniform worried
+    c "Maybe. You should go easy on her, I think she has a lot going on right now."
+    
+    j "Yeah... I'm just worried."
+    
+    "More silence."
+    
+    "Realizing I'm just making a weird situation worse, I shrug, and go get my lunch, leaving the pair of them alone."
+    
+    "Truthfully... I don't think it helps."
+    
+    "There's still an unspoken tension in the air. Kendall and Charlotte are chatting, but... barely. I don't think it's because of me. I think there's just something else going on here."
+    
+    "Oh well..."
+    
+    $ goodbye = Post(isabella, "Goodbye, everyone. Sorry I couldn't stay, but... well, it's for the better.")
+    $ transition("bg classroom evening", "3:55 PM")
+    
+    python:
+        seen_posts_chan = False
+        posts_chan = [ ]
+        posts_chan.append(dict(_image="12chan/Dead Magical Girl.jpg", image_name="lilydies.jpg (16 MiB)", op=True, text="omg, eniko finale\n\ngoodbye lily-chan ;_;", number="248337501"))
+        posts_chan.append(dict(text="I KNOW, RIGHT?", number="248337583"))
+        posts_chan.append(dict(text="i can't believe she had to die like that ._. she was soooooo awesome.", number="248337978"))
+        posts_chan.append(dict(text="I actually kind of thought her death was a little drawn out, don't you think?", number="248338180"))
+        posts_chan.append(dict(text="wut", number="248338807"))
+        posts_chan.append(dict(text="Don't get me wrong! It was awesome in general! I LOVE Lily-chan so much, I would go hetero for her, no lie. And it's a great finale. I just thought her death... went on for way longer than it should have.", number="248339355"))
+        posts_chan.append(dict(_image="12chan/Shocked Face.jpg", image_name="hesaidwut.jpg (6 MiB)", text=">thought lily should have died sooner\n>mfw", number="248340232"))
+        posts_chan.append(dict(text="I just think it would have been better if she'd said nothing. It really took me out of it, it went on for too long. Real death doesn't last for five minutes.", number="248341091"))
+        posts_chan.append(dict(text="true story. but it was supposed to be super dramatic.", number="248341698"))
+        posts_chan.append(dict(text="Right, I just don't think dragging it out for so long helped. I think it pushed it into melodrama. And making it a joke... just felt kind of cheap.", number="248341936"))
+        posts_chan.append(dict(text="how would u do it, then?", number="248342387"))
+        posts_chan.append(dict(text="Hm... that's hard.", number="248342479"))
+        posts_chan.append(dict(text="Well, how about a sudden ending?", number="248342651"))
+    
+    "That's it for the day. Well... as far as classes go, anyway."
+    
+    "Outside, I can hear rather a set of voices shouting rather loudly in unison; cheerleaders, I suppose."
+    
+    "Isabella's probably already on her way to my office."
+    
+    $ wait_chan()
+    
+    "Well... that's enough dawdling from me. Time to go."
+    
+    scene bg hallway evening with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg office evening with dissolve
+    show john suit normal
+    
+    "I guess I got here first?"
+    
+    play music CONTEMPLATION fadein 2.0
+    
+    "Well, I can wait."
+    
+    "I sit down, and wait..."
+    
+    "Tapping my hand on the desk, impatiently..."
+    
+    "I look over my lesson plan for tomorrow. But unlike every other time, I can't see anything worth adjusting."
+    
+    "I wonder where she could be?"
+    
+    "She doesn't really seem like the sort of person to blow off an appointment like that. I hope everything's okay with her."
+    
+    "All the worst possibilities of what it could be race through my head. Maybe she got hurt? Maybe something happened? Maybe she couldn't bring herself to talk about it?"
+    
+    "Or maybe she...?"
+    
+    "I'm being ridiculous, I just have an overactive imagination is all. I'm sure she's fine. Something probably just came up and delayed her."
+    
+    "Or maybe she just got lost...?"
+    
+    "No, that can't be it. She knows what room this is, it's not a very big school, and she clearly knew where it was.{nw}"
+    
+    menu:
+        extend ""
+        "Wait for her":
+            "Still... there's no point in assuming something bad. It's probably nothing. I owe it to her to wait a little bit longer."
+            
+            "So I wait."
+            
+            "And wait."
+            
+            "...and wait."
+            
+            "All told, I sit in the office for an hour and a half. There's no sign of her at all."
+            
+            "Well, I'm sure she'll understand. I don't think I can wait any longer, the school's going to get locked up soon."
+    
+            scene bg hallway evening with dissolve
+            
+        "Look for her":
+            "Okay, maybe something's wrong. I should go look for her."
+            
+            scene bg hallway evening with dissolve
+            
+            "I do a quick walk of the hallways, looking around every corner. No sign of her."
+            
+            "I stop by every classroom of hers. The school's practically deserted by this time of evening; there's no sign of her."
+            
+            "Where could she possibly be?"
+            
+            "Finally, in desperation, I do another walk of the school, checking every single classroom I pass. Absolutely no sign of her at all."
+    
+    "I wonder what happened? I hope she's okay."
+    
+    scene bg street evening with dissolve
+    
+    "She didn't seem okay at all. I'm really worried."
+    
+    scene bg bedroom evening with dissolve
+    
+    "What could be wrong?"
+    
+# TUESDAY, NOVEMBER 9, 2027
+    $ date = "Tuesday, November 9, 2027"
+    $ transition("bg classroom day", "NEXT MORNING")
+    
+    "Once the bell rings, I do attendance, as always, but I can tell immediately who the only absence is: Isabella."
+    
+    show john suit surprised
+    j "Has anyone heard from Isabella at all?"
+    
+    $ bad_place = Conversation(kendall, akira)
+    $ bad_place.send(kendall, "sorry about yesterday. i wasn't really in a great place emotionally, lol, kinda had to get over myself there. i was being a total dramafag, sorry orz")
+    
+    j "Anyone...?"
+    
+    "The class is silent."
+    
+    $ bad_place.send(akira, "it's cool. it happens to everyone, bro. ^.^")
+    
+    show john suit uncomfortable
+    j "Does anyone know how to get ahold of her, then?"
+    
+    "Still more silence."
+    
+    show john suit awkward smile
+    j "Alright..."
+    
+    "I move on, there not really being anything else I can do. But the whole thing gives me a sinking feeling."
+    
+    $ goodbye.reply(akira, ";_;")
+    $ suicide = Post(akira, "hey, did you hear about bella? :(", kendall)
+    $ suicide.reply(kendall, "?? there's news?")
+    $ suicide.reply(akira, "yeah. she killed herself. right after the last we saw her, apparently.")
+    $ suicide.reply(kendall, "...holy shit")
+    $ suicide.reply(arianna, "Oh my god! Really?! I mean, I knew she was depressed, but...")
+    $ suicide.reply(nolan, "omg. Thats awful. I didnt really know her well, but damn.")
+    $ suicide.reply(arianna, "I can't believe she's gone...")
+    $ Post(akira, "goodbye, bella. i'm sorry you had to go that way.", isabella)
+    $ Post(arianna, "Why did you have to leave us?!", isabella)
+    $ Post(charlotte, "Rest in peace, Bella.", isabella)
+    $ Post(taylor, "Our friendship much have had rough spots, but it really sucks that you're gone.", isabella)
+    $ Post(kendall, "rip, sis. ;_;", isabella)
+# MONDAY, NOVEMBER 15, 2027
+    $ date = "Monday, November 15, 2027"
+    $ Conversation(john, admin).send(john, "Could I please have any contact information on file for Isabella Hart? She's been absent for several days and I'd like to get ahold of her parents, since I'm very concerned.\n\nThanks,\nJohn Rook").send(admin, "Mr. Rook,\n\nI'm sorry, but we don't have any current way of getting ahold of that students' parents at all. The phone number listed on file is marked as being out of date, but we were never able to update the records. Furthermore, that students' tuition is not in good standing. You shouldn't spend any more time worrying about it, it isn't worth the effort.")
+    $ transition("bg classroom rain", "NEXT WEEK")
+    show john suit normal
+    
+    "A week later, and I still haven't seen Isabella at all. And the school still has no way of getting ahold of her at all."
+    
+    play music RAINY_DAY fadein 2.0
+    
+    "It's hard not to assume the worst."
+    
+    "But there's nothing I can do about it, other than feel terrible about it. Maybe I should have insisted? Or gone looking for her that evening?"
+    
+    "What could have possibly happened to her?"
+    
+    "Still. There's nothing I can do; class still goes on without her."
+    
+    j "What do you think about the ending? Kendall, I'd really like to hear your thoughts."
+    
+    show kendall uniform bored with dissolve
+    
+    k "Um... well, I thought it was good. It ends on an effective note and makes a strong impression. Plus the repetition of the body count works well for it."
+    
+    j "Did you think that worked in the other parts of the novel, too?"
+    
+    k "For reals. It helps keep things structured."
+    
+    j "Good point. Any other thoughts? Or anyone else?"
+    
+    $ Post(taylor, "So... is it my turn to host the party this weekend?")
+    $ a_date = Conversation(akira, nolan)
+    $ a_date.send(nolan, "Hey\n\nDo you want to see a movie this Saturday or something? No big deal or anything I'm just wondering")
+    
+    hide kendall with dissolve
+    
+    "She sits down without any further word."
+    
+    "Charlotte raises her hand, and I pause before calling on her."
+    
+    "You know, the worst thing about it all is..."
+    
+    "I find myself thinking..."
+    
+    $ a_date.send(akira, "awwww. yeah, i'd love to, let's talk about it at lunch.")
+    
+    "...even though Isabella's gone, it's hard to even notice the difference. It doesn't feel like the dynamic of anything has changed, with her gone."
+    
+    $ a_date.send(nolan, "kk")
+    
+    "How utterly horrible is that?"
+    
+    jump charlotte_start
+    </pre>

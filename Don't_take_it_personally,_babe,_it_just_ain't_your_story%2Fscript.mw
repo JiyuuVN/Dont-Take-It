@@ -1,0 +1,600 @@
+<pre class="brush:python">
+# remember to credit iconsweets
+# give Katelyn a last name
+init -2 python:
+    def magic_show(name, at_list=[], layer='master', what=None, zorder=0, tag=None, behind=[ ], atl=None, transient=False, munge_name=True):
+        if isinstance(name, tuple):
+            blur_name = tuple(list(name) + [ "blur" ])
+        else:
+            blur_name = name + " blur"
+        renpy.show(name, at_list, layer, what, zorder, tag, behind, atl, transient, munge_name)
+        #if globals().has_key("show_ui"):
+        renpy.show(blur_name, at_list, 'blur', what, zorder, tag, behind, atl, transient, munge_name)
+
+    def magic_hide(name, layer='master'):
+        renpy.hide(name, layer)
+        renpy.hide(name, 'blur')
+        
+    def magic_scene(layer='master'):
+        renpy.scene(layer)
+        renpy.scene('blur')
+        hide_blur()
+
+init:
+    python:
+        katelyn_surname = MultiPersistent("scoutshonour.com").last_name or "Robinson"
+        katelyn_surname = katelyn_surname.capitalize()
+        
+        character_list = [ ]
+        if persistent.use_blur == None:
+            persistent.use_blur = True
+        
+        #_window_during_transitions = True
+        
+        class User:
+            def __init__(self, name, about="", birthday="", hometown="", gender="", interested_in="", religious_views="", political_views="", relationship_status="", phone="", profile=None):
+                self.name = name
+                self.about = about
+                self.birthday = birthday
+                self.hometown = hometown
+                self.gender = gender
+                self.interested_in = interested_in
+                self.religious_views = religious_views
+                self.political_views = political_views
+                self.relationship_status = relationship_status
+                self.phone = phone
+                self.profile = profile
+                
+                self.wall = [ ]
+                self.messages = [ ]
+                
+            def unread_messages(self):
+                unread_count = 0
+                
+                for i in self.messages:
+                    unread_count += i.unread()
+                    
+                return unread_count
+                
+            def unread_replies(self):
+                unread_count = 0
+                
+                for i in self.wall:
+                    unread_count += i.unread()
+                    
+                return unread_count
+                
+        class Conversation:
+            def __init__(self, sender, recepient):
+                sender.messages.append(self)
+                recepient.messages.append(self)
+                
+                self.parties = [ sender, recepient ]
+                self.messages = [ ]
+                
+            def send(self, sender, message, link=None):
+                if store.show_ui:
+                    renpy.music.play(NEW_MESSAGE, channel="sound")
+                self.messages.append(Message(sender, message, link))
+                return self
+                
+            def unread(self):
+                unread_count = 0
+                
+                for i in self.messages:
+                    if i.unread:
+                        unread_count += 1
+                
+                return unread_count
+                
+        class Message:
+            def __init__(self, sender, message, link=None):
+                self.message = message
+                self.sender = self.poster = sender
+                self.unread = True
+                self.post_time = date.split(", ")[1] + ", " + right_now()
+                self.link = link
+        
+        class Post:
+            def __init__(self, poster, message, recepient=None, picture=True):
+                global date
+                if not recepient:
+                    recepient = poster
+                recepient.wall.insert(0,self)
+                
+                if store.show_ui:
+                    renpy.music.play(NEW_MESSAGE, channel="sound")
+                
+                self.picture = picture
+                self.recepient = recepient
+                self.poster = poster
+                self.message = message
+                self._unread = True
+                self.replies = [ ]
+                self.post_time = date.split(", ")[1] + ", " + right_now()
+                
+                if poster is not recepient:
+                    has_posted = Post(poster, "написал(а) на стене " + recepient.name.split(" ")[0] + ".", picture=False)
+                    has_posted._unread = False
+                
+            def reply(self, sender, message):
+                if store.show_ui:
+                    renpy.music.play(NEW_MESSAGE, channel="sound")
+                self.replies.append(Message(sender, message))
+                if sender is not self.recepient:
+                    has_posted = Post(sender, "написал(а) на стене " + self.recepient.name.split(" ")[0] + ".", picture=False)
+                    has_posted._unread = False
+                return self
+                
+            def unread(self):
+                unread_count = int(self._unread)
+                
+                for i in self.replies:
+                    if i.unread:
+                        unread_count += 1
+                        
+                return unread_count
+            
+                
+        def register_character_images(name, hair, outfits, expressions, width, glasses=None, null=False, xoffset=0, reverse=False, mirror=False, hair_under=False, silhouette=False, yoffset=0):
+            def fn(tag):
+                return "sprites/" + name.capitalize() + "/" + name.capitalize() + "_" + tag + ".png"
+                
+            def blur_fn(tag):
+                return "blur/" + name.capitalize() + "_" + tag + ".png"
+                
+            def try_mirror(image, should_mirror, *args, **kwargs):
+                if should_mirror:
+                    return im.Flip(image, horizontal=True)
+                return image
+                
+            def register(expression, outfit, hair, image_name, extra=None, reverse=False, hair_under=False, silhouette=False):
+                if hair_under:
+                    sprite = im.Composite((width, 640), (xoffset,yoffset), fn(expression), (xoffset,yoffset), fn(hair), (xoffset,yoffset), fn(outfit) )
+                    blur_sprite = im.Composite((width, 640), (xoffset,yoffset), blur_fn(expression), (xoffset,yoffset), blur_fn(hair), (xoffset,yoffset), blur_fn(outfit))
+                elif not reverse:
+                    sprite = im.Composite((width, 640), (xoffset,yoffset), fn(expression), (xoffset,yoffset), fn(outfit), (xoffset,yoffset), fn(hair))
+                    blur_sprite = im.Composite((width, 640), (xoffset,yoffset), blur_fn(expression), (xoffset,yoffset), blur_fn(outfit), (xoffset,yoffset), blur_fn(hair))
+                    if extra:
+                        sprite = im.Composite((width, 640), (xoffset,yoffset), fn(expression), (xoffset,yoffset), fn(outfit), (xoffset,yoffset), fn(extra), (xoffset,yoffset), fn(hair))
+                        blur_sprite = im.Composite((width, 640), (xoffset,yoffset), blur_fn(expression), (xoffset,yoffset), blur_fn(outfit), (xoffset,yoffset), blur_fn(extra), (xoffset,yoffset), blur_fn(hair))
+                else:
+                    sprite = im.Composite((width, 640), (xoffset,yoffset), fn(outfit), (xoffset,yoffset), fn(expression), (xoffset,yoffset), fn(hair))
+                    blur_sprite = im.Composite((width, 640), (xoffset,yoffset), blur_fn(outfit), (xoffset,yoffset), blur_fn(expression), (xoffset,yoffset), blur_fn(hair))
+                    if extra:
+                        sprite = im.Composite((width, 640), (xoffset,yoffset), fn(outfit), (xoffset,yoffset), fn(expression), (xoffset,yoffset), fn(extra), (xoffset,yoffset), fn(hair))
+                        blur_sprite = im.Composite((width, 640), (xoffset,yoffset), blur_fn(outfit), (xoffset,yoffset), blur_fn(expression), (xoffset,yoffset), blur_fn(extra), (xoffset,yoffset), blur_fn(hair))
+                    
+                sprite = try_mirror(sprite, mirror)
+                blur_sprite = try_mirror(blur_sprite, mirror)
+                    
+                if not null:
+                    if silhouette:
+                        renpy.image(image_name + " silhouette", im.MatrixColor(sprite, im.matrix.brightness(-0.92)))
+                        renpy.image(image_name + " silhouette blur", im.MatrixColor(blur_sprite, im.matrix.brightness(-0.92)))
+                    else:
+                        renpy.image(image_name, sprite)
+                        renpy.image(image_name + " blur", blur_sprite)
+                        
+                        renpy.image(image_name + " null", Null())
+                else:
+                    renpy.image(image_name, Null())
+                    renpy.image(image_name + " blur", Null())
+                
+                renpy.image(image_name + " null blur", Null())
+                
+                #side_portraits.append(image_name)
+                #side_portraits.append(im.Crop(sprite, 0, 0, width, 372, yalign=1.0, xpos=220+xoffset, xanchor=1.0))
+                
+                #    side_portraits[image_name] = sprite#im.Crop(im.MatrixColor(sprite, im.matrix.brightness(-0.92)), 0, 0, width, 372, yalign=1.0, xpos=220+xoffset, xanchor=1.0)
+                #else:
+                side_portraits[image_name] = sprite#im.Crop(sprite, 0, 0, width, 372, yalign=1.0, xpos=220+xoffset, xanchor=1.0)
+                if silhouette:
+                    side_portraits[image_name] = im.MatrixColor(sprite, im.matrix.brightness(-0.92))
+                    
+                #renpy.cache_pin(side_portraits[image_name])
+            
+            #side_portraits = [ ]
+            side_portraits = { }
+            for outfit in outfits:
+                outfit_name = outfit.split("_")[1].replace("-", " ")
+                for expression in expressions:
+                    expression_name = expression.split("_")[1].replace("-", " ")
+                    
+                    if not glasses:
+                        register(expression, outfit, hair, name + " " + outfit_name + " " + expression_name, reverse=reverse, hair_under=hair_under, silhouette=silhouette)
+                    else:
+                        register(expression, outfit, hair, name + " " + outfit_name + " " + expression_name, glasses, reverse=reverse, hair_under=hair_under, silhouette=silhouette)
+                        register(expression, outfit, hair, name + " " + outfit_name + " " + expression_name + " bare", reverse=reverse, hair_under=hair_under, silhouette=silhouette)
+            
+            def displayable_func(st, at):
+                for key in side_portraits:
+                    if renpy.showing(key):
+                        return side_portraits[key], None
+            
+            return DynamicDisplayable(displayable_func)        
+            #return ShowingSwitch(*side_portraits)
+            
+            
+        def unread_total(use_conversation=False):
+            all_unread = [ ]
+            for character in character_list:
+                for conversation in character.messages:
+                    if use_conversation:
+                        if conversation.unread() and conversation not in all_unread:
+                            all_unread.append(conversation)
+                    else:
+                        for message in conversation.messages:
+                            if message.unread and message not in all_unread:
+                                all_unread.append(message)
+                            
+            return all_unread
+            
+        def unread_posts():
+            unread_count = 0
+            
+            for character in character_list:
+                unread_count += character.unread_replies()
+                
+            return unread_count
+
+        def wait(waiting_on):
+            if len(unread_total()) + unread_posts() > 0:
+                messages = [ "Но прежде чем продолжу, надо всё таки прочитать эти сообщения. Индикатор показывает " + str(len(unread_total()) + unread_posts()) + ".", "Правда, надо бы хоть мельком глянуть.", "Надо завести привычку просматривать их постоянно, мало ли чего." ]
+            else:
+                messages = [ "Но прежде чем продолжу, надо всё таки прочитать эти сообщения. Индикатор показывает что есть письма для меня.", "Правда, надо бы хоть мельком глянуть.", "Надо завести привычку читать свои письма тоже." ]
+            messages.reverse()
+            
+            if waiting_on.unread():
+                while waiting_on.unread():
+                    renpy.choice_for_skipping()
+                    narrator(messages[-1])
+                    messages.insert(0, messages.pop(-1))
+                narrator("Вот и всё. Можно и продолжить.")
+                
+        def wait_chan():
+            messages = [ "Но прежде чем пойду, надо бы прерваться и посмотреть, что есть нового в 12чаннеле.", "Правда, надо бы хоть мельком глянуть.", "Прямо сейчас всё равно к себе в кабинет не пойду. Есть пара минуть чтобы проверить." ]
+            messages.reverse()
+            
+            while not store.seen_posts_chan:
+                renpy.choice_for_skipping()
+                narrator(messages[-1])
+                messages.insert(0, messages.pop(-1))
+                
+        def transition(new_scene, title, black=False, end=False):
+            store.posts_chan = [ ]
+            renpy.music.stop()
+            renpy.music.stop(channel="sound")
+            renpy.music.play(TRANSITION, loop=False, channel="sound")
+            store.show_ui = False
+            store._window = False
+            renpy.shown_window()
+            config.scene()
+            if black or end:
+                renpy.show("bg black")
+            else:
+                renpy.show("bg white")
+            renpy.with_statement(ComposeTransition(pixellate, dissolve))
+            renpy.shown_window()
+            if end:
+                bottom_right(title)
+            elif not black:
+                centered("{font=fonts/MetaBoldLFC.otf}{size=72}" + title + "{/size}{/font}{fast}") 
+            else:
+                centered("{font=fonts/MetaBoldLFC.otf}{size=72}{color=#fff}" + title + "{/color}{/size}{/font}{fast}")
+            renpy.with_statement(dissolve)
+            config.scene()
+            config.show(new_scene)
+            store._window = True
+            renpy.with_statement(dissolve)
+            if not black and not end:
+                store.show_ui = True
+            
+        def title(chapter, title, date, new_scene, character, title2=""):
+            renpy.music.stop("sound")
+            store._window = False
+            config.scene()
+            config.show("bg black")
+            renpy.with_statement(dissolve)
+            renpy.show_screen("chapter", chapter=str(chapter), title=title, title2=title2, date=date, character=character)
+            #renpy.choice_for_skipping()
+            renpy.pause(1.5)
+            if _preferences.get_volume("sfx") > 0:
+                renpy.music.play("music/jingle_014.mp3", loop=False, channel="sound")
+                #renpy.choice_for_skipping()
+                renpy.pause(4.0)
+            config.show(new_scene)
+            store._window = True
+            store.show_ui = True
+            renpy.with_statement(dissolve)
+            renpy.hide_screen("chapter")
+            
+        def advance(amount):
+            store.game_time = store.game_time[0],store.game_time[1]+amount
+            while store.game_time[1] >= 60:
+                store.game_time = store.game_time[0]+1,store.game_time[1]-60
+    
+        COOL_MORNING = "music/hiphop_001.mp3"
+        SERIOUS_MORNING = "music/hiphop_007.mp3"
+        EASY_GOING = "music/hiphop_004.mp3"
+        DAY_TO_DAY = "music/hiphop_015.mp3"
+        KEEPING_IT_REAL = "music/hiphop_019.mp3"
+        RARIBOU = "music/raribou.mp3"
+        NEW_MESSAGE = "music/62.mp3"
+        TRANSITION = "music/se_006.mp3"
+        MIDNIGHT = "music/ambient_001.mp3"
+        RAINY_DAY = "music/kokoroyami.mp3"
+        REFLECTION = "music/eok.mp3"
+        CONTEMPLATION = "music/june6_018.mp3"
+        QUIET_DAY = "music/june6_006.mp3"
+        UNSETTLING = "music/june6_016.mp3"
+        BELL = "music/school_bell.wav"
+        SACCHARINE = "music/makkakka.mp3"
+        COOL_AND_HEAVY = "music/sora_009.mp3"
+        LIGHTNING_KICK = "music/haruurara.mp3"
+        ICHIGO_STRIKES_BACK = "music/koibana.mp3"
+        FEELINGS = "music/feelings.mp3"
+                        
+    image bg office day = "bg/office-day.jpg"
+    image bg office evening = "bg/office-evening.jpg"
+    image bg office rain = "bg/office-rain.jpg"
+    image bg classroom day = "bg/classroom-day.jpg"
+    image bg classroom evening = "bg/classroom-evening.jpg"
+    image bg classroom rain = "bg/classroom-rain.jpg"
+    image bg classroom dark = "bg/classroom-dark.jpg"
+    image bg classroom2 day = "bg/classroom2-day.jpg"
+    image bg hallway day = "bg/hallway-day.jpg"
+    image bg hallway evening = "bg/hallway-evening.jpg"
+    image bg hallway rain = "bg/hallway-rain.jpg"
+    image bg street day = "bg/street-day.jpg"
+    image bg street rain = "bg/street-rain.jpg"
+    image bg street evening = "bg/street-evening.jpg"
+    image bg littlejapan day = "bg/littlejapan-day.jpg"
+    image bg littlejapan evening = "bg/littlejapan-evening.jpg"
+    image bg bedroom day = "bg/bedroom-day.jpg"
+    image bg bedroom evening = "bg/bedroom-evening.jpg"
+    image bg outside day = "bg/outside-day.jpg"
+    image bg rooftop day = "bg/rooftop-day.jpg"
+    
+    image bg kiss = "bg/kiss.jpg"
+    image bg akiranolan = "bg/akira-nolan.jpg"
+    image bg sake = "bg/sake.jpg"
+    image bg ariannabed = "bg/ariannabed.jpg"
+    image bg montage = "montage.jpg"
+    
+    image bg office day blur = "blur/office-day.jpg"
+    image bg office evening blur = "blur/office-evening.jpg"
+    image bg office rain blur = "blur/office-rain.jpg"
+    image bg classroom day blur = "blur/classroom-day.jpg"
+    image bg classroom evening blur = "blur/classroom-evening.jpg"
+    image bg classroom rain blur = "blur/classroom-rain.jpg"
+    image bg classroom dark blur = "blur/classroom-dark.jpg"
+    image bg classroom2 day blur = "blur/classroom2-day.jpg"
+    image bg hallway day blur = "blur/hallway-day.jpg"
+    image bg hallway evening blur = "blur/hallway-evening.jpg"
+    image bg hallway rain blur = "blur/hallway-rain.jpg"
+    image bg street day blur = "blur/street-day.jpg"
+    image bg street rain blur = "blur/street-rain.jpg"
+    image bg street evening blur = "blur/street-evening.jpg"
+    image bg littlejapan day blur = "blur/littlejapan-day.jpg"
+    image bg littlejapan evening blur = "blur/littlejapan-evening.jpg"
+    image bg bedroom day blur = "blur/bedroom-day.jpg"
+    image bg bedroom evening blur = "blur/bedroom-evening.jpg"
+    image bg outside day blur = "blur/outside-day.jpg"
+    image bg rooftop day blur = "blur/rooftop-day.jpg"
+    
+    image bg kiss blur = "blur/kiss.jpg"
+    image bg akiranolan blur = "blur/akira-nolan.jpg"
+    image bg sake blur = "blur/sake.jpg"
+    image bg ariannabed blur = "blur/ariannabed.jpg"
+    image bg montage blur = "blur/montage.jpg"
+    
+    image bg black = Solid((0,0,0,255))
+    image bg white = Solid((255,255,255,255))
+    image bg black blur = Solid((0,0,0,255))
+    image bg white blur = Solid((255,255,255,255))
+    
+    image montage = im.Alpha("montage.jpg", 0.3)
+    image john special = im.Composite(None, (0,0), "sprites/John/John_0020_suit.png", (0,0), "sprites/John/John_0007_uncomfortable.png", (0,0), "sprites/John/John_0001_glasses.png", (0,0), "sprites/John/John_0000_hair.png")
+    
+    $ k = Character("Кендалл", show_side_image=register_character_images("kendall", "0000_hair", [ "0001_uniform", "0002_casual1", "0003_casual2" ], [ "0004_smug", "0005_bored", "0006_awkward-smile", "0007_embarassed", "0008_forceful", "0009_wince", "0010_closed", "0011_sad", "0012_blush", "0013_surprised", "0014_uncomfortable", "0015_very-happy", "0016_worried", "0017_cross", "0018_happy", "0019_normal" ], 240))
+    $ c = Character("Шарлотта", show_side_image=register_character_images("charlotte", "0000_hair", [ "0002_uniform", "0003_uniform2", "0004_casual" ], [ "0005_awkward-smile", "0006_smug", "0007_disappointed", "0008_upset", "0009_forceful", "0010_wince", "0011_closed", "0012_sad", "0013_embarassed", "0014_surprised", "0015_uncomfortable", "0016_very-happy", "0017_worried", "0018_cross", "0019_happy", "0020_normal" ], 267, "0001_glasses"))
+    $ j = Character("Джон", show_side_image=register_character_images("john", "0000_hair", [ "0019_casual", "0020_suit" ], [ "0002_surprised", "0003_annoyed", "0004_smug", "0005_blushing", "0006_embarassed", "0007_uncomfortable", "0008_closed-amused", "0009_closed-cross", "0010_closed", "0011_sympathetic", "0012_awkward-smile", "0013_sulky", "0014_upset", "0015_cross", "0016_very-happy", "0017_happy", "0018_normal" ], 321, "0001_glasses", True, 30, True))
+    $ ar = Character("Арианна", show_side_image=register_character_images("arianna", "0000_hair", [ "0001_uniform", "0002_casual1", "0003_casual2" ], [ "0004_smug", "0005_disappointed", "0006_awkward-smile", "0007_upset", "0008_forceful", "0009_wince", "0010_closed", "0011_sad", "0012_embarassed", "0013_surprised", "0014_uncomfortable", "0015_very-happy", "0016_worried", "0017_cross", "0018_happy", "0019_normal" ], 240))
+    $ t = Character("Тэйлор", show_side_image=register_character_images("taylor", "0001_bun", [ "0002_uniform", "0003_casual" ], [ "0004_smug", "0005_disappointed", "0006_awkward-smile", "0007_upset", "0008_forceful", "0009_wince", "0010_closed", "0011_sad", "0012_embarassed", "0013_surprised", "0014_uncomfortable", "0015_very-happy", "0016_worried", "0017_cross", "0018_happy", "0019_normal" ], 200))
+    $ i = Character("Изабелла", show_side_image=register_character_images("isabella", "0000_hair", [ "0001_uniform", "0002_casual" ], [ "0003_smug", "0004_non-plussed", "0005_exacerbated", "0006_upset", "0007_forceful", "0008_wince", "0009_closed", "0010_sad", "0011_embarassed", "0012_surprised", "0013_uncomfortable", "0014_very-happy", "0015_worried", "0017_happy", "0018_normal" ], 254))
+    $ n = Character("Нолан", show_side_image=register_character_images("nolan", "0000_hair", [ "0021_casual1", "0022_casual2", "0023_uniform" ], [ "0002_smug", "0003_disappointed", "0004_upset", "0005_surprised", "0006_sulky", "0007_sad", "0008_closed", "0009_bored", "0010_angry", "0011_cross", "0012_bothered", "0013_speechless", "0014_awkward-smile", "0015_embarassed", "0016_super-happy", "0017_very-happy", "0018_amused", "0019_happy", "0020_normal" ], 329, reverse=True, mirror=True, xoffset=-40))
+    $ ak = Character("Акира", show_side_image=register_character_images("akira", "0001_hair", [ "0027_casual1", "0028_casual2", "0029_uniform", "0030_uniform2" ], [ "0002_smug", "0003_bored", "0004_upset", "0005_awkward-smile", "0006_very-upset", "0007_sad", "0008_uncomfortable", "0009_sulky", "0010_angry", "0011_cross", "0012_indignant", "0013_bothered", "0014_speechless", "0015_closed", "0016_closed-happy", "0017_very-happy", "0018_super-happy", "0019_affectionate", "0020_forceful", "0021_embarassed", "0022_blushing", "0023_normal", "0024_happy", "0025_amused" ], 260, reverse=True))
+    
+    $ anon_a = Character("Анонимус", show_side_image=register_character_images("akira", "0001_hair", [ "0030_uniform2" ], [ "0023_normal" ], 260, reverse=True, silhouette=True))
+    $ anon_k = Character("Анонимус", show_side_image=register_character_images("kendall", "0000_hair", [ "0001_uniform" ], [ "0019_normal" ], 240, silhouette=True))
+    
+    $ ich = Character("Мисс Ямазаки", show_side_image=register_character_images("ichigo", "0002_hair", [ "0000_suit", "0001_casual" ], [ "0003_sad", "0004_blush", "0005_upset", "0006_embarassed", "0007_very-happy", "0008_worried", "0009_cross", "0010_happy", "0011_normal" ], 237, hair_under=True, yoffset=42))
+    $ y = Character("???", show_side_image=register_character_images("yukata", "0000_hair", [ "0001_yukata" ], [ "0002_sad", "0003_blushing", "0004_surprised", "0005_uncomfortable", "0006_happy", "0007_embarassed", "0008_cross", "0009_very-happy", "0010_normal" ], 287, yoffset=40))
+    
+    $ credit = Character("", what_size=44, what_suffix="{fast}{w=5}{nw}", window_yalign=1.0, window_xalign=0, window_left_padding=30, window_background=None, what_color="#000", what_drop_shadow_color=((0,0,0,64)))
+    
+    transform center:
+        xanchor 0.5 xpos 0.5 yalign 1.0
+        
+    transform two_left:
+        xanchor 1.0 xpos 0.5 yalign 1.0
+        
+    transform two_right:
+        xanchor 0 xpos 0.5 yalign 1.0
+        
+    transform three_left:
+        xanchor 1.0 xpos 0.35 yalign 1.0
+        
+    transform three_right:
+        xanchor 0 xpos 0.65 yalign 1.0
+        
+    transform four_left:
+        xanchor 0 xpos 0 yalign 1.0
+        
+    transform four_right:
+        xanchor 1.0 xpos 1.0 yalign 1.0
+        
+    transform five_right:
+        xanchor 0.5 xpos 0.7 yalign 1.0
+        
+    transform five_left:
+        xanchor 0 xpos -50 yalign 1.0
+        
+    transform title_pos:
+        xanchor 1.0 xpos 0.3 yalign 1.0
+        
+    transform shift_center:
+        linear 0.5 xalign 0.5 yalign 1.0
+        
+    transform shift_two_left:
+        linear 0.5 xanchor 1.0 xpos 0.5 yalign 1.0
+        
+    transform shift_two_right:
+        linear 0.5 xanchor 0.5 xpos 0.65 yalign 1.0
+        
+    transform shift_three_left:
+        linear 0.5 xanchor 1.0 xpos 0.35 yalign 1.0
+        
+    transform shift_three_right:
+        linear 0.5 xanchor 0 xpos 0.65 yalign 1.0
+        
+    transform shift_four_left:
+        linear 0.5 xanchor 0 xpos 0 yalign 1.0
+        
+    transform shift_four_right:
+        linear 0.5 xanchor 1.0 xpos 1.0 yalign 1.0
+        
+    transform shift_five_right:
+        linear 0.5 xanchor 0.5 xpos 0.7 yalign 1.0
+        
+    transform just_crop:
+        crop ((1024-657), 0, 657, 640) xalign 1.0
+        
+    transform dont_show:
+        alpha 0
+        
+    transform fadein:
+        alpha 0
+        linear 1.0 alpha 1.0
+        
+    transform portrait_pos:
+        xanchor 1.0 xpos 220
+        yanchor 372 ypos 1.0
+        
+    image kendall_credits:
+        "credits/kendall.jpg"
+        xanchor 0 xpos 1024 yanchor 0 ypos 222
+        easein 3.0 xpos 391
+        
+    image akira_credits:
+        "credits/akira.jpg"
+        xanchor 0 xpos 805 yanchor 0 ypos -200
+        easein 3.0 ypos 426
+        
+    image nolan_credits:
+        "credits/nolan.jpg"
+        xanchor 0 xpos 599 yanchor 0 ypos 640
+        easein 3.0 ypos 426
+        
+    image charlotte_credits:
+        "credits/charlotte.jpg"
+        xanchor 0 xpos 1024 yanchor 0 ypos 222
+        easein 3.0 xpos 599
+        
+    image taylor_credits:
+        "credits/taylor.jpg"
+        xanchor 0 xpos -200 yanchor 0 ypos 426
+        easein 3.0 xpos 391
+        
+    image isabella_credits:
+        "credits/isabella.jpg"
+        xanchor 0 xpos 805 yanchor 0 ypos -200
+        easein 3.0 ypos 222
+        
+    image arianna_credits:
+        "credits/arianna.jpg"
+        xanchor 0 xpos 1024 yanchor 0 ypos 18
+        easein 3.0 xpos 391
+
+label main_menu:
+    scene bg montage
+    call screen main_menu
+
+label waiting:
+    python:
+        if len(unread_total()) + unread_posts() > 0:
+            messages = [ "Но прежде чем я продолжу, надо всё таки прочитать эти сообщения. Индикатор показывает " + str(len(unread_total()) + unread_posts()) + ".", "Правда, надо бы их просмотреть.", "Надо завести привычку просматривать их постоянно, мало ли чего." ]
+        else:
+            messages = [ "Но прежде чем я продолжу, надо всё таки прочитать эти сообщения. Индикатор показывает что есть письма для меня.", "Правда, надо бы их просмотреть.", "Надо завести привычку читать свои письма тоже." ]
+        messages.reverse()
+ 
+        if waiting_on.unread():
+            while waiting_on.unread():
+                renpy.choice_for_skipping()
+                narrator(messages[-1])
+                messages.insert(0, messages.pop(-1))
+        narrator("Вот и всё. Можно и продолжить.")
+        
+    return
+
+# The game starts here.
+label start:
+    python:
+        admin = User("Администратор")
+        john = User("Джон Рук")
+        nanasi = User("нанаси")
+        
+        arianna = User("Арианна Бель-Эссе", "Просто девушка.", "23 декабря 2010", "Лэйк Сити, Онтарио", "Женский", "Мужчины", "Атеист", "Либеральные", "Свободна", "1 186.698.3389", "profiles/arianna.jpg")
+        kendall = User("Кендал Флауерс", "Давайте проживем героически, давайте проживем стильно!", "26 июня 2010", "Лэйк Сити, Онтарио", "Женский", "Девушки", "Быть отличной от других", "Лолитика", "ОЧЕНЬ свободна", "1 186.226.5519", "profiles/kendall.jpg")
+        taylor = User("Тэйлор Гибсон", "Я веселая и милая. Узнайте меня вначале!", "30 апреля 2010", "Лэйк Сити, Онтарио", "Женский", "Парни", "Атеизм", "Кого волнует?", "Свободна", "1 186.229.7183", "profiles/taylor.jpg")
+        charlotte = User("Шарлотта Грюваль", "Люди — это нечто большее, чем жалкие строчки в анкетах.", "20 июня 2010", "Лэйк Сити, Онтарио", "Женский", "Люди", "Буддизм", "Либеральные", "Свободна", "1 186.649.0183", "profiles/charlotte.jpg")
+        isabella = User("Изабелла Харт", "Вся хитрость в том, чтобы дышать.", "30 декабря 2010", "Аякс, Онтарио", "Женский", "...", "Агностик", "Мечтаю о справедливом обществе.", "Нет.", "Не звоните, я им не пользуюсь.", "profiles/isabella.jpg")
+        nolan = User("Нолан Штруйкас", "Что здесь сказать?", "1 марта 2010", "Лэйк Сити, Онтарио", "Мужской", "Девушки", "Христианство", "Нахуй политику, просто будь честным", "Свободен", "1 186.129.3819", "profiles/nolan.jpg")
+        akira = User("Акира Ямазаки", "ДЕРЖИ МЕНЯ КРЕПКО~ так крепко, что можно сломать! И тогда даже в сильную метель мне не будет холодно~", "18 сентября 2012", "Саппоро, Япония", "Мужской", "Девушки", "Церковь Мегами Мелоди-самы", "ГОСПОДСТВО ПЛАМЕННОГО ПРАВОСУДИЯ!", "Не интересуюсь.", "1 186.295.0283", "profiles/akira.jpg")
+        
+        ichigo = User("Ичиго Ямазаки", "", "", "", "", "", "", "", "", "", "profiles/ichigo.jpg")
+        taylor2 = User("Тэйлор Гибсон", "Я веселая и милая. Узнайте меня вначале!", "30 апреля 2010", "Лэйк Сити, Онтарио", "Женский", "Парни", "Атеизм", "Кого волнует?", "Свободна", "1 186.229.7183", "profiles/taylor.jpg")
+        
+        character_list = [ arianna, kendall, taylor, charlotte, isabella, nolan, akira ]
+        show_ui = False
+        game_time = 11,32
+        date = "Среда, 20 ноября 2027"
+        posts_chan = [ ]
+        seen_posts_chan = False
+        
+        password = ""
+        bottom_right = centered.copy(window_xalign=0.9, window_yalign=0.9, what_text_align=1.0, what_color="#fff", what_size=64)
+        
+        renpy.layer_at_list([ dont_show ], layer='blur')
+    window show 
+    jump first_day
+    
+label credits:
+    window hide
+    play music FEELINGS
+    show bg white with None
+    show screen no_click
+    $ renpy.show("kendall_credits")
+    credit "Story and code\n{size=58}{b}Christine Love{/b}{/size}" with dissolve
+    show screen no_click
+    $ renpy.show("akira_credits")
+    credit "Event and profile art\n{size=58}{b}Auro-Cyanide{/b}{/size}" with dissolve
+    show screen no_click
+    $ renpy.show("nolan_credits")
+    credit "Character art\n{size=58}{b}Tokudaya{/b}{/size}\n\nBackground art\n{size=58}{b}Kimagure After{/b}{/size}\n\nIcons\n{size=58}{b}iconsweets2{/b}{/size}" with dissolve
+    show screen no_click
+    $ renpy.show("charlotte_credits")
+    credit "Music\n{size=58}{b}Rengoku Teien{/b}{/size}\n\n\n\nMusic\n{size=58}{b}propanmode{/b}{/size}" with dissolve
+    show screen no_click
+    $ renpy.show("taylor_credits")
+    credit "Playtesting\n{size=58}{b}Alex Androski{/b}{/size}\n\nPlaytesting\n{size=58}{b}@phoenix_red{/b}{/size}\n\nPlaytesting\n{size=58}{b}Raide{/b}{/size}\n\nPlaytesting\n{size=58}{b}Shadocchi{/b}{/size}" with dissolve
+    stop music fadeout 10.0
+    show screen no_click
+    $ renpy.show("arianna_credits")
+    credit "Special thanks to\n{size=58}{b}Tom Rothamel{/b}{/size}\nCreator of Ren'Py" with dissolve
+    show screen no_click
+    $ renpy.show("isabella_credits")
+    credit "And...\n                        {size=58}{b}YOU{/b}{/size}" with dissolve
+    return
+</pre>

@@ -1,0 +1,1099 @@
+<pre>
+# FRIDAY, OCTOBER 29, 2027
+label nolan_start:
+    st 9 30
+    $ date = "Friday, October 29, 2027"
+    $ save_name = "Chapter 2:\nNolan is an Island, Entire of Itself"
+    $ transition("bg black", "End of chapter 1.", end=True) # one week later
+    $ show_ui = False
+    a 12
+    $ season_finale = Post(kendall, "tell me i'm not the only one who saw the finale of eniko last night. that was THE MOST AMAZING THING. omg.")
+    $ coming_out = Conversation(akira, kendall)
+    a 8
+    $ coming_out.send(kendall, "hey, bro, what's up? you seem kinda distant. moreso than usual, even. things okay??")
+    a 5
+    $ coming_out.send(akira, "um, sorry. just been grappling with some personal stuff. things have been kind of... confusing lately. actually, um, can i ask you for advice? :/")
+    a 2
+    $ coming_out.send(kendall, "of course, bro, always. what about?")
+    a 1
+    $ season_finale.reply(charlotte, "What's that?")
+    
+    show john suit closed
+    
+    j "What does it mean to be a gentleman?"
+    
+    j "Is it an outdated concept? Or is there really a perfect model for a man in particular to follow that's still relevant to our times? Does it matter?"
+    
+    j "And is that truly a good thing?"
+    
+    j "According to L.J. Powell, before you can ask that question, you first have to ask one simple question: what does it {i}mean{/i} to be a gentleman?"
+    
+    show john suit normal
+    
+    j "I'll jump in to what Powell thinks in a minute... but first, what do you think it means? Just the first thing that comes to mind."
+    
+    scene bg classroom day with dissolve
+    show john suit normal
+    
+    "The class pauses for longer than I'd like, given that I just threw them the easiest question imaginable."
+    
+    "And predictably, the first hand to go up is Charlotte's."
+    
+    j "Go ahead. Just tell me anything."
+    
+    show charlotte uniform normal with dissolve
+    
+    c "This is a little bit obvious, but... chivalry? As in, holding the door open for a woman?"
+    
+    "...yes, it is a little bit obvious."
+    
+    hide charlotte with dissolve
+    
+    show john suit annoyed
+    j "Right, that's definitely one."
+    
+    j "How about... okay, Taylor?"
+    
+    "I'm definitely surprised to see her put up her hand."
+    
+    show taylor uniform cross with dissolve
+    
+    t "Knowing how to be respectful to a girl! For example, a gentleman wouldn't treat a girl like crap just because they've broken up."
+    
+    "I stare at her. There's more than just a touch of bitterness to her voice."
+    
+    "I wonder who she's really talking about?"
+    
+    $ title(2, "NOLAN IS AN ISLAND", "Friday, Oct. 29  — Wednesday, Nov. 3", "bg classroom day", "nolan uniform disappointed", title2="ENTIRE OF ITSELF")
+    show john suit normal
+    
+    st 12 0
+    play sound BELL
+    "The lunch bell rings, and the class starts to file out."
+    
+    play music KEEPING_IT_REAL fadein 2.0
+    
+    if arianna_kiss:
+        j "Arianna?"
+        
+        show arianna uniform worried with dissolve
+        
+        ar "Yes, Mr. Rook?"
+        
+        show john suit happy
+        j "Could I see you after class?"
+        
+        "I smile, trying to let her know that nothing's wrong — I'm not going to say it in front of the class, I just want to make plans to take her out this weekend."
+        
+        show arianna uniform awkward smile
+        ar "S-sure!"
+        
+        hide arianna with dissolve
+        
+        "I nod, and she turns away. As she walks away, I notice her swaying her hips... man, what a tease. It takes me a moment to focus again."
+    
+    "Meanwhile, sticking around behind are the usual group."
+    
+    show charlotte uniform normal at three_left
+    show akira uniform2 sulky at center
+    show isabella uniform non plussed at three_right
+    with dissolve
+    
+    a 13
+    $ season_finale.reply(kendall, "um, digital girl eniko. it's a shoujo-ai anime, just finished in japan.")
+    
+    ak "So Charlotte, when are you going to forgive Kendall?"
+    
+    i "Huh?"
+    
+    show charlotte uniform uncomfortable
+    c "Forgive? What are you talking about?"
+    
+    show akira uniform2 indignant
+    ak "I don't like having to avoid either one of my friends or the other! Can't you two just go back to getting along?"
+    
+    show akira uniform2 sulky
+    c "I don't see why you think we don't get along."
+    
+    show isabella uniform exacerbated
+    i "Leave it alone, Akira."
+    
+    ak "Don't you think so, Mr. Rook? Wouldn't it be better if they made up?"
+    
+    "Oh hell no. Don't drag me into this!"
+    
+    show charlotte uniform disappointed
+    c "Pardon me?"
+    
+    show john suit uncomfortable
+    j "I think it's none of my business."
+    
+    show isabella uniform non plussed
+    show akira uniform2 very upset
+    ak "Yeah, but don't you think —"
+    
+    "I really don't want to have this conversation. Isabella is giving me the dirtiest glare, and while I have no idea how Charlotte feels, I don't think interposing is going to help."
+    
+    show john suit surprised
+    j "Excuse me, I just remembered somewhere I need to be. Don't let anyone else into the classroom."
+    
+    scene bg hallway day with dissolve
+    
+    "And before anyone else can say anything, I escape with my lunch, shutting the door behind me. The two girls can deal with Akira without me."
+    
+    a 8
+    $ coming_out.send(akira, "first there's something i kinda have to tell you. um, it's kind of a big deal, actually. kinda anxious, so don't laugh, okay?")
+    
+    "I walk away, planning to take some solace in the office, but before I even make it to the stairs, I can see another two students in the distance... and I can {i}definitely{/i} hear them."
+    
+    show john suit normal
+    show taylor uniform upset at two_right
+    show nolan uniform surprised at two_left
+    with dissolve
+    
+    t "Well, you don't have to be such a jerk about it!"
+    
+    a 3
+    $ coming_out.send(kendall, "what, you're finally coming out of the closet?")
+    
+    show nolan uniform angry
+    n "Be a jerk about it? I'm being a jerk about it?! YOU'RE the one who stood up IN FRONT OF THE WHOLE FUCKING CLASS to take a cheap shot at ME!"
+    
+    n "And you have the balls to say that I'M being a jerk?!"
+    
+    a 5
+    $ coming_out.send(akira, "...yes, actually. that's what i was going to say: i think i'm gay.")
+    
+    show taylor uniform cross
+    t "After you dumped me! Do you have any idea how humiliating that was?"
+    
+    n "I didn't! You're the one who fucking dumped ME! W-T-F, you crazy bitch? What's WRONG with you?"
+    
+    a 3
+    $ coming_out.send(kendall, "lol, no shit, bro. i kinda already knew that. it's no big deal; so what's the problem?")
+    
+    t "How did I dump YOU?"
+    
+    show nolan uniform upset
+    n "What? We've had this conversation before! TWICE! Will you just fucking leave me alone?"
+    
+    "This is pretty heated. I'm going to...{nw}"
+    
+    a 4
+    $ coming_out.send(akira, "wut\n\nhow could you already know that, i only figured it out, like, last night >.<")
+    
+    menu:
+        extend ""
+        
+        "...step in.":
+            "I try to make my approach as loud as possible."
+            
+            show john suit normal
+            j "Is there a problem here?"
+            
+            t "No, we're just —"
+            
+            show nolan uniform angry
+            n "There is definitely a problem."
+            
+            t "We're just talking, Mr. Rook; there's some things we need to work out."
+            
+            show john suit annoyed
+            j "It doesn't sound like Nolan {i}wants{/i} to talk. Is that right?"
+            
+            a 6
+            $ coming_out.send(kendall, "lol, for reals? dude, everyone knows you're gay. it's the most obvious thing ever.")
+            
+            show nolan uniform disappointed
+            n "...yes."
+            
+            j "Taylor, why don't you go, calm down, and go eat your lunch? Give the man some space."
+            
+            "She takes a moment, probably evaluating her options. Her expression shifts, back to the normal, calm smile."
+            
+            show taylor uniform happy
+            t "Sorry, Mr. Rook, you're right. We'll have this conversation at a better time!"
+            
+            "She skips off, overselling her co-operativeness far too much."
+            
+            hide taylor with dissolve
+            show nolan uniform sulky at shift_center
+            
+            show john suit sulky
+            j "Are you alright?"
+            
+            a 8
+            $ coming_out.send(akira, "wut. no way, ur just projecting because YOU came out when you were like, 13.\n\ni'm telling you, i only just figured it out. i mean... it makes a lot of sense, but no way, bro.")
+            a 2
+            $ coming_out.send(kendall, "lol. post about it, see if anyone is surprised.")
+            
+            n "Yeah. Thank you, sir."
+            
+            show john suit normal
+            j "Well, let me know if she keeps it up."
+            
+            n "Thanks."
+            
+            "I guess that's all there is to be said. I'm not sure what's going on between the two of them, besides the obvious, but if he doesn't want to talk..."
+            
+            hide nolan with dissolve
+            
+            "I head to the office, to eat my lunch in peace."
+            
+        "...just back away.":
+            a 3
+            $ coming_out.send(kendall, "lol, for reals? dude, everyone knows you're gay. it's the most obvious thing ever.")
+            
+            "No, I'm not going anywhere near this. This definitely falls under the category of \"can sort it out themselves.\" I'm not touching this if I don't have to."
+            
+            "I'm only here because I was trying to get away from {i}another{/i} argument!"
+            
+            a 7
+            $ coming_out.send(akira, "wut. no way, ur just projecting because YOU came out when you were like, 13.\n\ni'm telling you, i only just figured it out. i mean... it makes a lot of sense, but no way, bro.")
+            a 3
+            $ coming_out.send(kendall, "lol. post about it, see if anyone is surprised.")
+            
+            "I turn around, and leave as quickly as possible."
+    
+    $ date = "Saturday, October 30, 2027"
+    $ akira.interested_in = "Boys, boys, boys"
+    $ anyone_surprised = Post(akira, "has a big announcement to make: he's gay.")
+    $ coming_out.send(akira, "fine, THERE")
+    $ anyone_surprised.reply(kendall, "congrats, that's a big step, bro.\n\nbtw: here's the context: akira thinks evryone's going to be surprised.")
+    $ anyone_surprised.reply(akira, "HOW COULD ANYONE KNOW BEFORE I DID")
+    $ harassment = Conversation(taylor, nolan)
+    $ harassment.send(taylor, "Hey, here's an idea: why don't you try not running away from our conversations? I was making a real effort to reach out!")
+    $ harassment.send(nolan, "Hey, here's an idea: FUCK OFF.")
+    $ harassment.send(taylor, "Very mature. Sometimes I can't believe you.")
+          
+# SATURDAY, OCTOBER 30, 2027
+    st 11 35
+    
+    if arianna_kiss:
+        $ transition("bg littlejapan day", "SATURDAY")
+        show john casual very happy
+        show arianna casual1 surprised
+        with dissolve
+        
+        ar "Wow... I've never seen this part of town before."
+        
+        play music SACCHARINE fadein 2.0
+        
+        a 2
+        $ anyone_surprised.reply(taylor, "LOL")
+        
+        j "I still can't believe you've never been to Little Japan before. It's my favourite neighbourhood."
+        
+        show arianna casual1 happy
+        ar "Yeah, it's pretty..."
+        
+        a 9
+        $ anyone_surprised.reply(charlotte, "I'm glad to hear that! I was wondering when you were going to come out. Congratulations!")
+        
+        j "Come on. I know the greatest sushi place, it'll be my treat. You're really going to love it."
+        
+        ar "Awesome!"
+        
+        a 3
+        $ anyone_surprised.reply(ichigo, "{image=sorewajikandesu.png}wwwww")
+        a 2
+        $ anyone_surprised.reply(isabella, "Nope, no surprise. But congratulations. :D")
+        
+        "I lead her on."
+        
+        "I really only have one thought: I'm going to show her a nice, innocent time. Just a fun date, nothing more. There's no need to push things further."
+        
+        a 16
+        $ anyone_surprised.reply(kendall, "lol, what did ur mom just say?")
+        
+        "Then she clings to my arm, resting her head against my shoulder."
+        
+        a 5
+        $ anyone_surprised.reply(akira, "you don't even want to know. OMG, FML.")
+        
+        ar "Thanks, Mr. Rook..."
+    else:
+        $ transition("bg bedroom day", "SATURDAY")
+        
+        "The weekend: the time for excitement, and partying, and dates, and relaxing, and sleeping in, and..."
+        
+        a 2
+        $ anyone_surprised.reply(taylor, "LOL")
+        
+        "Oh, who the hell am I kidding?"
+        
+        a 9
+        $ anyone_surprised.reply(charlotte, "I'm glad to hear that! I was wondering when you were going to come out. Congratulations!")
+        
+        "All it is to me is just a couple days where I have extra time to prepare my lesson plans."
+        
+        "I order pizza for lunch. It's not that I {i}can't{/i} cook, it's just... after the last divorce, I realized: what's the point?"
+        
+        a 3
+        $ anyone_surprised.reply(ichigo, "{image=sorewajikandesu.png}wwwww")
+        a 2
+        $ anyone_surprised.reply(isabella, "Nope, no surprise. But congratulations. :D")
+        
+        "I don't enjoy cooking, and I can afford not to without breaking the bank."
+        
+        a 16
+        $ anyone_surprised.reply(kendall, "lol, what did ur mom just say?")
+        
+        "Delivery pizza and lesson plans. Yep. It sounds crazy, but it's a lot better than where I was before. No crazy job, no crazy wife... just the challenge of getting kids to engage with literature."
+        
+        a 5
+        $ anyone_surprised.reply(akira, "you don't even want to know. OMG, FML.")
+        
+        "I don't mind a single bit."
+      
+# MONDAY, NOVEMBER 1, 2027
+    st 11 20
+    $ date = "Monday, November 1, 2027"
+    $ transition("bg classroom day", "MONDAY")
+    a 2
+    $ taylor_whines_in_public = Post(taylor, "can't believe what a pussy a certain person can be.")
+    $ taylor_whines_to_arianna = Conversation(taylor, arianna)
+    $ taylor_whines_to_isabella = Conversation(taylor, isabella)
+
+    "Class in the morning goes... alright. Not great."
+    
+    play music SERIOUS_MORNING fadein 2.0
+    
+    a 1
+    $ taylor_whines_to_arianna.send(taylor, "I actually tried to apologize to Nolan, hoping we could get back together... and can you believe it? He just runs away on me. And now he's ignoring my messages!\n\nI can't believe that guy. What did I do to deserve to be treated like this?!")
+    a 3
+    $ taylor_whines_to_isabella.send(taylor, "Do you have any idea what's wrong with Nolan? I tried apologizing to him in the hopes of getting back together, and he just refuses to talk to me!\n\nI don't get what his problem is. I'm trying to be nice and just move on from this silly fight, but he just keeps dragging it out!")
+   
+    "I didn't catch her in the act, but I think Taylor may have actually {i}fallen asleep{/i} at one point. Just when I thought I couldn't resent her more."
+    
+    play sound BELL
+    "I'm just glad when lunch rolls around, and everyone starts to finally act like they're alive again."
+    
+    st 12 2
+    $ taylor_whines_to_arianna.send(arianna, "That sucks! He just didn't want to listen at all? So what are you going to do now?")
+    a 12
+    $ taylor_whines_to_isabella.send(isabella, "I'm more interested in what's wrong with {i}you.{/i}\n\nWhy are you involving me in your stupid gossip? Maybe you should try acting like an adult and just move on, instead of dragging me into your bullshit. Just a thought. <3")
+    
+    show john suit happy
+    show charlotte uniform happy at three_left
+    show akira uniform2 bored at center
+    show isabella uniform happy at three_right
+    with dissolve
+    
+    j "So, how were your weekends?"
+    
+    i "Alright."
+    
+    a 3
+    $ taylor_whines_in_public.reply(kendall, "nice. very mature")
+    
+    c "I didn't really do much. Just homework and some shopping."
+    
+    a 6
+    $ taylor_whines_to_arianna.send(taylor, "I have no idea. I guess I'm just going to try talking to him again, maybe when he's calmed down a little. I just wish I knew what he's playing at! I get it, I shouldn't have started the fight to begin with, I just want to end it and make things go back to the way they were. I guess he must just be punishing me for it.\n\nI want to make things better, but I honestly don't know how, especially if he won't even talk to me.")
+    
+    show akira uniform2 indignant
+    ak "Disastrous. Totes disastrous. Sunday was the most humiliating day of my life ever. I take it back, Charlotte, you can ignore Kendall all you want."
+    
+    show akira uniform2 cross
+    i "Lol."
+    
+    a 2
+    $ taylor_whines_to_isabella.send(taylor, "Whoa, where did that bitchiness come from?! I just thought maybe you could give me some advice, because you seem like you have experience when it comes to love. You don't have to be like that.")
+    
+    show charlotte uniform very happy
+    c "Heehee, is this about your 'coming out?' I'm sorry, but that was pretty funny."
+    
+    show charlotte uniform happy
+    show akira uniform2 very upset
+    ak "O-M-G, no, it wasn't! Mom was embarrassing about it, but Ka-san was just cruel!"
+    
+    j "Ka-san? Who's that?"
+    
+    show akira uniform2 cross
+    ak "My other mother. She just... kept giggling incontrollably!"
+    
+    c "Hazuki, right? Not Ichigo?"
+    
+    a 3
+    $ taylor_whines_to_isabella.send(isabella, "Here's my advice:\n\nGet over yourself, and then get over him. In that order.")
+    a 2
+    $ taylor_whines_in_public.reply(taylor, "I don't know if you realize this, Kendall, but {i}normal{/i} girls don't like pussies. Maybe that's it, he's more your type.")
+    
+    show akira uniform2 bored
+    ak "Yeah, right. That's Hazuki. Mom's the one who posted on Amie, I don't think you've met Ka-san ever. Thank god."
+    
+    show akira uniform2 uncomfortable
+    ak "Real talk here: I'm trying to be sincere, and she's just in a giggling fit, wondering how I didn't realize sooner."
+    
+    show akira uniform2 very upset
+    ak "All she keeps saying is, \"I had no idea you weren't already out of the closet!\" True story. {i}My mother.{/i} It's ridiculous."
+    
+    $ taylor_whines_to_arianna.send(arianna, "I guess all you can do is wait, really. I'm sorry, though, that's awful.")
+    
+    show akira uniform2 indignant
+    ak "Ka-san, whose own coming out story is like a year long, with all sorts of detailed subplots, and will tell it on the drop of a hat... just keeps giggling at me!"
+    
+    show john suit sympathetic
+    j "Awkward."
+    
+    ak "For reals!"
+    
+    a 2
+    $ taylor_whines_in_public.reply(kendall, "lol, u mad?")
+    
+    show akira uniform2 cross
+    c "I'm sorry. But I saw your coming out on Amie, and you have to admit, it's funny that you were the last person to figure it out."
+    
+    show akira uniform2 very upset
+    ak "See? I'm a punchline, bro."
+    
+    ak "My sexuality is just one big setup, and it's not just \"lol, you're gay,\" it's \"lol, EVERYONE ELSE BUT YOU knew you're gay.\" I used to have dignity!"
+    
+    a 3
+    $ taylor_whines_in_public.reply(taylor, "Oh, now who's immature?")
+    
+    show akira uniform2 cross
+    show isabella uniform smug
+    i "That's not true."
+    
+    a 1
+    $ taylor_whines_in_public.reply(kendall, "lol, u mad??")
+    
+    show isabella uniform happy
+    show akira uniform2 very upset
+    ak "See?! Even {i}Isabella{/i} gets cheap shots at me now!"
+    
+    show akira uniform2 cross
+    j "If it makes you feel any better, I didn't know you were gay."
+    
+    "...well, not before I read about it on your profile, anyway. And now the entire world knows."
+    
+    ak "Lol, it doesn't. You've known me, what, a week?"
+    
+    j "True enough."
+    
+    c "So what are you going to do now?"
+    
+    show akira uniform2 closed
+    ak "That's the question, isn't it?"
+    
+    show akira uniform2 bothered
+    show charlotte uniform very happy
+    c "Well, I'm happy you figured it out."
+    
+    show charlotte uniform happy
+    i "Me too."
+    
+    a 6
+    $ taylor_whines_in_public.reply(taylor, "Oh my god, you are the biggest bitch, you know that?")
+    
+    c "It's a big step! I had trouble, myself, when I first met Kendall."
+    
+    ak "Lol, yeah, I remember."
+    
+    show akira uniform2 upset
+    ak "Actually, speaking of Kendall... I'm gonna ditch on you guys. I actually made plans. That cool?"
+    
+    a 2
+    $ taylor_whines_in_public.reply(kendall, "lol, u mad???")
+    
+    show akira uniform2 happy
+    c "No, of course I won't think less of you if you go spend time with your best friend. Don't be silly. Go ahead."
+    
+    a 2
+    $ taylor_whines_in_public.reply(taylor, "I give up! You're impossible!")
+    
+    i "Yeah..."
+    
+    ak "Alright, thanks. Laters!"
+    
+    hide akira with dissolve
+    show charlotte uniform happy at shift_two_left
+    show isabella uniform happy at shift_two_right
+    
+    c "Oh, that boy. He's kind of adorable, isn't he?"
+    
+    c "I don't mean in that way, just that he's really funny. He sure does get wound up tight."
+    
+    i "Well... you heard what his mother's like."
+    
+    $ wheres_akira = Conversation(isabella, kendall)
+    a 1
+    $ wheres_akira.send(isabella, "Hey, Akira's on his way now. Sorry that he's late, we ended up distracting him a bit.")
+    $ ty = Post(nolan, "Thanks", kendall)
+    
+    c "That's true, isn't it? He must take after her more than he'd like to think?"
+    
+    a 1
+    $ wheres_akira.send(kendall, "???")
+    
+    show john suit closed
+    j "Every boy takes after his mother more than he'd like to think."
+    
+    a 1
+    $ ty.reply(kendall, "yw :3")
+    $ wheres_akira.send(isabella, "Do you mean he's not going to meet with you? Do you know where he just went?")
+    
+    c "Is that so?"
+    
+    c "I suppose that makes a lot of sense, I can understand that."
+    
+    a 1
+    $ wheres_akira.send(kendall, "nope.\n\ni'm not his babysitter, i don't keep track of his whereabouts. sorry, sis.")
+    
+    show isabella uniform smug
+    i "...hey. He's not going to see Kendall."
+    
+    c "Oh? How do you know?"
+    
+    i "I just asked."
+    
+    c "Huh. I wonder where he's going, then."
+    
+    a 3
+    $ taylor_whines_to_arianna.send(taylor, "I guess you're right. Thanks, though, I'm really glad you're actually willing to talk, though, everyone else has just been awful. Even Isabella was just nasty.\n\nI'm really glad to have you as a friend. Thanks.")
+    
+    i "I don't know. I think Kendall does, but is being difficult."
+    
+    a 2
+    $ taylor_whines_to_arianna.send(arianna, "I'm sorry to hear that. :( It sounds like you need a hug.")
+    
+    show charlotte uniform smug
+    c "Kendall? Difficult? Well, I never."
+    
+    a 1
+    $ taylor_whines_to_arianna.send(taylor, "Yeah...")
+    
+    "I've definitely never heard that kind of sarcasm from her before."
+    
+    st 14 30
+    $ transition("bg classroom day", "PREP PERIOD")
+    
+    $ asking_out = Conversation(akira, nolan)
+    a 3
+    $ asking_out.send(akira, "hey, what's up? sorry about that whole awkward thing in the cafeteria earlier. not my finest hour.")
+    a 10
+    $ asking_out.send(nolan, "Sokay. we all have awkward moments. oh, I saw your post about coming out, congratulations. So what did you want at lunch?")
+    a 12
+    $ asking_out.send(akira, "um. sorry, i hope you don't mind me distracting you.")
+    
+    "Another teacher is borrowing the office right now, so I'm forced to spend my prep period in the classroom instead."
+    
+    a 3
+    $ asking_out.send(nolan, "No problem. like I care about math, this class is the worst. sup man?")
+    
+    "Not that I get any prep actually done."
+    
+    "I just keep getting distracted by my computer instead, idly checking to keep up on things."
+    
+    "I don't know why the school uses these things. Is this why the students have such a hard time engaging — because they're too busy chatting online?"
+    
+    a 30
+    $ asking_out.send(akira, "sorry. it's been kind of difficult to write. it's hard to say this and i'm not really good at this sort of thing, but... well i guess i'm just going to have to say it:\n\nI like you, Nolan.\n\nYou don't get credit for it but you're obviously a really smart guy. You don't put up with bullshit at school, you don't care about how many friends you have, you're even willing to stand up to Taylor. You're very cool, and you're also very hot, and I admire you so much that it was embarrassing the fuck out of me even {i}thinking{/i} about telling you how I feel. I don't know you all that well, but there is nothing in my heart that I would like more than to change that.\n\nI'll understand if you're not comfortable and don't want to talk to me again. I know this seems out of the blue, but... I've spent a long time trying to figure this out, and I just can't hold it in any longer.\n\nSo that's what I wanted to say: I like you. Would you like to hang out some time? I just really want to get to know you better.\n\nI guess that turned out long. sorry. thanks for bearing through it.")
+    
+    "Even if they're ostensibly for typing notes and storing books, it seems ridiculous. Compare that to how it was when I was in high school; there was nothing like that!"
+    
+    a 10
+    $ asking_out.send(nolan, "Thats pretty heavy. give me a day or two, k? I need to think about it.")
+    a 3
+    $ asking_out.send(akira, "of course, i totes understand. take ur time.")
+    
+    st 16 0
+    $ transition("bg hallway evening", "AFTER SCHOOL")
+    show john suit normal
+    show nolan uniform disappointed null
+    
+    "That's it for the day. I've packed up my stuff, and I'm heading home now."
+    
+    n "Hey! Sir?"
+    
+    "...or maybe not."
+    
+    show nolan uniform disappointed with dissolve
+    
+    j "Hi, Nolan. What's up?"
+    
+    n "Uh, hey. You know how you said if we ever had a problem... um... I mean, can I ask you for some advice?"
+    
+    j "Sure. What's the problem?"
+    
+    show nolan uniform sulky
+    n "Not now, I mean... it's a big thing. Could we talk tomorrow?"
+    
+    "I can't tell if he's being weirdly evasive, or shy, or... just straight up confused. I still don't really have a very good impression of him, I guess."
+    
+    "Aside from his shitty attitude towards his studies, and apparently being Taylor's ex-."
+    
+    "None of that really helps me out here."
+    
+    j "Of course. Why don't you meet me in my office this time tomorrow, then?"
+    
+    show nolan uniform speechless
+    n "That's good. Yeah, thanks, sir."
+    
+    n "Bye."
+    
+    hide nolan with dissolve
+    
+    "Weird..."
+    
+    "This is going to be awkward as hell, I'm guessing."
+    
+# TUESDAY, NOVEMBER 2, 2027
+    st 15 55
+    $ date = "Tuesday, November 2, 2027"
+    $ transition("bg classroom evening", "3:55 PM, THE NEXT DAY")
+    
+    python:
+        seen_posts_chan = False
+        posts_chan = [ ]
+        posts_chan.append(dict(op=True, text="ITT: your favourite sailor senshi", number="247226517"))
+        posts_chan.append(dict(text="WTF\n\nas in, Sailor Moon?", number="247227372"))
+        posts_chan.append(dict(text="OP here, starting off: usagi, for reals. she's lazy, she doesn't give a shit about school, she's worthless on her own; turns out to be badass anyway. story of my life, she is fucking awesome. usagi4life.", number="247227540"))
+        posts_chan.append(dict(text="Um, wow, really? Okay bro that's kinda weird.\n\nI always liked Ami best. She's shy and really smart, and otaku-ish, so I could always relate to her.", number="247228388"))
+        posts_chan.append(dict(text="Uranus. I would tap the hell out of her.", number="247228548"))
+        posts_chan.append(dict(text=">>247228388\nlol, u mad?", number="247229509"))
+        posts_chan.append(dict(text="Seriously!", number="247229863"))
+        posts_chan.append(dict(text="lol you were never like ami, bro.", number="247230603"))
+        posts_chan.append(dict(text="WTF are you talking about?", number="247231420"))
+        posts_chan.append(dict(_image="12chan/Sailor Mercury.jpg", image_name="LOOKATTHOSEFUCKINGBOOKS.jpg (8.3 MiB)", text="ami was smart because she studied her ass off. she's an a+ student. you probably think ur too smart to pay attention in class so you read manga instead. she wasn't the nerdy one of the group because she spent all her time alone playing vidya, she was the nerdy one because she was too busy STUDYING THE FUCK OUT. you're saying that's you?", number="247231874"))
+        posts_chan.append(dict(text="I guess not. You're right.", number="247232661"))
+        posts_chan.append(dict(text="But I still fucking hate Usagi. She's so god damned obnoxious. She is the worst part of her show.", number="247233312"))
+        posts_chan.append(dict(text="FUCK Usagi.", number="247233673"))
+        posts_chan.append(dict(text="lol, so what you're saying is you'd be like ami, if ami was actually a smug bitch who secretly thought she was too smart to bother, so read manga all the time instead of studying for tests?", number="247234245"))
+        posts_chan.append(dict(text="When you put it that way, no, I would fucking hate her, too. Characters like that in fiction piss me off so much! Even if they are really just like me. What does that even mean?", number="247235196"))
+        posts_chan.append(dict(_image="12chan/Sailor Moon.jpg", image_name="laughingmoonwoman.jpg (12 MiB)", text="it means usagi4life, bro.", number="247235452"))
+        posts_chan.append(dict(text="olololololololololololololol", number="247235862"))
+        posts_chan.append(dict(text="Fuck it, true story. Usagi4Life olololololololololololololol", number="247236605"))
+    
+    "That's it for the day. Well... as far as classes go, anyway."
+    
+    "Nolan's probably already on his way to my office."
+    
+    $ wait_chan()
+     
+    "Well... that's enough dawdling from me. Time to go."
+    
+    scene bg hallway evening with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg office evening
+    show john suit normal
+    show nolan uniform speechless
+    with dissolve
+    
+    n "Uh, hey, sir."
+    
+    play music CONTEMPLATION fadein 2.0
+    
+    j "Hi, Nolan. Why don't you have a seat, and we'll talk about what you were having trouble with?"
+    
+    "He sits down."
+    
+    n "Yeah..."
+    
+    "Followed by the worst awkward silence of my entire life."
+    
+    "He's trying to bring himself up to saying something, I can tell. But... he clearly can't. This just is painful."
+    
+    "Come on. Say something!"
+    
+    n "...uh..."
+    
+    "I don't know if I can sit through this. I should...{nw}"
+    
+    menu:
+        extend ""
+        "...ask if it's about Taylor.":
+            j "Let me guess. This is about Taylor, right?"
+            
+            show nolan uniform disappointed
+            n "...no, not really. She's a pain, I mean, but... that's not it. Sorry, it's just... hard."
+            
+            "More awkward silence."
+            
+            "I should...{nw}"
+            
+            menu:
+                "...ask if it's about Akira.":
+                    pass
+                
+                "...wait for him to answer on his own":
+                    jump wait_on_nolan
+            
+        "...ask if it's about Akira.":
+            pass
+            
+        "...wait for him to answer on his own.":
+            jump wait_on_nolan
+            
+label about_akira:
+    show john suit sulky
+    j "Let me guess. This about Akira, right?"
+    
+    show nolan uniform upset
+    n "...I... yeah. How did you know?"
+    
+    "Oh, shit, I don't have an explanation for how I could possibly know that, do I? Nobody told me, I only read about it on AmieConnect. {i}Shit.{/i} I start to scramble, thinking of an excuse."
+    
+    show john suit surprised
+    j "I just —"
+    
+    show nolan uniform disappointed
+    n "I'm just shocked by... the whole thing. I don't know how to respond. How do you respond to that?"
+    
+    "...I guess he didn't actually care, or was too distracted to. Still. I should be more careful next time."
+    
+    jump nolan_explains
+    
+label wait_on_nolan:
+    show john suit closed
+    j "Take your time."
+    
+    n "Well... it's..."
+    
+    n "Akira. Akira asked me out."
+    
+    show john suit normal
+    j "Huh."
+    
+    n "Yeah, it's just... I'm shocked. I'm just shocked. I don't know how to respond. How do you respond to that?"
+    
+label nolan_explains:
+    show john suit annoyed
+    "How do {i}I{/i} respond to that?{nw}"
+    
+    menu:
+        extend ""
+        "Ask if he's gay":
+            j "Well... are {i}you{/i} gay?"
+            
+            show nolan uniform upset
+            n "No! I mean, not that there's anything wrong with that. I just... don't think so?"
+            
+            show nolan uniform embarassed
+            n "I mean... I like girls. You know. I don't want to stick... well, you know. That's gross."
+            
+            "And then despite not actually {i}saying{/i} it, he still completely manages to evoke the mental image of him fucking Akira in the ass. God. That {i}is{/i} gross. Why would you even hint at that?!"
+            
+            "Gross."
+            
+            j "So, then..."
+            
+            "I ask...{nw}"
+            
+            menu:
+                extend ""
+                "...why not just say no?":
+                    jump say_no
+                    
+                "...why are you shocked?":
+                    pass
+            
+        "Ask why he's shocked":
+            pass
+            
+label why_shocked:
+    j "Why are you so shocked?"
+    
+    jump nolan_continues
+    
+label say_no:
+    j "Why not just say no?"
+    
+label nolan_continues:
+    show nolan uniform sad
+    n "The thing is... um, I don't know how to say this without sounding pathetic."
+    
+    show john suit closed
+    j "It's okay. I'm not going to judge, I promise."
+    
+    n "Yeah..."
+    
+    "I have got to get him to open up."
+    
+    "I try to think; I need to convince the guy that I'm not going to think less of him if he admits something emotional. ...how the fuck you do that, I don't know."
+    
+    "I don't think the straightforward \"you're a 16-year-old who doesn't pay attention in school, I couldn't think less of you\" is really going to help out, even if it's honest."
+    
+    "Maybe I could say..."
+    
+    show john suit awkward smile
+    j "Hey, look at me. I'm a twice divorcee, I'm 38 years old, and I've only gone into teaching as some sort of bizarre mid-life crisis. Okay?"
+    
+    j "You don't have to worry about seeming pathetic to me. Trust me. I know the feeling, and I'm the last person in the world to judge you on it. Alright?"
+    
+    show nolan uniform smug
+    n "Heh... okay. Fair enough, sir."
+    
+    show nolan uniform sad
+    n "It's just... I don't know if you've noticed, but I don't exactly have any friends."
+    
+    n "Not even when I was dating Taylor, not really. At least then I could pretend I was part of her huge social network, but now, it's just me."
+    
+    show john suit normal
+    j "So you just want a friend?"
+    
+    n "Yeah... no, not really."
+    
+    n "It's not like I'm desperate. I don't want to say yes to him just because I'm desperate to be close to someone. There's pathetic, and then there's {i}pathetic.{/i}"
+    
+    j "Then what?"
+    
+    show nolan uniform surprised
+    n "It's just... he {i}likes{/i} me. He barely knows me, but he feels so strongly that he's willing to embarrass himself for the {i}chance{/i} to get closer to me."
+    
+    show nolan uniform upset
+    n "For me. For me! What the fuck is up with that?"
+    
+    show nolan uniform disappointed
+    "He pauses. It's a weird line of thought, but... at least he's finally actually saying what he thinks."
+    
+    n "Then I thought, maybe it's just desperation. There aren't that many boys at this school."
+    
+    n "But..."
+    
+    n "Look at him. He's hot, man.{nw}"
+    
+    show nolan uniform embarassed
+    
+    extend " I don't mean... I don't — you know. I'm not gay, I'm not {i}attracted{/i} to men, it's just... objectively, right? You know what I mean?"
+    
+    show john suit uncomfortable
+    j "Probably not the kind of boy who would have trouble finding someone."
+    
+    show nolan uniform upset
+    n "That's it! I mean, fuck, if he wanted, he could probably have any fag in the world he wanted. I don't think he's desperate."
+    
+    show john suit normal
+    j "So what do you think, then?"
+    
+    n "I don't know! That's... that's the thing, sir. I don't know. It confuses me. I just can't wrap my mind around it."
+    
+    show nolan uniform disappointed
+    n "And I... well, I don't know what to do."
+    
+    n "I guess that's where I'm asking for advice, sir."
+    
+    "I stare at him. He's asking me what he should do? How the hell should I know?! I assumed his problem was going to be something simple. Something understandable."
+    
+    "Bullying I can get. His ex- being a jerk... I can definitely get. Him needing to pick it up on the academics, I could give a whole speech on."
+    
+    "But this?"
+    
+    "I guess there's only one thing I can do.{nw}"
+    
+    menu:
+        extend ""
+        "Apologize for not having the answer":
+            show john suit sympathetic
+            j "I'm sorry... I have no idea. That's really complicated — I wish I had something better to say."
+            
+            show nolan uniform sad
+            n "Oh..."
+            
+            "He seems really disappointed. Not surprised, but disappointed."
+            
+            n "I guess... I'm just going to have to figure this out on my own, then."
+            
+            j "Sorry. I wish I could be of more help."
+            
+            show nolan uniform cross
+            n "Fine."
+            
+            "Upset, he stands up."
+            
+            n "Thanks anyway, sir. I mean, thanks for nothing, but... whatever."
+            
+            hide nolan with dissolve
+            
+            "He's pissed off, and I don't blame him. I don't try to stop him from leaving at all."
+            
+            "That sucks for him, and for all my façade of trying to be helpful, I sure let him down."
+            
+            "Poor kid."
+            
+            $ failed_nolan = True
+            
+        "Ask why he doesn't just give it a shot":
+            show john suit closed
+            j "Well... honestly, it's kind of hard to put myself in your shoes. But..."
+            
+            "I pause. I should get my words right."
+            
+            show john suit awkward smile
+            j "The way it seems to me is... do you really have anything to lose by saying yes?"
+            
+            j "I mean, do you really think he's going to push you into anything you don't want?"
+            
+            n "No... probably not."
+            
+            n "But I don't want to lead him on. That would be a dick move."
+            
+            show john suit smug
+            show nolan uniform surprised
+            j "So don't lead him on."
+            
+            n "So..."
+            
+            show nolan uniform closed
+            "He stops to think about it, although it occurs to me that he's already made up his mind. He probably did a while ago... he just wanted someone else to confirm it for him."
+            
+            show nolan uniform disappointed
+            j "So you tell him you're interested in him, so long as he doesn't push you into anything. I mean... that's true, right?"
+            
+            n "Yeah... I guess so."
+            
+            show nolan uniform surprised
+            n "I mean, really, it's not that I'm attracted, it's just... who wouldn't be {i}interested{/i} in that?"
+            
+            show nolan uniform disappointed
+            "Uh, I sure wouldn't. But I don't say that."
+            
+            j "Well, don't just go off my word. But it sounds to me that's what you think you should do."
+            
+            n "I guess so."
+            
+            "There's a long silence. There's not really anything more that needs to be said, is there?"
+            
+            "Just... one big pause."
+            
+            n "So I should just..."
+            
+            show john suit closed
+            
+            j "Talk to him."
+            
+            show nolan uniform awkward smile
+            n "Yeah. Okay... you're right. I should just talk to the guy. Tell him... alright."
+            
+            n "Thanks, sir. That was helpful. I think... I think I've got a pretty good idea of what I'll say."
+            
+            n "How it'll go, I have no clue, but..."
+            
+            show john suit normal
+            
+            j "Trust me, Nolan. When it comes to these sorts of things, I don't think anyone has a clue how it'll go."
+            
+            show nolan uniform embarassed
+            n "Yeah... fair enough."
+            
+            n "Well, thank you, sir."
+            
+            n "I guess that's all, so..."
+            
+            j "I hope it goes well, then. See you."
+            
+            n "Yeah... bye, sir."
+            
+            hide nolan with dissolve
+            
+            "And there he goes."
+            
+            "I hope my advice wasn't too terrible, or pushing him... but honestly, I'm pretty sure I just told him what he wanted to hear."
+            
+            "That's probably all that he needed."
+            
+            "What a strange, strange evening."
+            
+            $ failed_nolan = False
+            
+    $ date = "Wednesday, November 3, 2027"
+    $ anxious = Post(akira, "is anxious...")
+# WEDNESDAY, NOVEMBER 3, 2027
+    st 11 50
+    $ transition("bg classroom day", "11:50 AM, THE NEXT DAY")
+    show john suit normal
+    show taylor uniform smug null #expr
+    
+    "The class is staring intently at the \"hand-outs\" I just sent them; or at least, I sure hope they are. It's hard to tell, when they're {i}always{/i} staring at their computers."
+    
+    play music EASY_GOING fadein 2.0
+    
+    j "Remember, the items listed are only suggestions. So long as it's 2500 words, or a five minute presentation, you can do whatever you find interesting."
+    
+    a 6
+    $ anxious.reply(kendall, "it'll be okay! FIGHT-O!")
+    
+    t "{i}Anything{/i} that's at least 2500 words?"
+    
+    show john suit annoyed
+    j "Okay, let me be perfectly clear. This is a grade 11 class, and I'm letting you have fun with this. Don't give me any bullshit."
+    
+    a 3
+    $ anxious.reply(akira, "^_^;")
+    
+    j "If you think it's cheating, then it probably is, and I'm not going to give you a good grade. If your heart's into it, that's fine, but be smart, not clever."
+    
+    j "Is that understood?"
+    
+    show taylor uniform uncomfortable
+    t "Yes, sir..."
+    
+    hide taylor with dissolve
+    play sound BELL
+    st 12 0
+    
+    j "Okay — hold on just a moment — that's all for today! For homework, you have a reading response, and please think about what you'll do for this assignment!"
+    
+    "Of course, the moment the bell rings, everyone but Charlotte stops paying attention. Of course. But I can try. The class starts to file out, but slower than usual."
+    
+    show akira uniform2 uncomfortable at two_right
+    show nolan uniform disappointed at two_left
+    with dissolve
+    
+    n "Hey, Akira?"
+    
+    ak "Uh, hi there."
+    
+    n "If you're still interested, um... I'd like to talk to you about... what you said the other day."
+    
+    ak "Wait, here?"
+    
+    show nolan uniform smug
+    n "Of course not. I thought, um, we could go somewhere more private, and eat lunch."
+    
+    show akira uniform2 forceful
+    ak "Oh. Ohhhhhhh. For reals?"
+    
+    show nolan uniform happy
+    n "It's complicated. But... yeah. For reals."
+    
+    show akira uniform2 blushing
+    ak "Awesome! So where did you have in mind...?"
+    
+    hide akira
+    hide nolan
+    with dissolve
+    
+    "They walk off together."
+    
+    show charlotte uniform surprised at two_left
+    show isabella uniform surprised at two_right
+    with dissolve
+    
+    i "No way."
+    
+    c "Did he just... those two? That was what I thought it was, right?"
+    
+    show john suit closed
+    j "Let's not start any gossip, now." 
+    
+    j "I think they both have enough problems right now without having the whole class talking about them behind their back, don't you think?"
+    
+    show charlotte uniform normal
+    show isabella uniform normal
+    c "Sorry. You're right, of course."
+    
+    "I have no idea what to make of the two of them; Nolan obviously has no idea what he wants, and it's probably going to be a more complicated relationship than Akira wants."
+    
+    "If there is anything between the two of them, it's going to be crazy. There will be tons of drama, and it's probably going to make things worse for both."
+    
+    "Still..."
+    
+    "...I couldn't help but notice that as they walked off, together, they both had the biggest smiles I'd ever seen from either."
+    
+    jump isabella_start
+</pre>

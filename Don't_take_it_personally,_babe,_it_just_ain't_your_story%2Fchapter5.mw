@@ -1,0 +1,1415 @@
+<pre>
+# FRIDAY, NOVEMBER 19, 2027
+label taylor_start:
+    $ date = "Friday, November 19, 2027"
+    $ save_name = "Chapter 5:\nDesu on Two Legs"
+    $ Post(kendall, "cross-dressing, lol")
+    $ inviting_nolan = Conversation(taylor, nolan)
+    $ inviting_nolan.send(taylor, "Hey, I'd really like to make up with you. I've been a real jerk lately, and I want to apologize. Can we talk about what happened, please? I know it's my fault, I'm willing to admit to that... I'd just like to still be your friend, if that's possible. Can we talk about it?")
+    $ cesario_is_too_cute = Post(akira, "Cesario: TOO CUTE <3")
+    $ cesario_is_too_cute.reply(nolan, "Wait but... he's actually a girl")
+    $ cesario_is_too_cute.reply(akira, "man whatevs, it's not hetero if he's a reverse trap")
+    $ cesario_is_too_cute.reply(nolan, "??????")
+    $ Post(arianna, "Instead of actually reading the play, we just watched a Shakespeare movie. Best class ever!")
+    $ cesario_is_too_cute.reply(akira, "i'll explain later ^.~")
+    $ cesario_is_too_cute.reply(taylor, "He's not really your type, is he? Not enough dick, I would have thought.")
+    $ cesario_is_too_cute.reply(kendall, "stay classy, taylor")
+    $ cesario_is_too_cute.reply(akira, "easy, bro. she's right, there's no such thing :D")
+    $ you_liked_it = Post(taylor, "Wait, you actually liked that movie? I thought it was just... weird.", arianna)
+    $ cesario_is_too_cute.reply(nolan, "AAAAAAAAAAAHHH STOP IT")
+    $ cesario_is_too_cute.reply(kendall, "lol")
+    $ you_liked_it.reply(arianna, "It was funny!")
+    $ prince = Post(kendall, "viola could be a gentleman, sure. but could she be a PRINCE? didn't think so.")
+    if charlotte_and_kendall:
+        $ prince.reply(charlotte, "You could be my prince!")
+    $ prince.reply(akira, "Ouji-sama~")
+    if charlotte_and_kendall:
+        $ prince.reply(kendall, "NO. only hers! sorry, bro.")
+        $ prince.reply(akira, "lol i'm heartbroken~")
+    $ transition("bg classroom day", "End of chapter 4.", end=True) # later
+    show john suit happy
+    
+    j "Of course, the whole sub-plot seems funny at the time. Sure, it's all at his expense, and really pretty cruel... but we laugh anyway."
+    
+    j "But tell me, what do you think of the ending? Is it funny at all? Do you think it's the main characters who get the last laugh?"
+    
+    show john suit awkward smile
+    j "Or is there something more uncomfortable about it?"
+    
+    j "Anyone can answer. What do you think? Just whatever your first impression was."
+    
+    show john suit surprised
+    j "Come on, anyone? Who do you think gets the last laugh?"
+    
+    $ title(5, "DESU ON TWO LEGS", "Friday, Nov. 19  — Friday, Nov. 26", "bg classroom evening", "taylor uniform disappointed")
+    
+    "By the end of the day, I'm positively worn out. It's just been one of those days."
+    
+    "Everyone was silent every single time I had a question for the class; not even Charlotte had my back!"
+    
+    "And half-way through the lecture, all my notes said were \"improvise about Toby and Maria's relationship\" for ten minutes. Why would I do that to myself?! It was not my finest hour."
+    
+    "I feel ridiculous and humiliated and exhausted, as I leave at the end of the day."
+    
+    $ inviting_nolan.send(nolan, "K sure. Id like that. What did you want to talk about?")
+    
+    scene bg hallway evening with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg street evening with dissolve
+    show john suit normal
+    
+    play music QUIET_DAY fadein 2.0
+    
+    "I'm thankful for how quiet the evening is as I walk home."
+    
+    $ inviting_nolan.send(taylor, "What I did, mostly. I'd really rather talk to you about it in person. It's... one of those things that needs to be said. Can we meet up at lunch on Monday, or are you too busy with Akira?")
+    $ unimpressed = Post(charlotte, "I can't say I really understand what that Literature lecture was all about...")
+    
+    "It's beautiful out, at least, so I decide to take the long way home, as a consolation to myself; a small consolation, though. All I can think about is how shitty the entire school day was."
+    
+    $ inviting_nolan.send(nolan, "Nah he ll understand. Monday is good.")
+    
+    "I can't help but wonder if I'm just not cut out for this job. I can never get my students to engage with the work, I don't know if I'm actually teaching anything..."
+    
+    "...and most ridiculous of all, I spend more time dealing with student drama than the curriculum!"
+    
+    $ unimpressed.reply(taylor, "If not even the great Charlotte can understand it, what hope did the rest of us have?!")
+    
+    "I think maybe it's just about time to conclude that my life is going to suck no matter what I do with it."
+    
+    $ inviting_nolan.send(taylor, "Great. It's a date, then!")
+    $ unimpressed.reply(kendall, "lol yeah...")
+    
+    "...I don't really mean that. I'm not about to get depressed about it, I'm way too old for that. I just sure wish I could reach my students is all. It's killing me."
+    
+    "That's all that's on my mind as I walk home; I'm so distracted, it's not for a while that I notice the sound of footsteps."
+    
+    "It's otherwise a perfectly quiet evening, save for the footsteps following behind me. It's almost a little eerie."
+    
+    play music UNSETTLING
+    
+    "After a few minutes, I finally yield to my curiousity. I turn my head over my shoulder to see who's there."
+    
+    show yukata yukata normal with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    hide yukata with dissolve
+    
+    "Strange. Utterly strange; both the outfit, and because these side streets are always empty, and she must have been following for a good five minutes now. I just keep walking."
+    
+    show yukata yukata normal null
+    
+    y "Why?"
+    
+    y "Why didn't you stop her? Why? Why, why, why?"
+    
+    "Is she talking to me...? I keep walking."
+    
+    y "Her spirit isn't at rest. Why did you let her die?"
+    
+    "That strikes a nerve. Confused and baffled, I turn to face her."
+    
+    show yukata yukata normal with dissolve
+    
+    show john suit surprised
+    j "What? Are you talking to me?"
+    
+    "She says nothing, but nods."
+    
+    j "Leave me alone, please. I don't know what on Earth you're talking about."
+    
+    hide yukata with dissolve
+    show yukata yukata cross null
+    
+    "I turn back, and keep walking. But then she responds and I can't help but shiver."
+    
+    y "{i}Isabella.{/i}"
+    
+    "Shocked to hear her name, I turn around, intent on confronting this strange, creepy woman; but she's nowhere to be seen."
+    
+    "Just completely and utterly vanished."
+    
+    j "What..."
+    
+    "I don't know what the hell to think, as I hurriedly walk back home, but none of it is good. I find myself unsettled by the whole thing to absolutely no end."
+    
+    scene bg black with dissolve
+    
+    "I end up dwelling on it all weekend."
+    
+    $ just_checking = Conversation(nolan, akira)
+    $ just_checking.send(nolan, "Hey bro two things\n\n1. What time did u say we were going to meet tomorrow? Just want to be sure, don't want to stand around awkwardly for like an hour again\n2. Do u mind if I spend lunch on Monday w/ Taylor?? sounds like she wants to apologize for being such a bitch. would be nice.")
+    $ just_checking.send(akira, "no, not a problem at all! its totes okay; really hope that turns out well for you, given what you've told me about her. and lol yeah, let's not repeat the last date ^.~ we said 2PM")
+    $ just_checking.send(nolan, "K thanks :D")
+    
+# MONDAY, NOVEMBER 22, 2027
+    $ date = "Monday, November 22, 2027"
+    $ transition("bg classroom day", "11:50 AM, MONDAY")
+    show john suit normal
+    
+    j "It's really important that, if you haven't started to think about what you're going to do for the big creative project, you think about it now."
+    
+    play music DAY_TO_DAY fadein 2.0
+    
+    j "They're due in two weeks, so if you don't at least know what you're doing, you need to figure it out immediately. You can talk to me after class if need be."
+    
+    j "There's no homework for tonight, other than studying for the test tomorrow."
+    
+    "I'm finished early again. Before I thought it was because I was planning better. Now I just wonder if my classes aren't just getting shorter and shorter. That's bad."
+    
+    j "Alright, well, that's it. I guess we're running a bit early, so I'm going to let you go now, but... please take your time going to the cafeteria, alright? No need to rush."
+    
+    j "That's all!"
+    
+    "They all slowly start to leave. Then I realize... no, only two have actually left. Everyone else is just milling about kind of aimlessly."
+    
+    show kendall uniform normal at four_left
+    show charlotte uniform happy at two_left
+    show akira casual2 sulky at two_right
+    show arianna uniform normal at four_right
+    with dissolve
+    
+    j "You're... all welcome to stick around in the classroom and eat, if you want?"
+    
+    ar "Thanks..."
+    
+    k "Sup, Akira, why aren't you with your boyfriend...?"
+    
+    "I'm about to speak, but then I realize, there's nothing I can say with honesty. I know exactly why he's not with Nolan, but I can hardly say that, can I?"
+    
+    j "Yeah, I thought you were spending your lunches with Nolan."
+    
+    ak "Um, well, he's apparently working things out with Taylor. Privately. No big deal, it's good they're making up."
+    
+    show kendall uniform surprised
+    k "Oh, shit."
+    
+    show kendall uniform worried
+    j "Kendall..."
+    
+    show akira casual2 bothered
+    ak "I'm sure it's fine. Better that she stops raging so hard over getting dumped, bro."
+    
+    show kendall uniform cross
+    k "Yeah, 'cause Taylor is totes the type for forgiving."
+    
+    k "Lemme tell you, bro, I would not trust my girlfriend anywhere near her, if I didn't want some sort of drama clusterfuck."
+    
+    if charlotte_and_kendall:
+        show charlotte uniform disappointed
+        c "Kendall!"
+        
+        c "I'm sorry, you guys. She's not very cute when she's being inexplicably hostile towards friends."
+        
+        k "Lol, \"friends.\""
+        
+        c "Come on, knock it off, really. It really is not endearing."
+        
+        show kendall uniform uncomfortable
+        k "S-sorry..."
+    else:
+        show arianna uniform cross
+        ar "Is that really something you would ever have to worry about? You, really?"
+        
+        show akira casual2 angry
+        ak "W-T-F, that's totes uncalled for."
+        
+        show charlotte uniform upset
+        c "Guys..."
+        
+    show john suit closed cross
+    j "Come on, let's keep it civil here. It's not a big deal. People talk to their exes all the time, it's not something worth getting worked up over."
+    
+    $ conspire = Conversation(kendall, akira)
+    $ conspire.send(kendall, "weren't you going to say something?")
+    
+    show akira casual2 bothered
+    show charlotte uniform disappointed
+    "Everyone turns awkwardly quiet, as — I hope — they realize I'm right."
+    
+    "The conversation never returns, though."
+    
+    $ conspire.send(akira, "?")
+    $ conspire.send(kendall, "...to mr rook, you asshat.")
+    
+    "Kendall and Akira just turn to occasionally saying something quietly to the other, Charlotte frequently looking like she might have something to say, but then never actually does."
+    
+    $ conspire.send(akira, "o rite")
+    
+    if arianna_kiss:
+        $ Post(arianna, "is still totally in love, in case anyone was wondering.")
+        "Arianna sits on her own, her attention alternating between her computer, and smiling cutely at me. I smile back, of course, but unable to think of anything to say."
+    else:
+        "Arianna sits on her own, her attention alternating between her computer, and stealing glances at me. I don't think she realizes I notice; so I pretend I don't."
+        
+    $ conspire.send(akira, "um, lemme figure out how to actually say it")
+        
+    "Everyone seems to be more paying attention to their computers than to each other, in general. It's the most awkward sight I've ever seen from an ordinarily very social group."
+    
+    $ wait(conspire)
+    
+    "Not for lack of trying, I guess. I eat my lunch patiently, wondering if Akira's actually going to follow through on his plans to strike up conversation."
+    
+    "Mercifully, he eventually does."
+    
+    show akira casual2 happy
+    ak "Hey, uh... sir, I was wonderin'. Have you ever read a novel called \"Digital Shinigami\"? It seems like it'd be up your alley."
+    
+    show john suit sulky
+    j "No, I... don't think so? Who's it by?"
+    
+    ak "Eriko Yamazaki. Dunno if you've heard of her."
+    
+    show john suit normal
+    j "Nope. Huh, any relationship? Is she some distant cousin of yours?"
+    
+    ak "Naw. My grandmother, actually. But she was a really big sci-fi writer in like, the 1980s, and actually is kind of cool."
+    
+    show charlotte uniform happy
+    c "Wow, I never knew that. That's really cool!"
+    
+    ak "For reals, bro. Also it's a lot like some of the stuff we were readin' earlier this year."
+    
+    j "You don't say. I'll have to keep my eye out for it, then. What's it about?"
+    
+    ak "Well, do you know what a shinigami is normally?"
+    
+    j "I... don't believe so, no."
+    
+    show kendall uniform smug
+    k "Lol, here's where Akira turns into the biggest weeaboo {i}ever.{/i}"
+    
+    "I have absoutely no idea what she just said, but Akira gives her the dirtiest look."
+    
+    $ incomprehensible = Post(charlotte, "is amazed by just how completely incomprehensible conversations between Kendall and Akira turn out...")
+    
+    show akira casual2 indignant
+    ak "W-T-F, weeaboo? I'm {i}actually Japanese!{/i} You mad, Kendall?"
+    
+    k "Ha ha, lol, remind me again where you were born?"
+    
+    show akira casual2 angry
+    ak "Oh my god, S-T-F-U. We were having a conversation!"
+    
+    show akira casual2 bored
+    ak "Anyway..."
+    
+    $ incomprehensible.reply(arianna, "Oh, I am so glad to hear it's not just me.")
+    
+    show kendall uniform happy
+    "Kendall just smirks to herself, clearly having gotten in a very clever insult... if only I knew what the hell it was."
+    
+    ak "Aw mans. What was I talking about?"
+    
+    j "Shinigami."
+    
+    ak "Oh-right."
+    
+    show akira casual2 happy
+    ak "Anyways, they're a sort of death spirit."
+    
+    ak "Sometimes they just carry your soul to the afterlife, or if you die with regrets, they might try to put them right before they can move on."
+    
+    ak "You know, stuff like that. They're not {i}usually{/i} supposed to be that big on the haunting thing, but it happens."
+    
+    j "Huh, interesting. So it's kind of like the grim reaper?"
+    
+    ak "I... sorta. Except you're more likely to get a cute girl in a yukata than a skeleton in a robe. Also nobody actually believes in the grim reaper."
+    
+    j "Huh..."
+    
+    show akira casual2 amused
+    ak "Anyway, the book's about a sort of futuristic take on that. You know, modern death spirits now have to cope with technology, that sorta thing. It's totes rad."
+    
+    "He keeps going on, but I get caught up on his original explanation."
+    
+    "It sounds just a little bit too familiar."
+    
+    j "I'll... have to look that up, then. It sounds... uh, interesting."
+    
+    "I make the motions of continuing conversation with him, but my mind is completely elsewhere."
+    
+    $ good_luck = Conversation(taylor, arianna)
+    $ good_luck.send(taylor, "Wish me luck! I'm going to try talking to Akira. Maybe I can get him to listen to reason.")
+    $ incomprehensible.reply(kendall, "T_T")
+    $ incomprehensible.reply(nolan, "Man hes my boyfriend and even still I only get like every other word out of his mouth")
+    $ everythings_cool = Post(taylor, "So everything's cool, then?", nolan)
+    $ first_bait = Conversation(taylor, akira)
+    $ first_bait.send(taylor, "I was just talking to Nolan, as I'm sure you know... I hope you don't think I'm being too rude here, since it's clearly none of my business. But there were some things about our conversation that jumped out at me, and I really want him to be happy; it seemed like there were some things that he just wasn't quite sure how to bring up with you.\n\nI'm sorry, that's not too presumptuous of me, is it? I know I haven't been the nicest to you, I'm sorry. It really is just jealousy, and I'd like to apologize for that.")
+    $ good_luck.send(arianna, "Good luck... you'll need it.")
+# TUESDAY, NOVEMBER 23, 2027
+    $ date = "Tuesday, November 23, 2027"
+    $ transition("bg bedroom evening", "TUESDAY NIGHT")
+    
+    "There is nothing more in life that I hate more than marking tests. Even when it's not that many at once, it's just an absolutely excruciating experience."
+    
+    play music MIDNIGHT fadein 2.0
+    
+    $ everythings_cool.reply(nolan, "Yeah everything is cool, what mores there to say?")
+    $ what_was = Post(charlotte, "I was actually curious myself, what was the name of that book you were telling Mr. Rook about the other day?", akira)
+    $ first_bait.send(akira, "um k. it's fine, bro, i know you don't REALLY have it in for me. i actually really did want to know what you two were talking about. i know things between you two were not so great.")
+    
+    "The literacy level isn't as bad as some people like to exaggerate it to be..."
+    
+    $ what_was.reply(akira, "digital shinigami, by eriko yamazaki")
+    
+    "...but somehow, that doesn't help when you're evaluating answers like \"The ladys problem's were that marriage was necessary and Sisario's cross-dressing identity mistaken.\""
+    
+    "Thank you, Taylor. I'm pretty sure that's not a sentence, at least not in any language I speak. How the fuck do you even begin to mark something like that?"
+    
+    $ what_was.reply(charlotte, "Thank you!")
+    $ what_was.reply(kendall, "i didn't know ur into those types of stories")
+    $ first_bait.send(taylor, "Well, I was responsible for screwing things up between us. I wish I had let him go sooner, instead of just clinging onto him for selfish purposes. It was a very me thing to do.\n\nWe just talked about him now, mostly. It sounds like you two are doing really well! Even if he's obviously not interested in you sexually, at least he finally has a friend again. I know he was feeling really desperate for one, when he traded me for you.")
+    
+    "They're not all that bad."
+    
+    "...well, most of them are, actually. Charlotte's answers are at least comprehensible, but that's just because she's writing what I said in class. Verbatim, in places."
+    
+    $ first_bait.send(akira, "um. did he say that?")
+    
+    "I end up bumping everyone's marks up so much that the class average is a low 80. If everyone's having trouble... then that means it's my fault. No need for them to suffer for that."
+    
+    $ what_was.reply(charlotte, "There's a lot you don't know about me, Kendall!")
+    $ first_bait.send(taylor, "He's a hard boy to coax things out of. Don't worry about it too much if he didn't want to tell you about that! You have to understand that he just tries very hard not to vulnerable, except to the people he's the very closest to.")
+    
+    "Sigh."
+    
+    $ worried = Conversation(akira, charlotte)
+    $ worried.send(akira, "i'm really worried about this whole taylor x nolan thing. what do you think? i'd ask kendall but she just exaggerates everything. but, um, should i be worried?")
+    $ worried.send(charlotte, "I don't know. I wish I could help you, but this is a little out of my real of understanding. I can't say I have any experience with either boys or straight girls. What do you think? Is there really cause for concern?")
+# WEDNESDAY, NOVEMBER 24, 2027
+    $ date = "Wednesday, November 24, 2027"
+    $ transition("bg classroom day", "NEXT MORNING")
+    show john suit normal
+    
+    j "Okay, I will be handing back your tests at the end of the period! The class average was about 83, so... good work, everyone."
+    
+    play music DAY_TO_DAY fadein 2.0
+    
+    $ sleepy = Post(kendall, "sleepy kendall is sleepy -_-")
+    
+    j "For the last unit before the independant study and exam review, I'm going to give you something much easier than the last few have been."
+    
+    j "I know you're all exhausted."
+    
+    j "So now we're going to be taking a look at some short stories; specifically, Edgar Allan Poe. It shouldn't take more than half an hour to read the first."
+    
+    j "Once you're all done, there's a couple questions that I'll put up on the board to answer, but they're all very straightforward. This isn't going to be strenuous."
+    
+    $ Post(nolan, "Everything sucks.")
+    
+    "I let them go to reading."
+    
+    "I didn't really have any intention of presenting this as being easy, but given the abysmal test scores, I think I need to restrain myself. They're clearly all struggling."
+    
+    $ shitty = Post(akira, "shitty. everything is shitty.")
+    
+    "As I copy out the easier questions I prepared last night, that's all I can think about. Maybe this just isn't my week is all. Maybe it's just not {i}their{/i} week. The class seems as stressed as I am."
+    
+    $ shitty.reply(kendall, "? what's wrong, bro?")
+    
+    "Well, I never did expect this to be an easy job."
+    
+    $ shitty.reply(akira, "just... have to bring myself to do something hard. shitsux")
+    $ transition("bg classroom day", "PREP PERIOD")
+    
+    "Somehow, when my prep period arrives, I find myself forced into the classroom again — I have got to talk to that teacher who keeps using the office for frivolous things — with absolutely nothing to do."
+    
+    "At least this time, I don't feel bad about spending the entire time checking up on my students' AmieConnect pages. It's not like I have anything better to do."
+    
+    "Although I certainly wonder about the classes they're in right now; I'm pretty sure {i}they{/i} should have better things to do."
+    
+    $ breaking_up = Conversation(akira, nolan)
+    $ breaking_up.send(akira, "this is something I really wanted to say in person but... well couldn't. sorry. you deserve better\n\nI've been holding onto you selfishly. I like you so much... but I didn't realize that part of love means letting that person do what makes them truly happy. But you're straight. This can't work. I've been a shitty person for thinking it could, and getting in the way of you and Taylor just for my own selfish whims. I'm sorry. Really sorry. You should go back with her, like you obviously want to.\n\ni fucked up, bro. sorry. ._. at least forgive me, I just... want you to be with who makes you happy.")
+    
+    "At least I'm not the only one whose class they chat through. Somehow, it makes me feel at least a little bit better knowing that."
+    
+    $ wait(breaking_up)
+    
+    "...only a little bit, though. There's not really much to feel great about it. What the hell's going on here?"
+    
+    $ breaking_up.send(nolan, "WTF? Did Taylor put you up to this?! Whats going on of {i}course{/i} I like you, where is this coming from??")
+    $ breaking_up.send(nolan, "nm I can see your ignoring amie. Im coming over")
+    $ whats_wrong = Conversation(kendall, charlotte)
+    $ whats_wrong.send(charlotte, "What's wrong with Akira? He seems absolutely awful, but I don't know what's up, and he won't say. Is he okay?")
+    $ whats_wrong.send(kendall, "no idea ._.\n\nhe won't tell me either. i hope so, sis, i hope so.")
+    $ whats_wrong.send(charlotte, "It's just not like him...")
+    $ wtf = Post(nolan, "WTF STAY AWAY FROM MY BOYFRIEND YOU CRAZY BITCH", taylor)
+# THURSDAY, NOVEMBER 25, 2027
+    $ date = "Thursday, November 25, 2027"
+    $ transition("bg street day", "NEXT MORNING")
+    
+    "My walk to school is quiet, as always. I'm really grateful that I'm not in the middle of a terribly busy neighbourhood; I can just take quiet side streets all the way there."
+    
+    scene bg outside day with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg hallway day with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg classroom2 day with dissolve
+    show john suit normal
+    
+    play music QUIET_DAY fadein 2.0
+    
+    "I arrive as early as I normally should. No surprise, the classroom is empty. I get to clearing up my desk, and getting my notes ready for class."
+    
+    "I've been there for only a few minutes when there's a knock on the door. Strange; it's open, that never happens. I turn to look, as an unfamiliar woman walks in."
+    
+    show ichigo suit normal with dissolve
+    
+    ich "Excuse me, are you Mr. Rook? The office told me I could find him here."
+    
+    j "That's me. John. But you have me at a disadvantage."
+    
+    ich "What?"
+    
+    "Her temper seems short."
+    
+    show john suit awkward smile
+    j "Uh... never mind. How can I help you?"
+    
+    ich "I'm Ichigo Yamazaki. I understand that you're my son's homeroom teacher?"
+    
+    j "Oh... so you're Akira's mother? Yes, that's right."
+    
+    ich "Maybe you can explain something to me, then. Does this school not have a strict policy about bullying?"
+    
+    show john suit uncomfortable
+    j "Uh, yeah, of course."
+    
+    show ichigo suit upset
+    ich "Then maybe you can explain why my son immediately locked himself into his room when he got home last night..."
+    
+    ich "And maybe you can explain why I had to deal with his poor boyfriend knocking at our door in tears."
+    
+    show ichigo suit cross
+    ich "Do you just not care about bullying when it's gay students? Is that it, Mr. Rook? Because I am certainly not paying tuition for teachers to be homoph —"
+    
+    show john suit surprised
+    j "Whoa! No, no, please, calm down!"
+    
+    "She was about to accuse me of being homophobic? And... I know that Akira broke up with Nolan, but what does that have to do with {i}me{/i}?"
+    
+    j "I had no idea! For what it's worth, I thought Akira and Nolan's relationship was extremely healthy, and encouraged it."
+    
+    if failed_nolan:
+        "That's a lie, of course — I completely failed to encourage it. But I don't think that's the right thing to say right now."
+        
+    show john suit normal
+    j "But I'm not responsible for them breaking up. It's hard for both, but that's just part of being a teenager. It's out of my control."
+    
+    show ichigo suit embarassed
+    ich "Do you know {i}why{/i} they broke up, Mr. Rook?"
+    
+    j "No... uh, this is actually the first time I've heard of it."
+    
+    "I can think of at least one reason why, but I can't admit to that. She never said anything to him in front of me, he never told me about her messages... as far as I {i}should{/i} know, it didn't happen."
+    
+    show ichigo suit upset
+    ich "Then maybe you should be paying better attention. Akira showed me a series of harassing messages that this girl Taylor had sent. It's completely unacceptable."
+    
+    ich "And yesterday, she cornered him at lunch, to tell him that, quote, \"a fag like him could never make Nolan happy,\" unquote..."
+    
+    ich "...and that he was being selfish for dating a \"straight\" boy. Can you imagine how hurtful that must have been? This is completely unacceptable."
+    
+    show ichigo suit cross
+    ich "What are you going to do about this?"
+    
+    "She said {i}what?{/i} Okay, that is most definitely grounds for dealing with her. I'm as shocked as she seems to be; that's absolutely appalling. I never thought Taylor would stoop that low."
+    
+    "That's far, far worse than I imagined. At least she was subtle in her messages, but that..."
+    
+    show john suit surprised
+    j "That's appalling. I can't believe she'd... Ms. Yamazaki, you have my utmost assurances, she's not going to go without reprimand. It's {i}not{/i} acceptable."
+    
+    j "I promise you, ma'am, I will straighten her out. We do have a strict anti-bullying policy, and I'm personally shocked and offended by her actions."
+    
+    show john suit sympathetic
+    "...and that's the truth."
+    
+    ich "I should hope so."
+    
+    show ichigo suit worried
+    ich "I just want to make it perfectly clear. I don't want to be antagonistic. Akira likes you, and says you're a good teacher."
+    
+    show ichigo suit cross
+    ich "But if I ever hear about her doing this to either my boy or Nolan again..."
+    
+    j "Then she'll be expelled. I'll see to it personally. It's not okay. That's the bottom line, Ms. Yamazaki."
+    
+    show ichigo suit worried
+    ich "Okay... that's good. I'm glad to hear it. I have to get to work now, but I'll be keeping up."
+    
+    ich "You seem decent enough. I'm sorry we had to meet under these circumstances."
+    
+    j "Me too."
+    
+    hide ichigo with dissolve
+    "She turns to leave. I...{nw}"
+    
+    menu:
+        extend ""
+        "...let her go":
+            "She leaves, there really being nothing more to be said; I will definitely have to have a very long conversation with Taylor."
+            
+        "...stop her with one more question":
+            j "Wait... Ms. Yamazaki?"
+            
+            show ichigo suit normal with dissolve
+            
+            "She turns back to face me."
+            
+            ich "Yes, Mr. Rook?"
+            
+            j "How are they doing? Is Akira doing better...?"
+            
+            show ichigo suit happy
+            ich "I'm glad you asked."
+            
+            show ichigo suit normal
+            ich "They're back together, if that's what you mean."
+            
+            ich "Akira was feeling vulnerable, but Nolan, the sweetheart, stayed over all night, to make sure he was okay. I think he's doing a lot better now."
+            
+            ich "Nolan was furious, though. He was holding in a lot when he heard what Taylor had said, for Akira's sake... he was trying to be brave, but I worry about him."
+            
+            show john suit uncomfortable
+            j "That's... rough. He always seemed sensitive about the subject, too."
+            
+            ich "Oh, so you understand. Well, I think he'll be fine. They're a good influence on each other. Just please, deal with Taylor, before Nolan makes a rash decision."
+            
+            "I'm about to object, to say that sounds awful threatening."
+            
+            "But... to be honest... if I had someone do that to someone I loved, I would probably do something stupid, too. I'm not going to hold it against either, so long as he doesn't act on it."
+            
+            show john suit sympathetic
+            j "I will."
+            
+            ich "Thanks. Goodbye, now."
+            
+            j "Bye."
+            
+            hide ichigo with dissolve
+            
+    $ wtf.reply(kendall, "wut? wtf did she do?")
+            
+    "Tough words from me, talking about having her expelled. I have no idea what that process is like; but tuition here isn't exactly cheap. It would probably be very difficult."
+    
+    "Not that Taylor knows that. It's a good threat, anyway. I really hope it won't come to testing it."
+    
+    $ wtf.reply(akira, "nothing.")
+    $ wtf.reply(nolan, "IT WASNT NOTHING. she tried to get back at me by harassing akira. wtf it was fucking horrible")
+    
+    play music SERIOUS_MORNING
+            
+    "I go back to sit at my desk, trying to get my thoughts back in order. I'm going to have to deal with Taylor later, of course, but I still do have a class to teach today."
+    
+    $ whats_wrong.send(kendall, "omg, it was taylor. look at her wall.")
+    
+    "I start to focus on that, reviewing my notes just to be sure, as the class slowly comes in."
+    
+    show charlotte uniform happy with dissolve
+    
+    c "Hi, Mr. Rook!"
+    
+    j "Hi..."
+    
+    hide charlotte with dissolve
+    
+    $ whats_wrong.send(charlotte, "...oh my god. Do you know what she actually did? I know Taylor can be bad, but I thought she was above abusing Akira just to get back with his boyfriend.")
+    
+    "She goes to sit down without saying another word. I guess she can probably tell that I'm stressed."
+    
+    "Eventually, the rest of the class starts to file in, although I'm really only interested in a certain pair who come in at the same time."
+    
+    show nolan casual1 sad at two_left
+    show akira casual2 sulky at two_right
+    with dissolve
+    
+    show john suit sympathetic
+    j "Wait... Nolan, Akira?"
+    
+    n "Hi, sir."
+    
+    ak "'sup..."
+    
+    show nolan casual1 disappointed
+    n "Oh, I'm sorry about the uniform, but... it's..."
+    
+    j "Relax. Nobody cares about the dress code, that's not what I was going to say."
+    
+    n "Oh."
+    
+    j "I heard about what happened. I'm going to have some very strong words with her, so... Nolan, I know you're probably still angry, but let me handle it, okay?"
+    
+    show nolan casual1 surprised
+    n "Fine. You're... going to deal with that bitch?"
+    
+    show nolan casual1 sad
+    "I can tell he's holding in a lot of stronger words than that. He's probably more than a little embarrassed, he wants to be the strong man, protecting his boyfriend, I imagine. But it {i}is{/i} better if I deal with it."
+    
+    j "Easy. I'll talk to her, but you have to be calm. And Akira... next time there's something wrong, tell me right away, okay?"
+    
+    show akira casual2 sad
+    ak "'K-'kay, sir. T-Y. You're... you're a bro."
+    
+    j "You're welcome, I just wish you'd told me, I would have dealt with it sooner. I'm so sorry you had to deal with that."
+    
+    show akira casual2 sulky
+    ak "T-Y, sir..."
+    
+    hide nolan
+    hide akira
+    with dissolve
+    
+    "I sit back down at the desk, watching Nolan comfort Akira before they take their seats. I've never seen either like that before. I can tell, beneath the calmness, Nolan's definitely angry."
+    
+    "I can't imagine how he must be feeling. This must be the most god damned emasculating experience possible, and I definitely feel bad for him."
+    
+    "Hard to feel like a man when you have to get your boyfriend's mother to get your teacher to deal with your problems. There's no shame there, but I bet he thinks there is. It's gotta be painful."
+    
+    $ whats_wrong.send(kendall, "LOL GUESS NOT. she's such a fucking waste of air. how can someone be so bitchy?")
+    
+    "Finally, the entire class arrives, and I get ready to start."
+    
+    $ loves_his_bf = Post(nolan, "LOVES Akira no matter what some say")
+    $ over_the_line = Conversation(taylor, arianna)
+    $ over_the_line.send(arianna, "Is what Nolan's saying true? That's really completely over the line. I know you don't like Akira, but that's no excuse to be a bitch. Didn't you consider Nolan's feelings?")
+    
+    show john suit cross
+    j "Before I begin... Taylor?"
+    
+    show taylor uniform worried null
+    t "Yes, Mr. Rook?"
+    
+    $ loves_his_bf.reply(akira, "<3")
+    
+    j "In my office, right after your last class. Is that understood?"
+    
+    show taylor uniform uncomfortable null
+    t "Okay..."
+    
+    j "Good. Now, onto the story that you were all supposed to read last night..."
+    
+    $ loves_his_bf.reply(arianna, "That's really sweet. I'm sorry about Taylor... she was completely over the line.")
+    $ Post(charlotte, "I'm really disappointed.", taylor)
+    $ crazy = Post(kendall, "WTF CRAZY BITCH", taylor)
+    $ Post(kendall, "WTF CRAZY BITCH", taylor)
+    $ crazy.reply(nolan, "Basically...")
+    $ warning = Post(kendall, "WARNING: DO NOT LET YOUR BOYFRIENDS NEAR TAYLOR GIBSON. SHE IS A HORRIBLE BITCH AND WILL EMOTIONALLY ABUSE THEM.", taylor)
+    $ ease_up = Conversation(akira, kendall)
+    $ ease_up.send(akira, "um, could you ease up on taylor a bit please? i hate her more than anyone, but i don't really need a dozen posts on her wall talking about what a helpless victim i am. >.> k bro?")
+    $ ease_up.send(kendall, "...sorry. ur right, i'll stop, i guess that's not helping.\n\ni'm just so sorry. you really didn't deserve that, what she did was just unbelievable. *hugs* if there's anything that i can do that would be helpful, plz let me know.")
+    $ ease_up.send(akira, "*hugs* trust me bro, i will. right now i just... want to be with my bf, k?")
+    $ ease_up.send(kendall, "kk")
+    
+    $ transition("bg classroom evening", "3:55 PM")
+    
+    python:
+        seen_posts_chan = False
+        posts_chan = [ ]
+        posts_chan.append(dict(_image="12chan/Magical Girl Pinup 1.jpg", image_name="eniko2000x2000.jpg (22 MiB)", op=True, text="Hey, did you hear, did you hear? SEASON TWO OF ENIKO CONFIRMED.", number="251154705"))
+        posts_chan.append(dict(text="um, honestly, not really looking forward to that. it's going to star fucking Kimi. pretty sure the world doesn't need Mahou Shoujo Magical Heartbreaker Jerk Kimi-chan.", number="251154793"))
+        posts_chan.append(dict(text="Bro, I would watch the hell out of that.", number="251155308"))
+        posts_chan.append(dict(text="...k, so would i, actually", number="251156155"))
+        posts_chan.append(dict(text="but its totes not going to actually be like that. it's going to be some alternate continuity or something, so it doesn't have to bother try redeeming kimi at all. i call bullshit.", number="251156781"))
+        posts_chan.append(dict(_image="12chan/Magical Girl Pinup 2.jpg", image_name="kimikimikimi.jpg (24 MiB)", text="Well, how could you possibly redeem Kimi after that big betrayal? She's a great, interesting character, but you kinda can't forgive her for that.", number="251157551"))
+        posts_chan.append(dict(text="dunno lol", number="251158065"))
+        posts_chan.append(dict(text="k, for serious though, there has got to be a way. there's always a way.", number="251158920"))
+        posts_chan.append(dict(text="I don't agree. Some people can just go DIAF forever. Kimi is definitely fucking one of them.", number="251159390"))
+        posts_chan.append(dict(text="wut", number="251159906"))
+        posts_chan.append(dict(text="for reals, bro. i mean it would totally take a whole series to make up for that, you can't just have it as an afterthought. but it could be all about her realizing what a horrible person she was and trying to overcome that. that'd be a story i want to see.", number="251160652"))
+        posts_chan.append(dict(text="also it's not like it would be inconsistent. that's how it goes in real life: you act like a horrible bitch to everyone and you just have to make up for it and keep going. you don't get a stupid fucking gaiden story where everything's great and perfect and awesome again, you learn to grow a fucking pair.", number="251161221"))
+        posts_chan.append(dict(text="I think I've seen fanart of that.", number="251161335"))
+        posts_chan.append(dict(text="wut?", number="251161798"))
+        posts_chan.append(dict(text="Kimi growing a pair. It's pretty hot, bro.", number="251162476"))
+        posts_chan.append(dict(text="olololololololololololololol", number="251163202"))
+        posts_chan.append(dict(text="...where? olololololololololololololol", number="251164074"))
+        
+    "That's it for the day. Well... as far as classes go, anyway."
+    
+    "I'm still not sure how I'm going to deal with Taylor yet, but I'm definitely going to make it clear that's not to try this sort of bullshit again."
+    
+    "Taylor's probably already on her way to my office."
+    
+    $ wait_chan()
+    
+    "Well... that's enough dawdling from me. Time to go."
+    
+    scene bg hallway evening with dissolve
+    
+    $ renpy.pause(0.5)
+    
+    scene bg office evening
+    show john suit normal
+    show taylor uniform worried
+    with dissolve
+    
+    t "Hi, Mr. Rook..."
+    
+    play music LIGHTNING_KICK fadein 2.0
+    
+    show john suit cross
+    j "Hello. Why don't you have a seat?"
+    
+    "She sits down, trembling."
+    
+    t "What's this about...?"
+    
+    j "Taylor? Don't insult my intelligence. You know exactly what this is about."
+    
+    t "Oh... is this about Akira? What did he tell you? He seemed really upset at me for some reason, like he was blaming me for —"
+    
+    "Oh {i}hell{/i} no you don't. I don't even want to hear what ridiculous story she's going to tell. I pre-empt her, deciding on my approach. How should I handle this?{nw}"
+    
+    $ conceded_to_taylor = False
+    menu:
+        extend ""
+        "Angry approach":
+            j "No, just shut up, Taylor. I'm not interested in the bullshit, okay?"
+            
+            show taylor uniform surprised
+            "She seems taken aback; at least now I have her attention. It's about time someone stops putting up with her shit. She's been getting away with it because it's behind my back for far too long."
+            
+            show taylor uniform uncomfortable
+            show john suit upset
+            j "I heard the whole story. With all given respect, what the hell is {i}wrong{/i} with you?"
+            
+            show john suit cross
+            j "If I didn't know you better, I wouldn't have even believed it. This is the archetypal crazy ex-girlfriend story. You're a cliché. You're an {i}insane{/i} cliché."
+            
+            j "How could you possibly be such an awful person to him? Did you just not consider his feelings?"
+            
+            show john suit upset
+            j "What could have convinced you that harassing some poor boy into dumping his boyfriend was okay? Do you just not understand how horrible that is?!"
+            
+            show taylor uniform upset
+            t "I don't {i}care!{/i}"
+            
+            show taylor uniform sad
+            t "Fine! Put his feelings ahead of mine. Let the girl cry, but rush in to defend the boy. I don't care about his fucking feelings!"
+            
+            "What. What do you even say to that...?{nw}"
+            
+            menu:
+                extend ""
+                "That's kind of sociopathic":
+                    show john suit surprised
+                    j "Wow. That's kind of sociopathic."
+                    
+                    show john suit upset
+                    j "Look, if you really want to be a crazy bitch, that's entirely up to you!"
+                    
+                    show john suit cross
+                    j "Be crazy and unfeeling if you want! But I'm not going to put up with you... hurting two young men like that."
+                    
+                    j "And if you keep this shitty attitude up, you're going to end up pissing off the wrong person."
+                    
+                    j "I'm {i}nice.{/i} The worst I can do is have you expelled. You keep this up, you're going to piss off the wrong person, and they're not going to be nearly as nice."
+                    
+                "Cite school policy":
+                    j "Well, you'd better start caring, because school policy is pretty clear on this matter."
+                    
+                    j "Anyone causing \"persistent, deliberate emotional distress\" can be expelled without refund."
+                    
+            jump angry_approach
+        
+        "Gentle approach":
+            "There's something wrong, here, clearly. I don't know what her problem is, but... I should be calm. I'm the mature one here; she's just a fucked up 17-year-old girl."
+            
+            show john suit closed
+            j "Come on. Just admit it, you were a jerk to him. You were a jerk to him for... what, exactly?"
+            
+            show john suit annoyed
+            "She stops, and sighs, seeming to realize she can't argue her way out."
+            
+            show taylor uniform sad
+            t "I wanted Nolan back. Is that really so wrong, Mr. Rook? I like him, I miss him!"
+            
+            j "That's a funny way of showing you like someone, hurting the boy they love."
+            
+            show taylor uniform embarassed
+            t "Well..."
+            
+            t "...it's not like anything I said was wrong."
+            
+            show taylor uniform sad
+            t "It'll never work between them. Nolan isn't a fag, I know that, {i}he{/i} knows that, but everyone pretends they're this amazing perfect couple anyway!"
+            
+            show john suit cross
+            j "Have you considered the possibility that you're wrong? Or that it doesn't matter, anyway?"
+            
+            show taylor uniform forceful
+            t "I'm not wrong! He's just dating Akira to get back at me, it's not like he's actually going to fuck him! It's just spite."
+            
+            show taylor uniform embarassed
+            "I wince. Is she really so self-centered that she {i}believes{/i} that?"
+            
+            show john suit upset
+            j "When they broke up, he was reduced to tears. He was devastated. Do you really think that's spite?"
+            
+            t "Well, of course he cried, that faggy little boy isn't exactly —"
+            
+            show john suit annoyed
+            j "{i}Nolan{/i} was reduced to tears. Not Akira. So that's a funny way of showing spite, wouldn't you say?"
+            
+            show taylor uniform surprised
+            t "Really...?"
+            
+            show taylor uniform uncomfortable
+            j "Really."
+            
+            "She goes quiet for a long time."
+            
+            "A very long time."
+            
+            show taylor uniform cross
+            t "Well, fine. What do I care? It's all about Akira's feelings, or Nolan's feelings..." 
+            
+            t "You jump right away to defend the fucking {i}men{/i}, but you sure don't care about my feelings, do you? Isn't that the wrong way around?!"
+            
+            show taylor uniform upset
+            t "No, of course. Nobody cares about my feelings. Nobody even {i}thinks{/i} about how I feel. \"Lol, Taylor, stop being a bitch!\" I'm not allowed to be upset?"
+            
+            show taylor uniform sad
+            t "Nobody ever rushes to defend {i}me{/i}. Nobody ever asks me if I'm okay. I'm popular, I'm friends with everyone, I'm pretty, I go to parties... my life must be great!"
+            
+            show taylor uniform forceful
+            t "F-M-L. Fuck my fucking life. I have one friend. I wear makeup, because people made fun of me when I didn't."
+            
+            show taylor uniform sad
+            t "I go to parties because all I want is to find one boy — one fucking boy! — who could actually be there for me when things suck. My life sucks."
+            
+            t "Oh, yes, I'm popular. Everyone always talks about me. \"What a crazy bitch!\" But at least they're saying it all the time, right?"
+            
+            "She stops to compose herself, and I don't say anything while she does; what can you possibly say to that?"
+            
+            show taylor uniform cross
+            t "So... go ahead, sir. Bitch me out. Tell me how I'm the worst person, I just hurt others, and you don't care about my feelings. Fine! What's one more?"
+            
+            "She waits, expectingly. How can I answer that?{nw}"
+            
+            menu:
+                extend ""
+                "Angry approach":
+                    "Fuck it."
+                    
+                    show john suit upset
+                    j "I don't care, Taylor. I really do not care. I'm sorry you think your life sucks, but it doesn't {i}matter{/i}."
+                    
+                    j "What does matter is that you don't treat your classmates like shit. It's not acceptable, and I don't care what your excuse is."
+                    
+                    show john suit cross
+                    j "Let me be perfectly clear: the school has a strong policy about bullying. I could have you expelled for what you've done. Do you understand?"
+                    
+                "Gentle approach":
+                    show john suit cross
+                    j "So how does treating Akira like shit help you with that?"
+                    
+                    "I guess that wasn't really gentle, after all. I don't care."
+                    
+                    show taylor uniform worried
+                    t "Well, I might have had a chance in getting Nolan back. That would have helped. That would have helped a lot."
+                    
+                    j "You'd break both Akira's heart, and the heart of the boy you're trying to get back, just for the {i}chance{/i} of something impossible happening?"
+                    
+                    show taylor uniform closed
+                    t "Of course. What do I have to lose? And it's not like either of those two care about how I feel. Why shouldn't I be the same?"
+                    
+                    "I'm speechless. Just... utterly speechless. I mean, I have to say something, but... what is there even to say? Besides the obvious?"
+                    
+                    show taylor uniform sad
+                    t "Go on, say it. Everyone says it. Everyone always says it, without fail."
+                    
+                    j "That's the most self-centered thing I've ever heard in my life. The world doesn't revolve around you, Taylor."
+                    
+                    show taylor uniform cross
+                    t "And there we go."
+                    
+                    t "Of course it's self-centered. How can I worry about other people when I can't get my own life right? I mean, how is that even possible?"
+                    
+                    show taylor uniform upset
+                    t "And... are you retarded, Mr. Rook? Of course the world revolves around me! What else could it possibly revolve around? Everyone says that, and W-T-F!"
+                    
+                    show taylor uniform wince
+                    t "Your world revolves around you, Akira's fucking world revolves around fucking Akira, and my world revolves around me! It's the dumbest thing you could say."
+                    
+                    show taylor uniform upset
+                    t "And yet everyone does. Everyone criticizes me for it! \"Oh, Taylor, don't be so self-centered,\" as if it's selfish to care about your own feelings!"
+                    
+                    t "Well of course I care about my own feelings! If I don't, who will?"
+                    
+                    show taylor uniform closed
+                    "She stops ranting for long enough to catch her breath."
+                    
+                    show taylor uniform upset
+                    t "Can you tell me? Who else will care about my feelings? Tell me, Mr. Rook, who else? Who else is going to care?"
+                    
+                    "I don't have an answer to her question. How could I possibly answer something like that?"
+                    
+                    t "That's what I thought."
+                    
+                    t "So maybe it's worth being self-centered. At least one person in this world — this world that revolves around me — should care."
+                    
+                    show taylor uniform embarassed
+                    t "I mean... it's..."
+                    
+                    show taylor uniform sad
+                    "And finally, she can't hold herself back anymore, and she starts sobbing. I had wondered if this wasn't some bizarre act... but now she's crying. Actually crying. There's no doubt, those are real tears."
+                    
+                    "She keeps wiping her face, trying to calm herself down, but completely unable to."
+                    
+                    t "I just... I... I..."
+                    
+                    "I sigh. It's the most pitiful sight I've ever seen."
+                    
+                    t "What..."
+                    
+                    show taylor uniform forceful
+                    "She takes a deep breath."
+                    
+                    show taylor uniform sad
+                    t "What should I do? Tell me, what... what do you think I should do, then?"
+                    
+                    t "How should I change? What should I do differently? What will make everything better and people not always telling me I'm terrible? What should I do?"
+                    
+                    "I have to say something to her. I just desperately want to walk out, let this be someone else's problem, give up on dealing with this crazy teenager, but..."
+                    
+                    "I can't. I know I can't. But how do you respond to that? What do you {i}say{/i}? I can't give her any advice that'll suddenly make things perfect. It doesn't exist."
+                    
+                    "Maybe that's what I should say. It's about all I can."
+                    
+                    show john suit sympathetic
+                    j "Nothing will make everything better. Nothing will make everything perfect. I can't just give you a single piece of sage advice that makes everything better."
+                    
+                    j "I don't know how to get through to you. You just don't seem to get it. All I can say is... in order for people to be nice to you, you have to show you care first."
+                    
+                    show taylor uniform awkward smile
+                    t "That's it? That's your advice? Lol, Mr. Rook. Lol, lol, lol, lol, lol, lol, lol, lol, lol, lol, lol, lol..."
+                    
+                    show taylor uniform uncomfortable
+                    "She starts laughing nervously... or maybe crying. It's impossible to tell."
+                    
+                    t "You think I haven't tried? I've tried everything! With Nolan... you have no idea how many times I tried to show that I care."
+                    
+                    t "I always apologized, I always admitted I was wrong, I always listened to what he told me, I always... I always was there."
+                    
+                    t "I kept my mouth shut when he wanted me to, and kept it open when he wanted, too. I begged to know what I could do to make things work again..."
+                    
+                    t "I... I care, Mr. Rook. I fucking well care. I showed it in every way possible. It wasn't enough. It's never enough. Not with him, not with anyone."
+                    
+                    "She wipes her tears again, and I'm at a loss. I have to break through to her somehow. It has to be possible."
+                    
+                    j "But did you treat him how he wanted to be treated?"
+                    
+                    show taylor uniform upset
+                    t "Of course I did!"
+                    
+                    show taylor uniform uncomfortable
+                    j "I mean... did you actually treat him how he wanted to?"
+                    
+                    j "That doesn't mean just apologizing, or going down on him, or nodding along, or begging for a way to prove yourself. It means {i}caring{/i}."
+                    
+                    j "And it sounds like... what he really wanted from you was to just leave him alone."
+                    
+                    "There's a pause."
+                    
+                    show taylor uniform sad
+                    t "That's what everyone wants from me! It's always the same. I should just leave everyone alone, everyone, always! Do I not deserve friends?!"
+                    
+                    j "I..."
+                    
+                    "I can't. I can't do it."
+                    
+                    show john suit uncomfortable
+                    j "I don't know what to say to you, Taylor. I'm sorry, I just... can't get through to you."
+                    
+                    j "I don't know what to tell you. I'm sorry your life sucks, and I'm even more sorry you can't seem to understand why. I don't think I can help you."
+                    
+                    show john suit cross
+                    j "All I can say is... it's my job to make sure everyone in the class has a comfortable learning environment, and you're getting in the way of that."
+                    
+                    j "I can't tell you how to change your life. All I can tell you is that if you ever interfere with that again, I'm going to have to remove you from the class."
+                    
+                    j "I don't want to do that. So please, just promise me you'll stop abusing your classmates. Can you do that?"
+                    
+                    "She gives a long drawn out sigh."
+                    
+                    t "Of course you can't. Nobody can. F-M-L."
+                    
+                    show taylor uniform wince
+                    "She wipes her face again."
+                    
+                    show taylor uniform cross
+                    t "...but okay. Fine. I promise. I... it's not like anything else ever works out for me. What's one more thing?"
+                    
+                    t "Is that all? Can I go home now?"
+                    
+                    j "...that's all. You can go now."
+                    
+                    hide taylor with dissolve
+                    
+                    "She leaves without a single other word."
+                    
+                    "I don't know what to think. I don't know what to make of it. I don't get her, I don't get what the fuck is wrong with her, and I don't know how to help."
+                    
+                    "Would anyone? Was there a better approach that I just didn't think of at all?"
+                    
+                    "Or... is it just impossible for her?"
+                    
+                    "I don't know which answer would be more depressing."
+                    
+                    jump after_taylor
+                    
+label angry_approach:
+    "She goes quiet, realizing just how serious I am. \"Expelled\" is probably a big word when your father's paying for your expensive private school tuition."
+            
+    "There's a long pause as I let that sink in with her."
+    
+    show taylor uniform cross
+    t "Well..."
+    
+    t "...well, that's retarded. That's bullshit. That is... that's {i}retarded{/i}. So what, Akira gets to be totally sheltered? At my expense?!"
+    
+    t "What's that going to be like for him in the real world? He's not going to be able to go crying to his teacher for help there!"
+    
+    show john suit upset
+    j "Taylor. In the real world, what you've done is called harassment. Any employer would fire you on the {i}spot{/i} for it."
+    
+    show john suit cross
+    j "I'm being really accomodating here, by giving you a second chance, and I don't have to. You could be expelled. I'm willing to do it."
+    
+    if arianna_kiss:
+        show taylor uniform smug
+        t "Lol. Try it!"
+        
+        "That leaves me taken aback. Does she think I was bluffing about expulsion? Now I just feel more compelled than ever to try it."
+        
+        j "I'm serious."
+        
+        t "So am I! Great, the school has some stupid policy about protecting young men from dangerous girls!"
+        
+        show taylor uniform very happy
+        t "I wonder, what's the policy on having jailbait in your home? On your lap? Do you think the school will really care that she hasn't sucked your dick yet?"
+        
+        show taylor uniform smug
+        "Silence."
+        
+        "Now I'm the one left with the long pause, the weight of it sinking in. It's a big threat."
+        
+        "And it's probably a bluff, but... should I really call her on it? Suddenly, I've just been thrown onto the defensive. How should I handle this?{nw}"
+        
+        menu:
+            extend ""
+            "Angry approach":
+                "Of course I'm going to call her on it."
+                
+                show john suit happy
+                j "I don't know. Let's go find out."
+                
+                show taylor uniform surprised
+                t "What?"
+                
+                show taylor uniform worried
+                j "Why don't we go down to the office together, so you can tell the principal about these terrible accusations? Come on, we can do it right now. I've got time!"
+                
+                show taylor uniform awkward smile
+                t "Are... you serious?"
+                
+                show taylor uniform worried
+                j "I'm deadly serious. Go ahead, Taylor, go tell him all about it."
+                
+                j "Do you really think he's going to take your word for it over mine?"
+                
+                "He would, of course, in a heartbeat. There's a whole multitude of reasons why he would, and I'm hoping that Taylor is too much of an idiot to know any of them. It's not an unrealistic hope."
+                
+                j "You honestly believe he's going to take the word of a 17-year-old girl with bad marks, over the teacher he hired personally? Really, Taylor?"
+                
+                "Uncertainty appears in her face, and suddenly, I feel bad. I'm bullying her. I'm bullying her because she's trying to blackmail me, in response to her own bullying. This is ridiculous."
+                
+                "I... can't really back down here. I don't think I've made any truly wrong decisions. It's just... what the hell, this is ridiculous."
+                
+                "But I keep badgering her all the same."
+                
+                j "If you honestly believe that, then go ahead, and try. It'll make things easier for me; I won't even need to say anything to convince him to expel you."
+                
+                t "I..."
+                
+                j "Or, you could never speak of it again, and you could leave Akira the hell alone, like a decent, civilized human being. And then you get to stay in school."
+                
+                j "It's your choice, Taylor. What's it going to be?"
+                
+                "There's a long pause, but I can tell from her expression: she's defeated."
+                
+                show taylor uniform uncomfortable
+                t "Fine..."
+                
+                show john suit cross
+                j "Sorry, what was that?"
+                
+                t "I'll... I'll... I'll leave him alone."
+                
+                j "Good choice."
+                
+                show taylor uniform closed
+                "She sighs loudly."
+                
+                show taylor uniform uncomfortable
+                j "That's all I wanted to hear. So long as you stop harassing Akira and Nolan, I don't see any reason to not put this conversation behind us."
+                
+                t "Okay..."
+                
+                "She just stands there, passively. My gut sinks; I really {i}did{/i} bully her into submission. This is awful."
+                
+                j "You can leave now, Taylor. Just don't do it again."
+                
+                hide taylor with dissolve
+                
+                "She doesn't say anything, she just quietly slinks away. That's all it takes to bring her down? Just a bit of shouting and posturing?"
+                
+                "I feel awful."
+                
+            "Gentle approach":
+                "I sigh audibly."
+                
+                show john suit sympathetic
+                j "Really, Taylor? You'd do that to Arianna?"
+                
+                "I stare at her, waiting for her to answer."
+                
+                show taylor uniform uncomfortable
+                t "I... well, it'd be your fault! If you push me..."
+                
+                j "Seriously? Do you think she'll see it that way?"
+                
+                j "You're so desperate to save face that you would try to destroy my life, and publicly humiliate your best friend? Come on. Don't do that to her."
+                j "She deserves better."
+                
+                t "Well..."
+                
+                j "Don't, Taylor. Don't do something that would hurt Arianna, just so you can get away with bullying Akira. You can do better. She deserves better."
+                
+                "There's a long pause, as she tries to come up with something."
+                
+                show taylor uniform closed
+                t "...fine. You're right. I wouldn't."
+                
+                show taylor uniform uncomfortable
+                show john suit sympathetic
+                j "I know. Just cut the shit, okay? I don't know what your problem is, but you're abusing the people around you, and it has to stop."
+                
+                t "I..."
+                
+                j "Look. Go home, Taylor. Just go home, think about what you've done, and then don't do it ever again. Just don't. That's all you have to do, it's not hard."
+                
+                show taylor uniform worried
+                "The indignant look on her face is gone; now she's just quiet."
+                
+                j "Nobody needs to do anything dramatic. Just don't be a bitch, okay?" 
+                
+                j "That's all I'm asking. Don't be a bitch, and you won't ruin your friendship with Arianna, or get expelled."
+                
+                j "Simple."
+                
+                t "I... okay."
+                
+                j "That's all. You can go."
+                
+                hide taylor with dissolve
+                
+                "She walks away quietly, and I don't have a clue what she's thinking."
+                
+                "Was I still too harsh anyway? Not harsh enough? I don't know. I really do not know."
+                
+                "I guess that went as well as it possibly could."
+                
+            "Concede":
+                "...the smart thing, I suppose, as embarrassing as it is, is to admit that she has me there."
+                
+                "I'm mad. I'm furious, even, and I can feel my fists shaking. But what pisses me off the most isn't that a bitchy teenaged girl has gotten the better out of me... it's that she deserves to."
+                
+                "What the fuck did I think would happen when I went for Arianna? Actions have consequences. She's right; it doesn't really matter that I've kept it in my pants the whole time."
+                
+                "I know the risks, I tried to threaten her; of course I was going to get threatened back."
+                
+                show john suit uncomfortable
+                j "...fine."
+                
+                "I have got to at least take some sort of control back of this situation."
+                
+                j "You..."
+                
+                "Calm. Have to be calm about this; I have to be in control."
+                
+                j "You realize if you do come out with that, it's still going to be my word and Arianna's against yours. It's not going to go away quickly, it will be very messy."
+                
+                j "Everyone would hate you for it in the process. Even your few friends now."
+                
+                show taylor uniform uncomfortable
+                t "I'll still do it. I will!"
+                
+                j "Calm down. Neither of us wants that to happen. You've got me; I can't... you've won this one."
+                
+                j "Just... walk out, and never mention it again. I won't interfere with your petty bullshit, but I swear..."
+                
+                j "...if you so much as hint at bringing up our relationship, I swear, I will do everything I can to make your life hell in the process. Is that understood?"
+                
+                show taylor uniform cross
+                t "I-I don't want to bring it up, either."
+                
+                j "Then we're in agreement. Neither of us will threaten the other again, and we'll leave it at that."
+                
+                t "Okay. Okay. Okay. Great."
+                
+                t "Do you want to shake on it, or just...?"
+                
+                "I give her the dirtiest glare I'm capable of summoning. It's not enough for how angry I feel at her. Nothing is."
+                
+                show john suit cross
+                j "Taylor Gibson, I am not even interested in {i}looking{/i} at you, letting alone touching you."
+                
+                show john suit upset
+                j "Just get the fuck out of here."
+                
+                "She stares, clearly not knowing how to respond; because she's stupid, she hasn't realized that she's still won. Completely won."
+                
+                "But gradually it seems to dawn on her, and she smiles. Then she walks away, mercifully not bothering to say another word. Realizing there's nothing to be said."
+                
+                hide taylor with dissolve
+                
+                "This..."
+                
+                "I go to the window, and slam my head against it as hard as I can."
+                
+                "And again."
+                
+                "And again."
+                
+                "And again..."
+                
+                "This... is not my finest hour."
+    
+    else:
+        show taylor uniform uncomfortable
+        t "I..."
+        
+        show john suit cross
+        j "Come on. All you have to do here is be a decent human being, and not treat a boy like shit."
+        
+        j "Is that hard? Is that really so hard that you'd get yourself expelled for it?"
+        
+        "She goes quiet. She can tell, I hope, that there's absolutely nothing she can say to dig her way out of this."
+        
+        "She sighs, and she seems to swallow her pride."
+        
+        show taylor uniform embarassed
+        t "...fine. You're right. It's not."
+                
+        show john suit upset
+        j "I know. Just cut the shit, okay? I don't know what your problem is, but you're abusing the people around you, and it has to stop."
+        
+        t "I..."
+        
+        show john suit cross
+        j "Look. Go home, Taylor. Just go home, think about what you've done, and then don't do it ever again. Just don't. That's all you have to do, it's not hard."
+        
+        "The indignant look on her face is gone; now she's just quiet."
+        
+        j "Just don't be a bitch, okay? That's all I'm asking. Don't be a bitch, and you won't get expelled."
+        
+        j "Simple."
+        
+        t "I... okay."
+        
+        j "That's all. You can go."
+        
+        hide taylor with dissolve
+        
+        "She walks away quietly, and I don't have a clue what she's thinking."
+        
+        "Was I still too harsh anyway? Not harsh enough? I don't know. I really do not know."
+        
+        "I guess that went as well as it possibly could."
+        
+label after_taylor:
+    $ why2 = Conversation(nanasi, john).send(nanasi, "Tell me, John Rook, she wants to know. Why?")
+    $ good_luck.send(arianna, "WTF. I just heard the whole story! I thought you were just going to talk to him, not be the world's biggest jerk! That was way too cruel, Taylor. I hope you realize that.")
+    $ transition("bg bedroom evening", "THAT NIGHT")
+    
+    play music MIDNIGHT fadein 2.0
+    
+    "I've been lying in bed for the past hour. I just... can't get to sleep."
+    
+    "Every time I started to drift off, all I can think about was how awful things went today. Just... absolutely awful. For everyone."
+    
+    $ Conversation(nanasi, john).send(nanasi, "Why, John, why? You could have saved her! You could have stopped her!")
+    
+    $ wait(why2)
+    
+    "Or worse... I get woken up by these creepy, creepy messages."
+    
+    $ taylor.wall = [ ]
+    $ Post(taylor, "has purged her wall.", picture=False)
+    $ Post(taylor, "is going to delete any more abusive comments, okay? Just leave me alone if you don't have anything nice to say.")
+    $ good_luck.send(taylor, "Yes, please, bitch me out too! I really wanted another person to do that. That makes me feel very happy. That's what I really need when I'm emotionally needy. Thank you, Arianna, for being a great friend.")
+    $ Conversation(nanasi, john).send(nanasi, "Why?!")
+    $ good_luck.send(arianna, "Forget it, then.")
+label after_taylor2:
+# FRIDAY, NOVEMBER 26, 2027
+    $ date = "Friday, November 26, 2027"
+    $ transition("bg classroom day", "NEXT LUNCH")
+    show john suit normal
+    show arianna uniform worried at three_right
+    show kendall uniform happy at three_left
+    show charlotte uniform normal
+    with dissolve
+    
+    "Another weird mix of people in class for lunch today. Well, not that weird, I suppose."
+    
+    play music SERIOUS_MORNING fadein 2.0
+    
+    "I feel tired and awful. I didn't get much sleep last night, in the end."
+    
+    show charlotte uniform disappointed
+    c "So... Taylor didn't show up for class."
+    
+    show kendall uniform smug
+    k "Lol. And not a single fuck was given that day."
+    
+    show arianna uniform upset
+    ar "Oh, come on... I'm not going to defend her, but she has a lot going on. She doesn't deserve that."
+    
+    c "I'm sorry, but I can't really disagree with Kendall. What she did was just appalling."
+    
+    "While I completely agree..."
+    
+    show john suit annoyed
+    j "Let's not gossip about it, guys. It's been dealt with, and I don't think what we need is more talking about her behind her back."
+    
+    $ why = Conversation(nanasi, john).send(nanasi, "Why? Why did you let her die? You could have saved her! Why, why, why?\n\nWhy?\n\nWhy, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why, why?")
+    
+    show kendall uniform closed
+    k "Whatevs."
+    
+    show kendall uniform bored
+    show charlotte uniform worried
+    c "Alright. Sorry. If you say so..."
+    
+    $ wait(why)
+    
+    "Sleep-deprived, and... what? What the hell is going on with all these messages?"
+    
+    "They remind me of Isabella, of course, and I have to wonder... could I have helped her, anyway? Or would things have gone just as poorly as they did with Taylor?"
+    
+    "And what the hell is going on here? At least the Taylor thing is explainable: she has fucking problems."
+    
+    "But this... what's going on?"
+    
+    jump kendall_start
+</pre>
